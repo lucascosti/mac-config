@@ -928,10 +928,12 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>954 282 737 382 0 0 1920 1057 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 126 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>506 490 796 486 0 0 1920 1057 </string>
+	<string>506 529 1018 447 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 527 1920 530 0 0 1920 1057 </string>
+	<string>0 422 1920 635 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>401 102 1110 657 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -1590,7 +1592,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -2409,6 +2411,10 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>0DDC18E5-0C66-4571-BA9E-04CB2E8BD87E</string>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -2463,7 +2469,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-13T06:31:48Z</date>
+	<date>2019-01-21T05:20:24Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowPaneTitles</key>

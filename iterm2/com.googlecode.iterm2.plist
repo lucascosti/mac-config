@@ -928,12 +928,14 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>954 282 737 382 0 0 1920 1057 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>650 498 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>506 529 1018 447 0 0 1920 1057 </string>
+	<string>506 350 796 486 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 422 1920 635 0 0 1920 1057 </string>
+	<string>-1080 815 1080 660 -1080 -422 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>401 102 1110 657 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -1252,7 +1254,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Yes</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -1652,7 +1654,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/lucascosti</string>
+			<string>/Users/lucascosti/repos/internal-developer.github.com</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -2419,6 +2421,8 @@
 	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>567604859.022066</real>
+	<key>OnlyWhenMoreTabs</key>
+	<false/>
 	<key>OpenArrangementAtStartup</key>
 	<true/>
 	<key>OpenNoWindowsAtStartup</key>
@@ -2469,7 +2473,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-21T05:20:24Z</date>
+	<date>2019-02-08T00:22:21Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowPaneTitles</key>
@@ -2496,7 +2500,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.6</string>
+	<string>3.2.7</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

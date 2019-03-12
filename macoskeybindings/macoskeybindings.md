@@ -55,5 +55,8 @@ delete:       \U007F
   "@$\UF703" = moveWordForwardAndModifySelection:; // Cmd+Shift+RightArrow
   "~$\UF702" = moveToBeginningOfLineAndModifySelection:; // Alt+Shift+LeftArrow
   "~$\UF703" = moveToEndOfLineAndModifySelection:; // Alt+Shift+RightArrow
+  
+  // Delete a word backwards
+  "@\U007f" = deleteWordBackward:; //Cmd+backspace
 }
 ```

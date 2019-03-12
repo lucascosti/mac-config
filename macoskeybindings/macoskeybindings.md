@@ -1,0 +1,59 @@
+From: https://damieng.com/blog/2015/04/24/make-home-end-keys-behave-like-windows-on-mac-os-x
+
+Create a file called `DefaultKeyBinding.dict` in your `~/Library/KeyBindings` folder (might need to create that folder too) with the following contents:
+
+```
+/* ~/Library/KeyBindings/DefaultKeyBinding.dict
+
+Below cheat sheet taken from: https://gist.github.com/trusktr/1e5e516df4e8032cbc3d
+
+Here is a rough cheatsheet for syntax.
+Key Modifiers
+^ : Ctrl
+$ : Shift
+~ : Option (Alt)
+@ : Command (Apple)
+# : Numeric Keypad
+
+Non-Printable Key Codes
+
+Standard
+Up Arrow:     \UF700        Backspace:    \U0008        F1:           \UF704
+Down Arrow:   \UF701        Tab:          \U0009        F2:           \UF705
+Left Arrow:   \UF702        Escape:       \U001B        F3:           \UF706
+Right Arrow:  \UF703        Enter:        \U000A        ...
+Insert:       \UF727        Page Up:      \UF72C
+Delete:       \UF728        Page Down:    \UF72D
+Home:         \UF729        Print Screen: \UF72E
+End:          \UF72B        Scroll Lock:  \UF72F
+Break:        \UF732        Pause:        \UF730
+SysReq:       \UF731        Menu:         \UF735
+Help:         \UF746
+
+OS X
+delete:       \U007F
+
+*/
+
+{
+  // This section changes the Home and End key behaviour.
+  "\UF729"  = moveToBeginningOfParagraph:; // Home
+  "\UF72B"  = moveToEndOfParagraph:; // End
+  "$\UF729" = moveToBeginningOfParagraphAndModifySelection:; // Shift+Home
+  "$\UF72B" = moveToEndOfParagraphAndModifySelection:; // Shift+End
+  "^\UF729" = moveToBeginningOfDocument:; // Ctrl+Home
+  "^\UF72B" = moveToEndOfDocument:; // Ctrl+End
+  "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // Ctrl+Shift+Home
+  "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // Ctrl+Shift+End
+  
+  // This section swaps the Cmd+Arrow key behaviour with Alt+Arrow.
+  "@\UF702" = moveWordBackward:; // Cmd+LeftArrow
+  "@\UF703" = moveWordForward:; // Cmd+RightArrow
+  "~\UF702" = moveToBeginningOfLine:; // Alt+LeftArrow
+  "~\UF703" = moveToEndOfLine:; // Alt+RightArrow
+  "@$\UF702" = moveWordBackwardAndModifySelection:; // Cmd+Shift+LeftArrow
+  "@$\UF703" = moveWordForwardAndModifySelection:; // Cmd+Shift+RightArrow
+  "~$\UF702" = moveToBeginningOfLineAndModifySelection:; // Alt+Shift+LeftArrow
+  "~$\UF703" = moveToEndOfLineAndModifySelection:; // Alt+Shift+RightArrow
+}
+```

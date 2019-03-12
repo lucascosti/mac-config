@@ -20,7 +20,7 @@ This repo contains the following config files:
   
   Also, I have swapped the `Cmd/Alt+Arrow` keys behaviour: `Cmd+Left/RightArrow` now moves the cursor between words, and `Alt+Left/RightArrow` moves to the start/end of a line (and `Shift` with both sets to select the text, if desired). 
   
-  This seems to work everywhere in MacOS, except some text editors, like Atom. Atom has it's own keymap, so I have also had to replicate this behaviour in the Atom keymap settings. 
+  This seems to work everywhere in MacOS, except some text editors, like Atom. Atom has its own keymap, so I have also had to replicate this behaviour in the Atom keymap settings. 
 * [iTerm2 configuration](iterm2/)
   
   Especially for the colour palette that I really got used to when using Fedora.

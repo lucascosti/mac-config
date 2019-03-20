@@ -58,5 +58,7 @@ delete:       \U007F
   
   // Delete a word backwards
   "@\U007f" = deleteWordBackward:; //Cmd+backspace
+  // Delete a word forwards
+  "@\UF728" = deleteWordForward:; //Cmd+delete
 }
 ```

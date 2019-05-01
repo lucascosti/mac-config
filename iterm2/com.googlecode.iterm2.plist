@@ -701,6 +701,10 @@
 	<string>4B04C84C-46DD-4B23-8C38-251FFC48A109</string>
 	<key>DimOnlyText</key>
 	<true/>
+	<key>EnableDivisionView</key>
+	<true/>
+	<key>EnableProxyIcon</key>
+	<false/>
 	<key>EnableUnderlineSemanticHistoryOnCmdHover</key>
 	<true/>
 	<key>GlobalKeyMap</key>
@@ -933,9 +937,9 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>506 350 796 486 0 0 1920 1057 </string>
+	<string>639 345 1018 447 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1080 815 1080 660 -1080 -422 1080 1897 </string>
+	<string>0 578 1920 479 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>401 102 1110 657 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -2473,8 +2477,10 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-02-08T00:22:21Z</date>
+	<date>2019-04-17T23:53:38Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowPaneTitles</key>
 	<true/>
@@ -2482,10 +2488,12 @@
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
 	<real>0.2807717347756411</real>
+	<key>StretchTabsToFillBar</key>
+	<false/>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>0</integer>
 	<key>UseBorder</key>
-	<true/>
+	<false/>
 	<key>UseVirtualKeyCodesForDetectingDigits</key>
 	<false/>
 	<key>Window Arrangements</key>
@@ -2500,7 +2508,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.7</string>
+	<string>3.2.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

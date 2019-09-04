@@ -23,5 +23,5 @@ This repo contains the following config files:
   This seems to work everywhere in MacOS, except some text editors, like Atom. Atom has its own keymap, so I have also had to replicate this behaviour in the Atom keymap settings. 
 * [iTerm2 configuration](iterm2/)
   
-  Especially for the colour palette that I really got used to when using Fedora.
-* For my `.bashrc` configuration, see [its own specific repo](https://github.com/lucascosti/bashrc).
+  Especially for the colour palette that I really got used to when using Fedora, as well as some key mappings (as iTerm2 doesn't recognise/respect most [custom `DefaultKeyBinding.dict`](macoskeybindings/macoskeybindings.md) settings).
+* For my Zsh configuration, see [its own specific repo](https://github.com/lucascosti/zshrc).

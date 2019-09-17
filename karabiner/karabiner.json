@@ -37,7 +37,12 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "shell_command": "open -a 'Alfred 3.app'"
+                                        "key_code": "spacebar",
+                                        "modifiers": [
+                                            "left_control",
+                                            "left_gui",
+                                            "left_shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -52,7 +57,7 @@
                                     "key_code": "tab",
                                     "modifiers": {
                                         "mandatory": [
-                                            "left_command"
+                                            "left_control"
                                         ]
                                     }
                                 },
@@ -60,7 +65,7 @@
                                     {
                                         "key_code": "tab",
                                         "modifiers": [
-                                            "left_control"
+                                            "left_command"
                                         ]
                                     }
                                 ],
@@ -152,6 +157,14 @@
                                 "key_code": "fn"
                             },
                             "to": {
+                                "key_code": "left_command"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_command"
+                            },
+                            "to": {
                                 "key_code": "left_control"
                             }
                         },
@@ -208,6 +221,14 @@
                                 "key_code": "left_alt"
                             },
                             "to": {
+                                "key_code": "left_control"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "left_control"
+                            },
+                            "to": {
                                 "key_code": "left_command"
                             }
                         },
@@ -229,18 +250,18 @@
                         },
                         {
                             "from": {
-                                "key_code": "scroll_lock"
-                            },
-                            "to": {
-                                "consumer_key_code": "volume_decrement"
-                            }
-                        },
-                        {
-                            "from": {
                                 "key_code": "print_screen"
                             },
                             "to": {
                                 "consumer_key_code": "mute"
+                            }
+                        },
+                        {
+                            "from": {
+                                "key_code": "scroll_lock"
+                            },
+                            "to": {
+                                "consumer_key_code": "volume_decrement"
                             }
                         }
                     ]
@@ -345,10 +366,14 @@
                 }
             ],
             "name": "Lucas' super Karabiner settings",
+            "parameters": {
+                "delay_milliseconds_before_open_device": 1000
+            },
             "selected": true,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
-                "country_code": 0
+                "country_code": 0,
+                "mouse_key_xy_scale": 100
             }
         }
     ]

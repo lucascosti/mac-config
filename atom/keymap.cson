@@ -55,7 +55,6 @@
 "atom-text-editor[data-grammar='source gfm']":
   'cmd-shift-K': 'custom:markdown-link'
 
-
 'atom-workspace':
   'cmd-shift-r': 'window:reload'
   'cmd-o': 'fuzzy-finder:toggle-file-finder'

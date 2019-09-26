@@ -941,7 +941,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>-1044 225 918 512 -1080 -422 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 603 1920 454 0 0 1920 1057 </string>
+	<string>-1080 848 1080 627 -1080 -422 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>401 102 1110 657 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -1570,13 +1570,13 @@
 			<key>Name</key>
 			<string>Lucas Default</string>
 			<key>Non Ascii Font</key>
-			<string>DejaVuSansMonoNerdFontCompleteM-Book 18</string>
+			<string>DejaVuSansMonoNerdFontCompleteM-Book 17</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>DejaVuSansMonoNerdFontCompleteM-Book 18</string>
+			<string>DejaVuSansMonoNerdFontCompleteM-Book 17</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -2326,7 +2326,7 @@
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
-			<integer>-2</integer>
+			<integer>0</integer>
 			<key>Scrollback Lines</key>
 			<integer>0</integer>
 			<key>Selected Text Color</key>
@@ -2398,7 +2398,9 @@
 		<string>3.3.2</string>
 		<string>3.2.9</string>
 		<string>3.3.1</string>
+		<string>3.3.4</string>
 		<string>3.3.0</string>
+		<string>3.3.3</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -2420,7 +2422,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>0DDC18E5-0C66-4571-BA9E-04CB2E8BD87E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>14</integer>
+	<integer>23</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3168,7 +3170,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-04T02:02:31Z</date>
+	<date>2019-09-19T21:18:43Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -3187,6 +3189,8 @@
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>0</integer>
+	<key>TabsHaveCloseButton</key>
+	<false/>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseVirtualKeyCodesForDetectingDigits</key>
@@ -3205,7 +3209,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.2</string>
+	<string>3.3.4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

@@ -1,0 +1,73 @@
+"*":
+  "autocomplete-plus":
+    confirmCompletion: "tab always, enter when suggestion explicitly selected"
+  "better-git-blame":
+    searchInLayerEnabled: false
+  "bracket-matcher":
+    autocompleteBrackets: false
+    highlightMatchingLineNumber: true
+  core:
+    disabledPackages: [
+      "markdown-preview"
+      "whitespace"
+      "highlight-selected"
+      "exception-reporting"
+    ]
+    packagesWithKeymapsDisabled: [
+      "markdown-preview-plus"
+    ]
+    restorePreviousWindowsOnStart: "always"
+    telemetryConsent: "no"
+    titleBar: "custom"
+  editor:
+    fontFamily: "DejaVuSansMono Nerd Font Mono"
+    fontSize: 15
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    softWrapHangingIndent: 1
+  "linter-ui-default":
+    panelHeight: 77
+    showPanel: true
+    statusBarRepresents: "Current File"
+  "markdown-preview-plus":
+    markdownItConfig:
+      useImsize: false
+      useLazyHeaders: false
+    previewConfig:
+      activatePreviewWithEditor: true
+    syncConfig:
+      syncEditorOnPreviewScroll: true
+      syncPreviewOnChange: true
+      syncPreviewOnEditorScroll: true
+    useGitHubStyle: true
+  minimap:
+    plugins:
+      bookmarks: true
+      bookmarksDecorationsZIndex: 0
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+      selection: true
+      selectionDecorationsZIndex: 0
+      "split-diff": true
+      "split-diffDecorationsZIndex": 0
+  "no-title-bar":
+    enableLiberalWindowDragging: false
+  "spell-check":
+    locales: [
+      "en-US"
+    ]
+  "split-diff":
+    ignoreWhitespace: true
+  "status-bar": {}
+  welcome:
+    showOnStartup: false
+  whitespace: {}

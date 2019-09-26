@@ -1,0 +1,92 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+}
+
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: white;
+  // background-color: hsl(180, 24%, 12%);
+}
+
+// style UI elements inside atom-text-editor
+atom-text-editor .cursor {
+  // border-color: red;
+}
+
+// Lucas For Atom 1.17+ hide the bottom dock's tab title if there is only one tab in the dock
+atom-dock.bottom ul.tab-bar {
+  height: auto;
+  li.tab:only-child {
+    display: none;
+  }
+}
+//Lucas blame gutter colour settings
+atom-text-editor .blame-gutter {
+  .hash   { color: #2D518A; }
+  .date   { color: #AAAAAA; }
+  .author { color: #3F732D; }
+}
+
+//Lucas Second pane width default (should work with multiple sub panes; only the second pane (even if it is a column) should be 46%).
+atom-pane-axis.pane-row > atom-pane:nth-child(3), atom-pane-axis.pane-row > atom-pane-axis:nth-child(3) {
+  max-width: 46%;
+}
+
+//OLD way: Lucas Second pane width default:
+// .pane-row .pane:last-child {
+//     max-width: 42%;
+// }
+
+//Lucas Make the minimap visable area more prominent
+atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
+  background-color: rgba(80, 150, 201, 0.50);
+}
+
+//Lucas Minimap line highlight overrides
+.minimap .cursor-line {
+  background: #2391D9;
+}
+.minimap .bookmark {
+  background: #FFB800; //OLD: 00558C
+}
+//Override minimap git-diff new lines
+@import "syntax-variables";
+.minimap {
+  .line {
+    .git-line-added {
+      background: fadeOut(@syntax-color-added, 50%);
+    }
+  }
+}
+
+// Lucas change bookmark color to be more obvious.
+atom-text-editor .gutter .line-number.bookmarked .icon-right:before {
+  color: #F2FF00;
+}
+atom-text-editor div .gutter .line-number.bookmarked .icon-right {
+  opacity: 1;
+}
+
+// Lucas reduce margins/padding in left gutter
+// atom-text-editor .line-number .icon-right {
+//   padding-left: 0;
+// }
+

@@ -36,10 +36,10 @@
   'ctrl-w': 'editor:toggle-soft-wrap'
   #'cmd-shift-M': 'markdown-preview:toggle'
   'cmd-shift-M': 'markdown-preview-plus:toggle'
+  'ctrl-m': 'markdown-preview-plus:toggle'
   # Switch around the bookmark mappings
   'cmd-f2': 'bookmarks:toggle-bookmark'
   'cmd-shift-f2': 'bookmarks:view-all'
-  'cmd-b': 'blame:toggle'
   # The below bindings match my custom MacOS handling of navigating text with the arrow keys. See the ~/Library/KeyBindings/DefaultKeyBinding.dict file for details. Atom overrides the default OS behaviour, so it has to be duplicated here.
   'cmd-right': 'editor:move-to-end-of-word'
   'cmd-left': 'editor:move-to-beginning-of-word'
@@ -53,10 +53,11 @@
   'cmd-delete': 'editor:delete-to-end-of-word'
 
 "atom-text-editor[data-grammar='source gfm']":
-  'cmd-shift-K': 'custom:markdown-link'
+  'cmd-k': 'custom:markdown-link'
 
 'atom-workspace':
   'cmd-shift-r': 'window:reload'
   'cmd-o': 'fuzzy-finder:toggle-file-finder'
   'ctrl-l': 'window:toggle-bottom-dock'
   'ctrl-g': 'github:toggle-git-tab'
+  'cmd-b': 'blame:toggle'

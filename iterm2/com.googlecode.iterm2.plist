@@ -941,7 +941,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>-1044 225 918 512 -1080 -422 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-1080 848 1080 627 -1080 -422 1080 1897 </string>
+	<string>0 603 1920 454 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>401 102 1110 657 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -2372,7 +2372,7 @@
 			<key>Thin Strokes</key>
 			<integer>3</integer>
 			<key>Transparency</key>
-			<real>0.051140149111675089</real>
+			<real>0.023800364847715694</real>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -2408,12 +2408,19 @@
 		<string>DejaVuSansMono Nerd Font</string>
 		<string>DejaVu Sans Mono for Powerline</string>
 	</array>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {1920, 1080}}</string>
+		<key>topLeft</key>
+		<string>{694, 767}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{638, 845}</string>
+		<string>{612, 590}</string>
 	</dict>
 	<key>NoSyncHaveUsedCopyMode</key>
 	<true/>
@@ -2422,7 +2429,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>0DDC18E5-0C66-4571-BA9E-04CB2E8BD87E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>23</integer>
+	<integer>24</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3170,7 +3177,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-19T21:18:43Z</date>
+	<date>2019-09-26T21:46:08Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>

@@ -1,0 +1,16 @@
+
+{
+  "_comment": "This file is for https://github.com/AtomLinter/linter-markdown. It goes in the user root directory (~). I also needed to install the following packages at my root (~) directory using `npm install`: remark-preset-lint-recommended, remark-preset-lint-consistent, remark-validate-links",
+  "plugins": [
+    "remark-preset-lint-recommended",
+    ["remark-lint-list-item-indent", false],
+    ["remark-lint-no-literal-urls", false],
+    "remark-preset-lint-consistent",
+    [
+      "validate-links",
+      {
+        "repository": false
+      }
+    ]
+  ]
+}

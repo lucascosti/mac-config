@@ -42,6 +42,22 @@ wrapSelections = (editor, before, after, multiLine = true) ->
         editor.addCursorAtBufferPosition cursorPosition
 
 # Add command to wrap selected text in markdown link
-atom.commands.add 'atom-text-editor', 'custom:markdown-link', ->
+atom.commands.add 'atom-text-editor', 'lucas:markdown-link', ->
   wrapSelections @getModel(), '[', ']($1)', false
 
+# Custom function to 'linkify' section of text, especially a copied markdown title.
+# This lower-cases all the text, and replaces spaces with dashes, and adds a hash.
+myCommand = (editor) ->
+  #Lower case the text
+  atom.commands.dispatch(atom.views.getView(editor), 'editor:lower-case')
+  # Replace spaces with dashes
+  editor.scanInBufferRange /\ /g, editor.getSelectedBufferRange(), ({replace}) ->
+    replace "-"
+  # Insert a hash at the start
+  editor.getLastSelection().insertText("#"+editor.getLastSelection().getText())
+  
+atom.commands.add 'atom-text-editor', 'lucas:markdown-title-linkify', ->
+  # do it as a single transaction so there for only one undo action
+  editor = @getModel()
+  editor.transact ->
+    myCommand editor

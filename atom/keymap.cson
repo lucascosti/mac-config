@@ -53,11 +53,13 @@
   'cmd-delete': 'editor:delete-to-end-of-word'
 
 "atom-text-editor[data-grammar='source gfm']":
-  'cmd-k': 'custom:markdown-link'
+  'cmd-k': 'lucas:markdown-link'
+  'cmd-shift-k': 'lucas:markdown-title-linkify'
 
 'atom-workspace':
   'cmd-shift-r': 'window:reload'
   'cmd-o': 'fuzzy-finder:toggle-file-finder'
   'ctrl-l': 'window:toggle-bottom-dock'
   'ctrl-g': 'github:toggle-git-tab'
+  'f4': 'github:toggle-git-tab'
   'cmd-b': 'blame:toggle'

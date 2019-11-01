@@ -23,6 +23,9 @@
 
 # Markdown code block
 '.source.gfm':
+  'GitHub - helpdocs':
+    'prefix': 'GitHub'
+    'body': '{{ site.data.variables.product.prodname_dotcom }}'
   'Code block':
     'prefix': 'code'
     'body': """
@@ -43,4 +46,29 @@
       ```shell
       $1
       ```
+    """
+  'Code block yaml':
+    'prefix': 'codeyaml'
+    'body': """
+      ```yaml
+      $1
+      ```
+    """
+  'Note block':
+    'prefix': 'note'
+    'body': """
+      {{#note}}
+
+      **Note:** $1
+
+      {{/note}}
+    """
+  'Warning block':
+    'prefix': 'warning'
+    'body': """
+      {{#warning}}
+
+      **Warning:** $1
+
+      {{/warning}}
     """

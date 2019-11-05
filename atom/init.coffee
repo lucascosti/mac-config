@@ -46,18 +46,18 @@ atom.commands.add 'atom-text-editor', 'lucas:markdown-link', ->
   wrapSelections @getModel(), '[', ']($1)', false
 
 # Custom function to 'linkify' section of text, especially a copied markdown title.
-# This lower-cases all the text, and replaces spaces with dashes, and adds a hash.
-myCommand = (editor) ->
+# This lower-cases all the text, replaces spaces with dashes, and prepends a hash.
+linkifySelection = (editor) ->
   #Lower case the text
   atom.commands.dispatch(atom.views.getView(editor), 'editor:lower-case')
   # Replace spaces with dashes
   editor.scanInBufferRange /\ /g, editor.getSelectedBufferRange(), ({replace}) ->
     replace "-"
-  # Insert a hash at the start
+  # Prepend a hash
   editor.getLastSelection().insertText("#"+editor.getLastSelection().getText())
   
 atom.commands.add 'atom-text-editor', 'lucas:markdown-title-linkify', ->
-  # do it as a single transaction so there for only one undo action
+  # do it as a single transaction so there is only one undo action
   editor = @getModel()
   editor.transact ->
-    myCommand editor
+    linkifySelection editor

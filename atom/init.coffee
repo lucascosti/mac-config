@@ -45,16 +45,18 @@ wrapSelections = (editor, before, after, multiLine = true) ->
 atom.commands.add 'atom-text-editor', 'lucas:markdown-link', ->
   wrapSelections @getModel(), '[', ']($1)', false
 
-# Custom function to 'linkify' section of text, especially a copied markdown title.
-# This lower-cases all the text, replaces spaces with dashes, and prepends a hash.
+# Custom function to 'linkify' selection of text, especially a copied markdown title.
+# This lower-cases all the text, removes any puctuation, replaces spaces with dashes, and prepends a hash.
 linkifySelection = (editor) ->
-  #Lower case the text
-  atom.commands.dispatch(atom.views.getView(editor), 'editor:lower-case')
-  # Replace spaces with dashes
-  editor.scanInBufferRange /\ /g, editor.getSelectedBufferRange(), ({replace}) ->
-    replace "-"
-  # Prepend a hash
-  editor.getLastSelection().insertText("#"+editor.getLastSelection().getText())
+  # get the selection
+  link = editor.getLastSelection().getText()
+  # This part shamelessly stolen from @sarahs' linkify hubot chat script
+  link = link.toLowerCase()             # Downcase
+  link = link.replace(/[^\w\- ]/g, '')  # Drop punctuation (anything that's not a letter/number/hyphen/space)
+  link = link.replace(/[ ]/g, '-')      # Replace spaces with hyphens
+  link = '#' + link                     # Add hash symbol
+  # Replace the selection with the link
+  editor.getLastSelection().insertText(link)
   
 atom.commands.add 'atom-text-editor', 'lucas:markdown-title-linkify', ->
   # do it as a single transaction so there is only one undo action

@@ -30,7 +30,6 @@
     softWrapHangingIndent: 1
   "linter-ui-default":
     panelHeight: 31
-    showPanel: true
     statusBarRepresents: "Current File"
   "markdown-preview-plus":
     markdownItConfig:

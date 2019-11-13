@@ -34,6 +34,7 @@
 'atom-text-editor':
   'ctrl-s': 'spell-check:correct-misspelling'
   'ctrl-w': 'editor:toggle-soft-wrap'
+  'ctrl-t': 'git-time-machine:toggle'
   #'cmd-shift-M': 'markdown-preview:toggle'
   'cmd-shift-M': 'markdown-preview-plus:toggle'
   'ctrl-m': 'markdown-preview-plus:toggle'

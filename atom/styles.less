@@ -13,7 +13,6 @@
 /*
  * Examples
  * (To see them, uncomment and save)
- */
 
 // style the background color of the tree view
 .tree-view {
@@ -30,6 +29,7 @@ atom-text-editor {
 atom-text-editor .cursor {
   // border-color: red;
 }
+ */
 
 // Lucas For Atom 1.17+ hide the bottom dock's tab title if there is only one tab in the dock
 atom-dock.bottom ul.tab-bar {
@@ -50,14 +50,10 @@ atom-pane-axis.pane-row > atom-pane:nth-child(3), atom-pane-axis.pane-row > atom
   max-width: 46%;
 }
 
-//OLD way: Lucas Second pane width default:
-// .pane-row .pane:last-child {
-//     max-width: 42%;
-// }
-
 //Lucas Make the minimap visable area more prominent
 atom-text-editor atom-text-editor-minimap .minimap-visible-area::after {
-  background-color: rgba(80, 150, 201, 0.50);
+  //OLD:background-color: rgba(80, 150, 201, 0.50);
+  background-color: rgba(80, 150, 201, 0.25);
 }
 
 //Lucas Minimap line highlight overrides

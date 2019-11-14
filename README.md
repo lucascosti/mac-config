@@ -28,6 +28,7 @@ This repo contains the following config files:
     
   I also have a few key extra combination shortcuts that do special things. For example, <kbd>⌥ Option(mapped)</kbd>+<kbd>Tab</kbd> opens MacOS Mission Control, and a single press on <kbd>⌥ Option(mapped)</kbd> is mapped to the keyboard shortcut to open [Alfred](https://www.alfredapp.com/).
   
+  This [`karabiner/`](karabiner/) directory is symlinked from `~/.config/karabiner`.
   
 * [MacOS key bindings for text navigation](macoskeybindings/macoskeybindings.md)
   
@@ -41,9 +42,13 @@ This repo contains the following config files:
 * [iTerm2 configuration](iterm2/)
   
   Especially for the colour palette that I really got used to when using Fedora, as well as some key mappings (as iTerm2 doesn't recognise/respect most [custom `DefaultKeyBinding.dict`](macoskeybindings/macoskeybindings.md) settings).
+  
+  Set the iTerm configuration to this file in **iTerm2 > Preferences > General > Preferences > Load preferences from a custom folder or URL**
 * [Atom configuration](atom/)
   
   The files that control the majority of my Atom editor's configuration.
+  
+  These files are symlinked from `~/.atom/`
 * Some other minor settings:
   * I use [uBar](https://brawersoftware.com/products/ubar) as a Windows-like taskbar, so I have the MacOS Dock set to autohide on the right of the screen. This command sets the Dock to be less sensitive to appear, so it's less prone to accidental activation when I move the cursor near the right edge of the screen.
     
@@ -51,4 +56,4 @@ This repo contains the following config files:
     defaults write com.apple.dock autohide-delay -float 0.20
     killall Dock
     ```
-* For my Zsh configuration, see [its own specific repo](https://github.com/lucascosti/zshrc).
+* For my Zsh shell configuration, see [its own specific repo](https://github.com/lucascosti/zshrc).

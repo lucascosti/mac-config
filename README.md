@@ -49,6 +49,9 @@ This repo contains the following config files:
   The files that control the majority of my Atom editor's configuration.
   
   These files are symlinked from `~/.atom/`
+* [Firefox](firefox/)
+  
+  Mainly just [`userChrome.css`](firefox/userChrome.css), this configures some minor (mainly font) changes in the Firefox UI, aka the 'chrome'. The user profile location on macOS is `~/Library/Application Support/Firefox/Profiles/xxxxxxxx.default`.
 * Some other minor settings:
   * I use [uBar](https://brawersoftware.com/products/ubar) as a Windows-like taskbar, so I have the MacOS Dock set to autohide on the right of the screen. This command sets the Dock to be less sensitive to appear, so it's less prone to accidental activation when I move the cursor near the right edge of the screen.
     

@@ -1,0 +1,95 @@
+/* Original:
+Firefox Custom Font Size by aireca v1.01
+http://forums.mozillazine.org/viewtopic.php?p=12890981&sid=c1ff584176b806003e646227a4fc9a0f#p12890981
+This goes in your firefox profile in the `chrome` directory.
+*/
+
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+/* Window font */
+window, page, wizard, prefwindow {
+font-size:  11pt !important; }
+
+/* Dialog font */
+dialog {
+font-size: 11pt !important; }
+
+/* Tabs Toolbar font */
+#TabsToolbar{
+font-size: 11pt !important;
+font-family: "Helvetica Neue" !important;
+font-weight: 500 !important;}
+
+/* Tab text font */
+.tab-text {
+font-size: 11pt !important;
+font-family: "Helvetica Neue" !important;
+font-weight: 500 !important;}
+
+/* Textbox font */
+textbox {
+font-size: 11pt !important; }
+
+/* Toolbar font */
+toolbar {
+font-size: 11pt !important; }
+
+/* Address bar font */
+#urlbar {
+font-size: 11pt !important; }
+
+/* Personal Titlebar Title font */
+#personal-titlebar{
+font-size: 11pt !important;}
+
+/* Status bar font */
+#status-bar {
+font-size: 11pt !important; }
+
+/* Sidebars Font */
+#sidebar-box *,
+#bookmarksPanel *, #bookmarks-view *,
+#history-panel *, #historyTree, sidebarheader {
+font-size: 11pt !important; }
+
+/* Trees font */
+tree, treechildren {
+font-size: 11pt !important; }
+
+/* Buttons font */
+button {
+font-size: 11pt !important; }
+
+/* Preferences font */
+#BrowserPreferences {
+font-size: 11pt !important; }
+
+
+/* About Addons fonts */
+.name-container {
+font-size:  16pt !important; }
+#detail-name-container {
+font-size:  20pt !important; }
+.detail-view-container {
+font-size:  14pt !important; }
+.category {
+font-size:  11.5pt !important; }
+
+
+/* Lucas: Firefox 57 Tweaks: */
+/* Make tab padding smaller to fit more in. */
+.tab-content[pinned] {padding-left: 9px !important; padding-right: 9px !important;}
+.tab-content:not([pinned]) {padding-left: 5px !important; padding-right: 5px !important;}
+
+/* Lucas Hide TreeStyleTab sidebar header */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
+/* Reduce minimum width of the sidebar */
+#sidebar {
+  min-width: 100px !important;
+}
+/* searchbar suggestion font size for Firefox ~70+*/
+.autocomplete-richlistitem .ac-title {
+  font-size: 11pt !important;
+}

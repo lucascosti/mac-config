@@ -21,7 +21,6 @@
     titleBar: "custom"
   editor:
     fontFamily: "DejaVuSansMono Nerd Font Mono"
-    fontSize: 15
     scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
@@ -30,6 +29,7 @@
     softWrapHangingIndent: 1
   "linter-ui-default":
     panelHeight: 31
+    showPanel: true
     statusBarRepresents: "Current File"
   "markdown-preview-plus":
     markdownItConfig:

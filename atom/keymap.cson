@@ -41,6 +41,8 @@
   # Switch around the bookmark mappings
   'cmd-f2': 'bookmarks:toggle-bookmark'
   'cmd-shift-f2': 'bookmarks:view-all'
+  # Regular Windows-esque find
+  'f3': 'find-and-replace:find-next'
   # The below bindings match my custom MacOS handling of navigating text with the arrow keys. See the ~/Library/KeyBindings/DefaultKeyBinding.dict file for details. Atom overrides the default OS behaviour, so it has to be duplicated here.
   'cmd-right': 'editor:move-to-end-of-word'
   'cmd-left': 'editor:move-to-beginning-of-word'

@@ -89,6 +89,10 @@ font-size:  11.5pt !important; }
 #sidebar {
   min-width: 100px !important;
 }
+/* searchbar font size */
+#searchbar {
+  font-size: 11pt !important;
+}
 /* searchbar suggestion font size for Firefox ~70+*/
 .autocomplete-richlistitem .ac-title {
   font-size: 11pt !important;

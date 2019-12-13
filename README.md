@@ -59,4 +59,10 @@ This repo contains the following config files:
     defaults write com.apple.dock autohide-delay -float 0.20
     killall Dock
     ```
+  * I used these settings to stop the MacBook from automatically turning on or resuming from sleep when the lid is opened ([source](http://osxdaily.com/2017/01/19/disable-boot-on-open-lid-macbook-pro/), [source](http://osxdaily.com/2011/04/26/disable-wake-from-sleep-when-opening-the-lid-of-a-macbook-pro/)):
+    
+    ```shell
+    sudo nvram AutoBoot=%00
+    sudo pmset lidwake 0
+    ```
 * For my Zsh shell configuration, see [its own specific repo](https://github.com/lucascosti/zshrc).

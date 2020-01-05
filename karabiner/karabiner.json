@@ -77,6 +77,14 @@
                         "description": "Only in Firefox: Cmd+Tab to Ctrl+Tab (for switching tabs)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "org.mozilla.firefox"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "tab",
                                     "modifiers": {
@@ -91,14 +99,6 @@
                                         "modifiers": [
                                             "left_control"
                                         ]
-                                    }
-                                ],
-                                "conditions": [
-                                    {
-                                      "type": "frontmost_application_if",
-                                      "bundle_identifiers": [
-                                        "org.mozilla.firefox"
-                                      ]
                                     }
                                 ],
                                 "type": "basic"
@@ -249,24 +249,29 @@
                     "fn_function_keys": [],
                     "identifiers": {
                         "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 45082,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
                         "is_pointing_device": false,
-                        "product_id": 258,
-                        "vendor_id": 12046
+                        "product_id": 50475,
+                        "vendor_id": 1133
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
                     "simple_modifications": [
                         {
                             "from": {
-                                "key_code": "application"
-                            },
-                            "to": {
-                                "key_code": "right_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "left_alt"
+                                "key_code": "left_command"
                             },
                             "to": {
                                 "key_code": "left_control"
@@ -282,66 +287,21 @@
                         },
                         {
                             "from": {
-                                "key_code": "left_gui"
-                            },
-                            "to": {
-                                "key_code": "left_option"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "pause"
-                            },
-                            "to": {
-                                "consumer_key_code": "volume_increment"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "print_screen"
-                            },
-                            "to": {
-                                "consumer_key_code": "mute"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_alt"
-                            },
-                            "to": {
-                                "key_code": "right_control"
-                            }
-                        },
-                        {
-                            "from": {
-                                "key_code": "right_control"
-                            },
-                            "to": {
                                 "key_code": "right_command"
+                            },
+                            "to": {
+                                "key_code": "right_control"
                             }
                         },
                         {
                             "from": {
-                                "key_code": "scroll_lock"
+                                "key_code": "right_control"
                             },
                             "to": {
-                                "consumer_key_code": "volume_decrement"
+                                "key_code": "left_command"
                             }
                         }
                     ]
-                },
-                {
-                    "disable_built_in_keyboard_if_exists": false,
-                    "fn_function_keys": [],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 45082,
-                        "vendor_id": 1133
-                    },
-                    "ignore": true,
-                    "manipulate_caps_lock_led": false,
-                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [

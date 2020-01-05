@@ -26,6 +26,9 @@
   'GitHub - helpdocs':
     'prefix': 'GitHub'
     'body': '{{ site.data.variables.product.prodname_dotcom }}'
+  'GitHub Actions - helpdocs':
+    'prefix': 'Actions'
+    'body': '{{ site.data.variables.product.prodname_actions }}'
   'Code block':
     'prefix': 'code'
     'body': """

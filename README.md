@@ -52,6 +52,8 @@ This repo contains the following config files:
 * [Firefox](firefox/)
   
   Mainly just [`userChrome.css`](firefox/userChrome.css), this configures some minor (mainly font) changes in the Firefox UI, aka the 'chrome'. The user profile location on macOS is `~/Library/Application Support/Firefox/Profiles/xxxxxxxx.default`.
+  
+  See https://www.reddit.com/r/FirefoxCSS/ for some good tutorials and required settings for have a custom `userChrome.css`. 
 * Some other minor settings:
   * I use [uBar](https://brawersoftware.com/products/ubar) as a Windows-like taskbar, so I have the MacOS Dock set to autohide on the right of the screen. This command sets the Dock to be less sensitive to appear, so it's less prone to accidental activation when I move the cursor near the right edge of the screen.
     
@@ -59,10 +61,9 @@ This repo contains the following config files:
     defaults write com.apple.dock autohide-delay -float 0.20
     killall Dock
     ```
-  * I used these settings to stop the MacBook from automatically turning on or resuming from sleep when the lid is opened ([source](http://osxdaily.com/2017/01/19/disable-boot-on-open-lid-macbook-pro/), [source](http://osxdaily.com/2011/04/26/disable-wake-from-sleep-when-opening-the-lid-of-a-macbook-pro/)):
+  * I use this setting to stop the MacBook from automatically turning on when the lid is opened ([source](http://osxdaily.com/2017/01/19/disable-boot-on-open-lid-macbook-pro/)):
     
     ```shell
     sudo nvram AutoBoot=%00
-    sudo pmset lidwake 0
     ```
 * For my Zsh shell configuration, see [its own specific repo](https://github.com/lucascosti/zshrc).

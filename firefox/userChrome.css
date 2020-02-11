@@ -75,6 +75,16 @@ font-size:  14pt !important; }
 .category {
 font-size:  11.5pt !important; }
 
+/* Lucas: these are for the 'View in local/production...' bookmarklets on the browser toolbar.
+/* Hide the all-tabs button */
+#alltabs-button {
+  display: none;
+}
+/* Hide favicons on the bookmarks toolbar */
+.bookmark-item > .toolbarbutton-icon {
+    display: none !important;
+}
+
 
 /* Lucas: Firefox 57 Tweaks: */
 /* Make tab padding smaller to fit more in. */

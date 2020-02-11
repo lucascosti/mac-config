@@ -74,13 +74,15 @@
                         ]
                     },
                     {
-                        "description": "Only in Firefox: Cmd+Tab to Ctrl+Tab (for switching tabs)",
+                        "description": "For apps with tabs: Cmd+Tab to Ctrl+Tab (for switching tabs)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "org.mozilla.firefox"
+                                            "org.mozilla.firefox",
+                                            "com.github.atom",
+                                            "com.microsoft.VSCode"
                                         ],
                                         "type": "frontmost_application_if"
                                     }

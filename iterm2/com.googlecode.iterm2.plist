@@ -6,6 +6,8 @@
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -935,7 +937,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>954 282 737 382 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>-932 824 620 392 -1080 -417 1080 1897 </string>
+	<string>650 498 620 392 0 0 1920 1057 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -2396,13 +2398,14 @@
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.6</string>
-		<string>3.3.0</string>
+		<string>3.3.2</string>
+		<string>3.3.8</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
 		<string>3.3.7</string>
+		<string>3.3.0</string>
 		<string>3.2.9</string>
-		<string>3.3.2</string>
 		<string>3.3.4</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
@@ -2432,7 +2435,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>0DDC18E5-0C66-4571-BA9E-04CB2E8BD87E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>98</integer>
+	<integer>132</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3125,30 +3128,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSearchHistory</key>
-	<array>
-		<string>terminfo</string>
-		<string>LC_ALL</string>
-		<string> LC_ALL</string>
-		<string>t LC_ALL</string>
-		<string>rt LC_ALL</string>
-		<string>ort LC_ALL</string>
-		<string>port LC_ALL</string>
-		<string>xport LC_ALL</string>
-		<string>git_sec</string>
-	</array>
-	<key>NoSyncSearchHistory2</key>
-	<array>
-		<string>members_can</string>
-		<string>mermber</string>
-		<string>primart</string>
-		<string>dns</string>
-		<string>launchdn</string>
-		<string>launchdns</string>
-		<string>launcg</string>
-		<string>direc</string>
-		<string>white</string>
-	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>567604859.022066</real>
 	<key>OnlyWhenMoreTabs</key>
@@ -3203,7 +3182,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-10T05:57:52Z</date>
+	<date>2020-02-03T03:29:47Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -3244,7 +3223,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.7</string>
+	<string>3.3.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

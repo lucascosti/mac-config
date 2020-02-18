@@ -1,8 +1,3 @@
-From: https://damieng.com/blog/2015/04/24/make-home-end-keys-behave-like-windows-on-mac-os-x
-
-Create a file called `DefaultKeyBinding.dict` in your `~/Library/KeyBindings` folder (might need to create that folder too) with the following contents:
-
-```
 /* ~/Library/KeyBindings/DefaultKeyBinding.dict
 
 Below cheat sheet taken from: https://gist.github.com/trusktr/1e5e516df4e8032cbc3d
@@ -36,15 +31,26 @@ delete:       \U007F
 */
 
 {
+  // OLD: previous method (paras instead of lines This section changes the Home and End key behaviour.)
+  // "\UF729"  = moveToBeginningOfParagraph:; // Home
+  // "\UF72B"  = moveToEndOfParagraph:; // End
+  // "$\UF729" = moveToBeginningOfParagraphAndModifySelection:; // Shift+Home
+  // "$\UF72B" = moveToEndOfParagraphAndModifySelection:; // Shift+End
+  // "^\UF729" = moveToBeginningOfDocument:; // Ctrl+Home
+  // "^\UF72B" = moveToEndOfDocument:; // Ctrl+End
+  // "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // Ctrl+Shift+Home
+  // "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // Ctrl+Shift+End
+  
   // This section changes the Home and End key behaviour.
-  "\UF729"  = moveToBeginningOfParagraph:; // Home
-  "\UF72B"  = moveToEndOfParagraph:; // End
-  "$\UF729" = moveToBeginningOfParagraphAndModifySelection:; // Shift+Home
-  "$\UF72B" = moveToEndOfParagraphAndModifySelection:; // Shift+End
+  "\UF729"  = moveToBeginningOfLine:; // Home
+  "\UF72B"  = moveToEndOfLine:; // End
+  "$\UF729" = moveToBeginningOfLineAndModifySelection:; // Shift+Home
+  "$\UF72B" = moveToEndOfLineAndModifySelection:; // Shift+End
   "^\UF729" = moveToBeginningOfDocument:; // Ctrl+Home
   "^\UF72B" = moveToEndOfDocument:; // Ctrl+End
   "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // Ctrl+Shift+Home
   "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // Ctrl+Shift+End
+
   
   // This section swaps the Cmd+Arrow key behaviour with Alt+Arrow.
   "@\UF702" = moveWordBackward:; // Cmd+LeftArrow
@@ -61,4 +67,3 @@ delete:       \U007F
   // Delete a word forwards
   "@\UF728" = deleteWordForward:; //Cmd+delete
 }
-```

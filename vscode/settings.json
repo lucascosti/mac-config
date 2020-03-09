@@ -1,0 +1,202 @@
+{
+  "editor.fontFamily": "DejaVuSansMono Nerd Font Mono",
+  "editor.fontSize": 14,
+  "editor.tabSize": 2,
+  "workbench.editor.tabSizing": "shrink",
+  "editor.renderWhitespace": "boundary",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.mouseWheelZoom": true,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.renderSideBySide": false,
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.renderCharacters": false,
+  "search.enableSearchEditorPreview": true,
+  "editor.rulers": [
+    80
+  ],
+  "editor.selectionHighlight": false,
+  "editor.renderLineHighlight": "all",
+  "workbench.editor.restoreViewState": false,
+  "workbench.activityBar.visible": true,
+  "editor.occurrencesHighlight": false,
+  "editor.wordWrap": "bounded",
+  "[markdown]": {
+    "editor.wordWrap": "bounded",
+    "editor.quickSuggestions": true,
+  },
+  "window.zoomLevel": 0,
+  "editor.minimap.scale": 1.1,
+  // Set the git commit editor validation lengths to match Atom (72 for description, no limit on other lines)
+  "git.inputValidationSubjectLength": 72,
+  "git.inputValidationLength": 1000,
+  "workbench.iconTheme": "file-icons",
+  "workbench.colorTheme": "One Dark Pro",
+    // These color customisations are for the "One Dark Pro" theme.
+  "workbench.colorCustomizations": {
+    // This makes linter warnings/errors transparent in the minimap
+    "minimap.errorHighlight": "#00000000",
+    "minimap.warningHighlight": "#00000000",
+    // Don't show problems (warnings,infos, errors) in the scrollbar
+    "editorOverviewRuler.errorForeground": "#0000",
+    "editorOverviewRuler.warningForeground": "#0000",
+    "editorOverviewRuler.infoForeground": "#fff0",
+    // make the text in File Explorer the same color as Atom's
+    "sideBar.foreground": "#9da5b4",
+    // To change the folder icon color to be the same color:
+      // open the Icon extension file at: ~/.vscode/extensions/file-icons.file-icons-1.0.22/icons/file-icons-icon-theme.json
+      // find the following segment:
+      // ```
+      // "iconDefinitions": {
+      //     "_folder": {
+      //         "fontCharacter": "\\f016",
+      // ```
+      // change the "fontColor" tp "#9da5b4"
+    // Make the modified color orange instead of teal!
+    "editorOverviewRuler.modifiedForeground": "#b6944f",
+    "editorGutter.modifiedBackground": "#b6944f",
+    "minimapGutter.modifiedBackground": "#b6944f",
+    // Make the new line color a better green.
+    "editorOverviewRuler.addedForeground": "#28744e",
+    "editorGutter.addedBackground": "#28744e",
+    "minimapGutter.addedBackground": "#28744e",
+    // Change the search highlight in minimap to a yellow (instead of orange)
+    "minimap.findMatchHighlight": "#b3b154",
+    "editorOverviewRuler.findMatchForeground": "#b3b154",
+    // Change the focus area border color to be blue, like Atom's
+    "focusBorder" : "#568af2",
+    // Bookmark extension colors
+    "bookmarks.lineBackground": "#0071fc50",
+    "bookmarks.overviewRuler": "#0070f8",
+  },
+  "editor.tokenColorCustomizations": {
+    "[One Dark Pro]": {
+      // Overide the theme comment color to make it a tad darker (same as Atom's One Dark)
+      "comments": "#5c6370",
+      "textMateRules": [{
+          // Change the link color to match Atom's One Dark
+          "scope": ["markup.underline.link.markdown"],
+          "settings": {
+            "foreground": "#56b6c2"
+          }
+        },
+        {
+          // Remove formatting on punctuation to match Atom's One Dark
+          "scope": [
+            "punctuation.definition.metadata.markdown",
+            "punctuation.definition.string.end.markdown",
+            "punctuation.definition.string.begin.markdown"
+          ],
+          "settings": {
+            "foreground": "#abb2bf"
+          }
+        },
+      ]
+    }
+  },
+  "cSpell.language": "en,en-US",
+  "cSpell.showCommandsInEditorContextMenu": false,
+  "cSpell.dictionaries": [
+    "en-US"
+  ],
+  "cSpell.userWords": [
+    "Algolia",
+    "Janky",
+    "Karabiner",
+    "Powerlevel",
+    "cheatsheets",
+    "entrypoint",
+    "frontmatter",
+    "hardcoded",
+    "permalinks",
+    "postgres",
+    "prodname",
+    "reusables",
+    "screencasts",
+    "submodules",
+    "symlinked",
+    "templated",
+    "webhook",
+    "zshscripts"
+  ],
+  "problems.decorations.enabled": false,
+  "cSpell.enableFiletypes": [
+    "asciidoc",
+    "c",
+    "csharp",
+    "css",
+    "git-commit",
+    "go",
+    "handlebars",
+    "haskell",
+    "html",
+    "jade",
+    "java",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "jsonc",
+    "latex",
+    "less",
+    "markdown",
+    "php",
+    "plaintext",
+    "pug",
+    "python",
+    "restructuredtext",
+    "rust",
+    "scala",
+    "scss",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "yaml",
+    "yml"
+  ],
+  "markdownlint.config": {
+    "MD004": false,
+    "MD024": false,
+    "MD034": false,
+    "MD040": false,
+    "MD041": false,
+  },
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.views.compare.avatars": false,
+  "gitlens.blame.avatars": false,
+  "gitlens.blame.format": "${id}  ${date}  ${author|10}",
+  "gitlens.blame.dateFormat": "YYYY-MM-DD",
+  "gitlens.views.lineHistory.avatars": false,
+  "gitlens.views.fileHistory.avatars": false,
+  "gitlens.hovers.avatars": false,
+  "gitlens.hovers.currentLine.enabled": false,
+  "gitlens.hovers.annotations.changes": false,
+  "gitlens.views.repositories.location": "gitlens",
+  "gitlens.views.fileHistory.location": "gitlens",
+  "gitlens.views.lineHistory.location": "gitlens",
+  "gitlens.views.compare.location": "gitlens",
+  "gitlens.views.search.location": "gitlens",
+  "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
+  "gitlens.defaultDateFormat": "DD MMM YYYY",
+  "gitlens.menus": {
+    "editor": false,
+    "editorGroup": {
+      "blame": true,
+      "compare": false
+    },
+    "editorTab": false,
+    "explorer": false,
+    "scmGroup": false,
+    "scmItem": false
+  },
+  "gitlens.keymap": "none",
+  "gitlens.statusBar.enabled": false,
+  "markdown.preview.fontFamily": "\"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, freesans, sans-serif",
+  "gitlens.views.repositories.avatars": false,
+  "gitlens.views.repositories.enabled": false,
+  "markdownShortcuts.icons.bullets": false,
+  "markdownShortcuts.icons.bold": false,
+  "markdownShortcuts.icons.italic": false,
+  "markdownShortcuts.icons.strikethrough": false,
+  "ActiveFileInStatusBar.fullpath": false,
+}

@@ -1,0 +1,275 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "editor.action.toggleWordWrap"
+  },
+  {
+    "key": "alt+z",
+    "command": "-editor.action.toggleWordWrap"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+y",
+    "command": "redo",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+z",
+    "command": "-redo",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+y",
+    "command": "editor.action.webvieweditor.redo",
+    "when": "!editorFocus && !inputFocus && !webviewHasOwnEditFunctions && activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "shift+cmd+z",
+    "command": "-editor.action.webvieweditor.redo",
+    "when": "!editorFocus && !inputFocus && !webviewHasOwnEditFunctions && activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "cmd+y",
+    "command": "editor.action.customEditor.redo",
+    "when": "focusedCustomEditorIsEditable && !inputFocus"
+  },
+  {
+    "key": "shift+cmd+z",
+    "command": "-editor.action.customEditor.redo",
+    "when": "focusedCustomEditorIsEditable && !inputFocus"
+  },
+  {
+    "key": "cmd+f2",
+    "command": "-editor.action.changeAll",
+    "when": "editorTextFocus && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+f2",
+    "command": "bookmarks.toggle",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+k",
+    "command": "-bookmarks.toggle",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "f2",
+    "command": "-editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "f2",
+    "command": "bookmarks.jumpToNext",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+cmd+l",
+    "command": "-bookmarks.jumpToNext",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+left",
+    "command": "cursorWordStartLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+left",
+    "command": "-cursorWordStartLeft",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+left",
+    "command": "-cursorHome",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+left",
+    "command": "-workbench.action.terminal.moveToLineStart",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+cmd+left",
+    "command": "-cursorHomeSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+cmd+left",
+    "command": "cursorWordStartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "shift+alt+left",
+    "command": "-cursorWordStartLeftSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+right",
+    "command": "-workbench.action.terminal.moveToLineEnd",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+right",
+    "command": "-cursorEnd",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+right",
+    "command": "cursorWordStartRight"
+  },
+  {
+    "key": "shift+cmd+right",
+    "command": "cursorWordStartRightSelect"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "-markdown.showPreview",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "ctrl+m",
+    "command": "markdown.showPreviewToSide",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+k v",
+    "command": "-markdown.showPreviewToSide",
+    "when": "editorLangId == 'markdown'"
+  },
+  {
+    "key": "cmd+o",
+    "command": "-workbench.action.files.openFileFolder"
+  },
+  {
+    "key": "cmd+o",
+    "command": "-workbench.action.files.openLocalFileFolder",
+    "when": "remoteFileDialogVisible"
+  },
+  {
+    "key": "cmd+o",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+p",
+    "command": "-workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+k",
+    "command": "md-shortcut.toggleLink",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "cmd+delete",
+    "command": "-deleteAllRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+delete",
+    "command": "workbench.action.terminal.deleteWordRight",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+delete",
+    "command": "-workbench.action.terminal.deleteWordRight",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+backspace",
+    "command": "-deleteAllLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+backspace",
+    "command": "workbench.action.terminal.deleteWordLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+backspace",
+    "command": "-workbench.action.terminal.deleteWordLeft",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+backspace",
+    "command": "deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+backspace",
+    "command": "-deleteWordLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+delete",
+    "command": "deleteWordRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+delete",
+    "command": "-deleteWordRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+escape",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.reloadWindow"
+  },
+  {
+    "key": "alt+b",
+    "command": "-gitlens.toggleFileBlame",
+    "when": "editorTextFocus && config.gitlens.keymap == 'alternate' && gitlens:activeFileStatus =~ /blameable/"
+  },
+  {
+    "key": "alt+cmd+g b",
+    "command": "-gitlens.toggleFileBlame",
+    "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+b",
+    "command": "gitlens.toggleFileBlame"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "-workbench.action.findInFiles"
+  },
+  {
+    "key": "shift+cmd+f",
+    "command": "search.action.openNewEditor"
+  },
+  {
+    "key": "cmd+k",
+    "command": "-workbench.action.terminal.clear",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "-md-shortcut.toggleLink",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "cmd+t",
+    "command": "-workbench.action.showAllSymbols"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.files.newUntitledFile"
+  },
+]

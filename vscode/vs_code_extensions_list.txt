@@ -1,0 +1,20 @@
+Exported 2020-03-09
+
+alefragnani.Bookmarks
+bierner.github-markdown-preview
+bierner.markdown-checkbox
+bierner.markdown-emoji
+bierner.markdown-preview-github-styles
+bierner.markdown-yaml-preamble
+DavidAnson.vscode-markdownlint
+eamodio.gitlens
+file-icons.file-icons
+HookyQR.beautify
+IgorSbitnev.error-gutters
+jeff-hykin.code-eol
+mdickin.markdown-shortcuts
+redhat.vscode-yaml
+RoscoP.ActiveFileInStatusBar
+Shan.code-settings-sync
+streetsidesoftware.code-spell-checker
+zhuangtongfa.material-theme

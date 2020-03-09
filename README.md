@@ -48,9 +48,14 @@ This repo contains the following config files:
   Especially for the colour palette that I really got used to when using Fedora, as well as some key mappings (as iTerm2 doesn't recognise/respect most [custom `DefaultKeyBinding.dict`](macoskeybindings/DefaultKeyBinding.dict) settings).
   
   Set the iTerm configuration to this file in **iTerm2 > Preferences > General > Preferences > Load preferences from a custom folder or URL**
+* [VS Code configuration](vscode/)
+  
+   The files that control the majority of my VS Code editor's configuration.
+  
+   These files/folders are symlinked from `~/Library/Application Support/Code/User/`
 * [Atom configuration](atom/)
   
-  The files that control the majority of my Atom editor's configuration.
+  I'm currently in the process of transitioning my default editor to VS Code. These are the config files I used for Atom.
   
   These files are symlinked from `~/.atom/`
 * [Firefox](firefox/)

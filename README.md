@@ -7,8 +7,8 @@ This repo contains the following config files:
 
   I have a lot of muscle memory from using Windows and Linux OSs and keyboards, and this makes it a lot easier.
   
-  Although I previously remapped some of the modifer keys using the native MacOS Preferences interface, I now have implemented almost everything in my [Karabiner](https://pqrs.org/osx/karabiner/) configuration.
-  
+  Although I previously remapped some of the modifier keys using the native MacOS Preferences interface, I now have implemented almost everything in my [Karabiner](https://pqrs.org/osx/karabiner/) configuration.
+
   * On my **Windows keyboard**, I have the modifier keys (<kbd>Ctrl</kbd>&nbsp;<kbd>⊞ Win</kbd>&nbsp;<kbd>Alt</kbd>) remapped as the following:
     
     | Physical keyboard key | Mapped to MacOS... |

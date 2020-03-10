@@ -5,6 +5,7 @@
   "editor.fontFamily": "DejaVuSansMono Nerd Font Mono",
   "editor.fontSize": 14,
   "editor.tabSize": 2,
+  "editor.acceptSuggestionOnEnter": "off",
   "workbench.editor.tabSizing": "shrink",
   "editor.renderWhitespace": "boundary",
   "editor.multiCursorModifier": "ctrlCmd",
@@ -60,6 +61,9 @@
     "editorOverviewRuler.addedForeground": "#28744e",
     "editorGutter.addedBackground": "#28744e",
     "minimapGutter.addedBackground": "#28744e",
+    // Similar color changes for diff editor backgrounds
+    "diffEditor.removedTextBackground": "#64111186",
+    "diffEditor.insertedTextBackground": "#206b4788",
     // Change the search highlight in minimap to a yellow (instead of orange)
     "minimap.findMatchHighlight": "#b3b154",
     "editorOverviewRuler.findMatchForeground": "#b3b154",

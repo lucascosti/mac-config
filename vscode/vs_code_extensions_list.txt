@@ -1,4 +1,4 @@
-Exported 2020-03-09
+Exported 2020-03-10
 
 alefragnani.Bookmarks
 bierner.github-markdown-preview
@@ -17,4 +17,5 @@ redhat.vscode-yaml
 RoscoP.ActiveFileInStatusBar
 Shan.code-settings-sync
 streetsidesoftware.code-spell-checker
+wayou.vscode-todo-highlight
 zhuangtongfa.material-theme

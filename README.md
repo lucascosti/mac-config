@@ -50,9 +50,12 @@ This repo contains the following config files:
   Set the iTerm configuration to this file in **iTerm2 > Preferences > General > Preferences > Load preferences from a custom folder or URL**
 * [VS Code configuration](vscode/)
   
-   The files that control the majority of my VS Code editor's configuration.
+  The files that control the majority of my VS Code editor's configuration.
   
-   These files/folders are symlinked from `~/Library/Application Support/Code/User/`
+  These files/folders are symlinked from `~/Library/Application Support/Code/User/`
+  
+  To get a list of extensions, I used this command: `code --list-extensions > vs_code_extensions_list.txt`
+
 * [Atom configuration](atom/)
   
   I'm currently in the process of transitioning my default editor to VS Code. These are the config files I used for Atom.

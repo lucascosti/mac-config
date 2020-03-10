@@ -1,4 +1,7 @@
 {
+  // preview features 1.43
+  "timeline.showView": true,
+  //
   "editor.fontFamily": "DejaVuSansMono Nerd Font Mono",
   "editor.fontSize": 14,
   "editor.tabSize": 2,
@@ -10,7 +13,6 @@
   "diffEditor.renderSideBySide": false,
   "editor.minimap.showSlider": "always",
   "editor.minimap.renderCharacters": false,
-  "search.enableSearchEditorPreview": true,
   "editor.rulers": [
     80
   ],
@@ -25,7 +27,6 @@
     "editor.quickSuggestions": true,
   },
   "window.zoomLevel": 0,
-  "editor.minimap.scale": 1.1,
   // Set the git commit editor validation lengths to match Atom (72 for description, no limit on other lines)
   "git.inputValidationSubjectLength": 72,
   "git.inputValidationLength": 1000,
@@ -67,6 +68,8 @@
     // Bookmark extension colors
     "bookmarks.lineBackground": "#0071fc50",
     "bookmarks.overviewRuler": "#0070f8",
+    // Highlight notifications with a border
+    "notificationToast.border": "#568af2"
   },
   "editor.tokenColorCustomizations": {
     "[One Dark Pro]": {

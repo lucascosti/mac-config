@@ -1,10 +1,11 @@
 {
-  // preview features 1.43
+  // preview features for 1.43
   "timeline.showView": true,
   //
   "editor.fontFamily": "DejaVuSansMono Nerd Font Mono",
   "editor.fontSize": 14,
   "editor.tabSize": 2,
+  "markdown.preview.fontFamily": "\"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, freesans, sans-serif",
   "editor.acceptSuggestionOnEnter": "off",
   "workbench.editor.tabSizing": "shrink",
   "editor.renderWhitespace": "boundary",
@@ -31,6 +32,7 @@
   // Set the git commit editor validation lengths to match Atom (72 for description, no limit on other lines)
   "git.inputValidationSubjectLength": 72,
   "git.inputValidationLength": 1000,
+  "problems.decorations.enabled": false,
   "workbench.iconTheme": "file-icons",
   "workbench.colorTheme": "One Dark Pro",
     // These color customisations are for the "One Dark Pro" theme.
@@ -79,7 +81,8 @@
     "[One Dark Pro]": {
       // Overide the theme comment color to make it a tad darker (same as Atom's One Dark)
       "comments": "#5c6370",
-      "textMateRules": [{
+      "textMateRules": [
+        {
           // Change the link color to match Atom's One Dark
           "scope": ["markup.underline.link.markdown"],
           "settings": {
@@ -97,9 +100,17 @@
             "foreground": "#abb2bf"
           }
         },
+        {
+          // Lighten up the block quote color a tad
+          "scope": ["markup.quote.markdown"],
+          "settings": {
+            "foreground": "#777e8b"
+          }
+        },
       ]
     }
   },
+  // Extension settings should go below here
   "cSpell.language": "en,en-US",
   "cSpell.showCommandsInEditorContextMenu": false,
   "cSpell.dictionaries": [
@@ -125,7 +136,6 @@
     "webhook",
     "zshscripts"
   ],
-  "problems.decorations.enabled": false,
   "cSpell.enableFiletypes": [
     "asciidoc",
     "c",
@@ -198,7 +208,6 @@
   },
   "gitlens.keymap": "none",
   "gitlens.statusBar.enabled": false,
-  "markdown.preview.fontFamily": "\"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, freesans, sans-serif",
   "gitlens.views.repositories.avatars": false,
   "gitlens.views.repositories.enabled": false,
   "markdownShortcuts.icons.bullets": false,

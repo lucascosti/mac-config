@@ -252,6 +252,39 @@
                         ]
                     },
                     {
+                        "description": "Slack only: Remap 'link' shortcut to trigger when cmd-k is pressed.",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com.tinyspeck.slackmacgap"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "k",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_gui"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "u",
+                                        "modifiers": [
+                                            "left_gui",
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Opt/Super+Tab to Mission Control",
                         "manipulators": [
                             {

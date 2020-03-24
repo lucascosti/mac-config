@@ -22,6 +22,11 @@
     "body": "{{ site.data.variables.product.prodname_actions }}",
     "description": "GitHub Actions variable"
   },
+  "GitHub Packages - helpdocs": {
+    "prefix": "Packages",
+    "body": "{{ site.data.variables.product.prodname_registry }}",
+    "description": "GitHub Packages variable"
+  },
   "Plain Code block": {
     "prefix": "code",
     "body": [

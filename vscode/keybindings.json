@@ -166,11 +166,6 @@
     "command": "-workbench.action.quickOpen"
   },
   {
-    "key": "cmd+k",
-    "command": "md-shortcut.toggleLink",
-    "when": "editorTextFocus && markdownShortcuts:enabled"
-  },
-  {
     "key": "cmd+delete",
     "command": "-deleteAllRight",
     "when": "textInputFocus && !editorReadonly"
@@ -272,4 +267,12 @@
     "key": "cmd+t",
     "command": "workbench.action.files.newUntitledFile"
   },
+  {
+    "key": "cmd+k",
+    "command": "editor.action.insertSnippet",
+    "when": "editorTextFocus",
+    "args": {
+        "snippet": "[${TM_SELECTED_TEXT}]($1)"
+    }
+  }
 ]

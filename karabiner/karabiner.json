@@ -108,6 +108,31 @@
                         ]
                     },
                     {
+                        "description": "Emoji selector: Map Opt+. to Cmd+ctrl+space",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_alt"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "spacebar",
+                                        "modifiers": [
+                                            "left_command",
+                                            "left_control"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Slack only: Cmd+left arrow to Opt-left arrow. To move between words (because Electron apps don't respect a keybinding file!)",
                         "manipulators": [
                             {

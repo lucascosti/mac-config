@@ -212,9 +212,5 @@
   "gitlens.statusBar.enabled": false,
   "gitlens.views.repositories.avatars": false,
   "gitlens.views.repositories.enabled": false,
-  "markdownShortcuts.icons.bullets": false,
-  "markdownShortcuts.icons.bold": false,
-  "markdownShortcuts.icons.italic": false,
-  "markdownShortcuts.icons.strikethrough": false,
   "ActiveFileInStatusBar.fullpath": false,
 }

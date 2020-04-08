@@ -1,4 +1,4 @@
-Exported 2020-03-10
+Exported 2020-04-08
 
 alefragnani.Bookmarks
 bierner.github-markdown-preview
@@ -12,7 +12,7 @@ file-icons.file-icons
 HookyQR.beautify
 IgorSbitnev.error-gutters
 jeff-hykin.code-eol
-mdickin.markdown-shortcuts
+ms-azuretools.vscode-docker
 redhat.vscode-yaml
 RoscoP.ActiveFileInStatusBar
 Shan.code-settings-sync

@@ -1,7 +1,4 @@
 {
-  // preview features for 1.43
-  "timeline.showView": true,
-  //
   "editor.fontFamily": "DejaVuSansMono Nerd Font Mono",
   "editor.fontSize": 14,
   "editor.tabSize": 2,

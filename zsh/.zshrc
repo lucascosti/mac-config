@@ -126,6 +126,11 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=33'
 
 # Set path for the cheat command config (https://github.com/cheat/cheat)
 export CHEAT_CONFIG_PATH="$ZSH_SCRIPTS_DIR/miscdotfiles/cheat/conf.yml"
+# Cheat autocompletion:
+_cmpl_cheat() {
+  reply=($(cheat -l | cut -d' ' -f1))
+}
+compctl -K _cmpl_cheat cheat
 
 
 # Aliases

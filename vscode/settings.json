@@ -72,6 +72,8 @@
     "editorOverviewRuler.findMatchForeground": "#b3b154",
     // Change the focus area border color to be blue, like Atom's
     "focusBorder" : "#568af2",
+    // Add a colored border to the top of the active tab
+    "tab.activeBorderTop" : "#568af2",
     // Bookmark extension colors
     "bookmarks.lineBackground": "#0071fc50",
     "bookmarks.overviewRuler": "#0070f8",

@@ -41,7 +41,7 @@ This repo contains the following config files:
   
   Also, I have swapped the <kbd>⌘ Command</kbd>/<kbd>⌥ Option</kbd>+<kbd> arrow</kbd> keys behaviour: <kbd>⌘ Command(mapped)</kbd>+<kbd>←</kbd>/<kbd>→</kbd>  now moves the cursor between words, and <kbd>⌥ Option(mapped)</kbd>+<kbd>←</kbd>/<kbd>→</kbd> moves to the start/end of a line (and <kbd>Shift</kbd> with both sets to select the text, if desired). 
   
-  This seems to work everywhere in MacOS, except some text editors, like Atom. Atom has its own keymap, so I have also had to replicate this behaviour in the Atom keymap settings.
+  This seems to work in most places in MacOS, except Electron-based apps (like VS Code, Atom, Slack, etc.). The editors like VS Code have their own keymaps, so I have also had to replicate this behaviour in the VS Code settings keymap settings. For apps that don't allow you to customise this, like Slack, I've had to resort to Karabiner rules.
 
   Place this file in the `~/Library/KeyBindings` folder (you might need to create that folder).
   

@@ -59,11 +59,6 @@ This repo contains the following config files:
   
   To get a list of extensions, I used this command: `code --list-extensions > vs_code_extensions_list.txt`
 
-* [Atom configuration](atom/)
-  
-  I'm currently in the process of transitioning my default editor to VS Code. These are the config files I used for Atom.
-  
-  These files are symlinked from `~/.atom/`
 * [Firefox](firefox/)
   
   Mainly just [`userChrome.css`](firefox/userChrome.css), this configures some minor (mainly font) changes in the Firefox UI, aka the 'chrome'. The user profile location on macOS is `~/Library/Application Support/Firefox/Profiles/xxxxxxxx.default`.

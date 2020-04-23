@@ -25,6 +25,10 @@
     "editor.wordWrap": "bounded",
     "editor.quickSuggestions": true,
   },
+  "explorer.confirmDragAndDrop": false,
+  "search.exclude": {
+    "**/translations": true
+  },
   "window.zoomLevel": 0,
   // Set the git commit editor validation lengths to match Atom (72 for description, no limit on other lines)
   "git.inputValidationSubjectLength": 72,
@@ -120,6 +124,8 @@
     "Powerlevel",
     "Webhooks",
     "cheatsheets",
+    "codespace",
+    "codespaces",
     "devops",
     "entrypoint",
     "frontmatter",
@@ -133,6 +139,7 @@
     "symlinked",
     "templated",
     "webhook",
+    "workspace's",
     "zshscripts"
   ],
   "cSpell.enableFiletypes": [
@@ -210,4 +217,7 @@
   "gitlens.views.repositories.avatars": false,
   "gitlens.views.repositories.enabled": false,
   "ActiveFileInStatusBar.fullpath": false,
+  "vsicons.presets.foldersAllDefaultIcon": true,
+  "vsicons.presets.hideExplorerArrows": true,
+  "vsicons.presets.hideFolders": true,
 }

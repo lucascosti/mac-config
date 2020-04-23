@@ -1,8 +1,11 @@
 # mac-config
-Some of the miscellaneous configuration files I use on my work MacBook.
+
+The main configuration files I use for my work MacBook.
 
 This repo contains the following config files:
+* [Zsh shell configuration](zsh/)
 
+  See its [own README for details](zsh/).
 * [Karabiner key mapping configuration](karabiner/)
 
   I have a lot of muscle memory from using Windows and Linux OSs and keyboards, and this makes it a lot easier.
@@ -73,4 +76,4 @@ This repo contains the following config files:
     defaults write com.apple.dock autohide-delay -float 0.20
     killall Dock
     ```
-* For my Zsh shell configuration, see [its own specific repo](https://github.com/lucascosti/zshrc).
+

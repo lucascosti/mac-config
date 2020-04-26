@@ -36,7 +36,7 @@
   "problems.decorations.enabled": false,
   "workbench.iconTheme": "file-icons",
   "workbench.colorTheme": "One Dark Pro",
-    // These color customisations are for the "One Dark Pro" theme.
+  // These color customisations are for the "One Dark Pro" theme.
   "workbench.colorCustomizations": {
     // This makes linter warnings/errors transparent in the minimap
     "minimap.errorHighlight": "#00000000",
@@ -219,7 +219,8 @@
   "gitlens.views.repositories.avatars": false,
   "gitlens.views.repositories.enabled": false,
   "ActiveFileInStatusBar.fullpath": false,
-  "vsicons.presets.foldersAllDefaultIcon": true,
-  "vsicons.presets.hideExplorerArrows": true,
-  "vsicons.presets.hideFolders": true,
+  "markdownShortcuts.icons.italic": false,
+  "markdownShortcuts.icons.bullets": false,
+  "markdownShortcuts.icons.bold": false,
+  "markdownShortcuts.icons.strikethrough": false
 }

@@ -80,4 +80,9 @@
     ],
     "description": "Warning block"
   },
+  "For more information...": {
+    "prefix": "For more",
+    "body": "For more information, see \"[${1:title}]($2).\"",
+    "description": "For more information..."
+  },
 }

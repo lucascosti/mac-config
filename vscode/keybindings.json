@@ -2,11 +2,6 @@
 [
   // Cmd+arrows for text navigation
   {
-    "key": "alt+cmd+l",
-    "command": "-bookmarks.jumpToNext",
-    "when": "editorTextFocus"
-  },
-  {
     "key": "cmd+left",
     "command": "cursorWordStartLeft",
     "when": "textInputFocus"
@@ -59,12 +54,12 @@
     "key": "shift+cmd+right",
     "command": "cursorWordStartRightSelect"
   },
-  {
-    "key": "shift+cmd+v",
-    "command": "-markdown.showPreview",
-    "when": "editorLangId == 'markdown'"
-  },
   // Cmd+delete/backspace for removing words
+  {
+    "key": "cmd+delete",
+    "command": "deleteWordRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
   {
     "key": "cmd+delete",
     "command": "-deleteAllRight",
@@ -81,8 +76,13 @@
     "when": "terminalFocus"
   },
   {
+    "key": "alt+delete",
+    "command": "-deleteWordRight",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
     "key": "cmd+backspace",
-    "command": "-deleteAllLeft",
+    "command": "deleteWordLeft",
     "when": "textInputFocus && !editorReadonly"
   },
   {
@@ -91,28 +91,18 @@
     "when": "terminalFocus"
   },
   {
+    "key": "cmd+backspace",
+    "command": "-deleteAllLeft",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
     "key": "alt+backspace",
     "command": "-workbench.action.terminal.deleteWordLeft",
     "when": "terminalFocus"
   },
   {
-    "key": "cmd+backspace",
-    "command": "deleteWordLeft",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
     "key": "alt+backspace",
     "command": "-deleteWordLeft",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "cmd+delete",
-    "command": "deleteWordRight",
-    "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "alt+delete",
-    "command": "-deleteWordRight",
     "when": "textInputFocus && !editorReadonly"
   },
   // Ctrl+w to toggle word wrap
@@ -195,15 +185,15 @@
     "command": "-editor.action.rename",
     "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   },
+  {
+    "key": "alt+cmd+l",
+    "command": "-bookmarks.jumpToNext",
+    "when": "editorTextFocus"
+  },
   // Ctrl+m to show markdown preview
   {
     "key": "ctrl+m",
     "command": "markdown.showPreviewToSide",
-    "when": "editorLangId == 'markdown'"
-  },
-  {
-    "key": "cmd+k v",
-    "command": "-markdown.showPreviewToSide",
     "when": "editorLangId == 'markdown'"
   },
   // Cmd+o to show quick open dialog
@@ -227,31 +217,27 @@
   // Cmd+t to open new blank file
   {
     "key": "cmd+t",
-    "command": "-workbench.action.showAllSymbols"
+    "command": "workbench.action.files.newUntitledFile"
   },
   {
     "key": "cmd+t",
-    "command": "workbench.action.files.newUntitledFile"
+    "command": "-workbench.action.showAllSymbols"
   },
   // Cmd+r to reload the window
   {
     "key": "cmd+r",
     "command": "workbench.action.reloadWindow"
   },
-  // Cmd+b for git blame
+  // Ctrl+b for git blame
   {
-    "key": "cmd+b",
-    "command": "gitlens.toggleFileBlame"
+    "key": "ctrl+b",
+    "command": "gitlens.toggleFileBlame",
+    "when": "gitlens:activeFileStatus =~ /blameable/"
   },
   {
-    "key": "alt+b",
-    "command": "-gitlens.toggleFileBlame",
-    "when": "editorTextFocus && config.gitlens.keymap == 'alternate' && gitlens:activeFileStatus =~ /blameable/"
-  },
-  {
-    "key": "alt+cmd+g b",
-    "command": "-gitlens.toggleFileBlame",
-    "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
+    "key": "ctrl+b",
+    "command": "-cursorLeft",
+    "when": "textInputFocus"
   },
   {
     "key": "cmd+b",
@@ -274,5 +260,66 @@
     "args": {
         "snippet": "[${TM_SELECTED_TEXT}]($1)"
     }
+  },
+  // Markdown shortcuts keybindings
+  {
+    "key": "cmd+b",
+    "command": "md-shortcut.toggleBold",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-md-shortcut.toggleBold",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "cmd+i",
+    "command": "md-shortcut.toggleItalic",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-md-shortcut.toggleItalic",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "cmd+m cmd+c",
+    "command": "md-shortcut.toggleCodeBlock",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "ctrl+m ctrl+c",
+    "command": "-md-shortcut.toggleCodeBlock",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "cmd+m cmd+1",
+    "command": "md-shortcut.toggleNumbers",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "ctrl+m ctrl+1",
+    "command": "-md-shortcut.toggleNumbers",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "cmd+m cmd+x",
+    "command": "md-shortcut.toggleCheckboxes",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "ctrl+m ctrl+x",
+    "command": "-md-shortcut.toggleCheckboxes",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "cmd+m cmd+b",
+    "command": "md-shortcut.toggleBullets",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  {
+    "key": "ctrl+m ctrl+b",
+    "command": "-md-shortcut.toggleBullets",
+    "when": "editorTextFocus && markdownShortcuts:enabled"
   },
 ]

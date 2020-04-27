@@ -222,5 +222,28 @@
   "markdownShortcuts.icons.italic": false,
   "markdownShortcuts.icons.bullets": false,
   "markdownShortcuts.icons.bold": false,
-  "markdownShortcuts.icons.strikethrough": false
+  "markdownShortcuts.icons.strikethrough": false,
+  "todohighlight.include": [
+    "**/*.md",
+    "**/*.txt",
+    "**/*.zsh",
+    "**/*.sh",
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html",
+    "**/*.php",
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "todohighlight.keywords": [
+    "TODO",
+    "FIXME",
+    "REPLACE"
+  ],
+  "todohighlight.defaultStyle": {
+    "backgroundColor": "#F06292",
+    "color": "white"
+  },
 }

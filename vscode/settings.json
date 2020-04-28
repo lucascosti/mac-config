@@ -8,7 +8,7 @@
   "editor.renderWhitespace": "boundary",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.mouseWheelZoom": true,
-  "diffEditor.ignoreTrimWhitespace": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
   "editor.minimap.showSlider": "always",
   "editor.minimap.renderCharacters": false,
@@ -42,9 +42,9 @@
     "minimap.errorHighlight": "#00000000",
     "minimap.warningHighlight": "#00000000",
     // Don't show problems (warnings,infos, errors) in the scrollbar
-    "editorOverviewRuler.errorForeground": "#0000",
-    "editorOverviewRuler.warningForeground": "#0000",
-    "editorOverviewRuler.infoForeground": "#fff0",
+    "editorOverviewRuler.errorForeground": "#00000000",
+    "editorOverviewRuler.warningForeground": "#00000000",
+    "editorOverviewRuler.infoForeground": "#00000000",
     // make the text in File Explorer the same color as Atom's
     "sideBar.foreground": "#9da5b4",
     // To change the folder icon color to be the same color:
@@ -82,7 +82,7 @@
   },
   "editor.tokenColorCustomizations": {
     "[One Dark Pro]": {
-      // Overide the theme comment color to make it a tad darker (same as Atom's One Dark)
+      // Override the theme comment color to make it a tad darker (same as Atom's One Dark)
       "comments": "#5c6370",
       "textMateRules": [
         {
@@ -115,6 +115,7 @@
   },
   // Extension settings should go below here
   "cSpell.language": "en,en-US",
+  "cSpell.diagnosticLevel": "Error",
   "cSpell.showCommandsInEditorContextMenu": false,
   "cSpell.dictionaries": [
     "en-US"
@@ -129,14 +130,17 @@
     "codespace",
     "codespaces",
     "devops",
+    "dotfiles",
     "entrypoint",
     "frontmatter",
     "hardcoded",
+    "megabranch",
     "permalinks",
     "postgres",
     "prodname",
     "reusables",
     "screencasts",
+    "scrollbar",
     "submodules",
     "symlinked",
     "templated",

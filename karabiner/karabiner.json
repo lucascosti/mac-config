@@ -133,13 +133,14 @@
                         ]
                     },
                     {
-                        "description": "Slack only: Cmd+left arrow to Opt-left arrow. To move between words (because Electron apps don't respect a keybinding file!)",
+                        "description": "Slack/Insomnia: Cmd+left arrow to Opt-left arrow. To move between words (because Electron apps don't respect a keybinding file!)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "com.tinyspeck.slackmacgap"
+                                            "com.tinyspeck.slackmacgap",
+                                            "com.insomnia.app"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -169,13 +170,14 @@
                         ]
                     },
                     {
-                        "description": "Slack only: Cmd+right arrow to Opt-right arrow. To move between words (because Electron apps don't respect a keybinding file!)",
+                        "description": "Slack/Insomnia: Cmd+right arrow to Opt-right arrow. To move between words (because Electron apps don't respect a keybinding file!)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "com.tinyspeck.slackmacgap"
+                                            "com.tinyspeck.slackmacgap",
+                                            "com.insomnia.app"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -205,13 +207,14 @@
                         ]
                     },
                     {
-                        "description": "Slack only: Cmd+backspace to Opt-backspace. To delete a word (because Electron apps don't respect a keybinding file!)",
+                        "description": "Slack/Insomnia: Cmd+backspace to Opt-backspace. To delete a word (because Electron apps don't respect a keybinding file!)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "com.tinyspeck.slackmacgap"
+                                            "com.tinyspeck.slackmacgap",
+                                            "com.insomnia.app"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -241,13 +244,14 @@
                         ]
                     },
                     {
-                        "description": "Slack only: Cmd+delete to Opt-delete. To forward delete a word (because Electron apps don't respect a keybinding file!)",
+                        "description": "Slack/Insomnia: Cmd+delete to Opt-delete. To forward delete a word (because Electron apps don't respect a keybinding file!)",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
-                                            "com.tinyspeck.slackmacgap"
+                                            "com.tinyspeck.slackmacgap",
+                                            "com.insomnia.app"
                                         ],
                                         "type": "frontmost_application_if"
                                     }

@@ -138,11 +138,12 @@ compctl -K _cmpl_cheat cheat
 ## Regular aliases
 ### zsh sudo last command:
 alias ffs='sudo $(fc -ln -1)'
+### Brew aliases
 alias bi='brew install'
 alias br='brew uninstall'
 alias bupd='brew update'
 alias bupg='brew upgrade'
-## Git aliases
+### Git aliases
 alias g='git'
 alias gfu='git fetch upstream'
 alias gfo='git fetch origin'
@@ -175,6 +176,7 @@ alias grom='git rebase origin/master'
 alias gremotes='git remote -v'
 alias gsub='git submodule'
 alias gsubupd='git submodule update --remote --merge'
+### Directory aliases
 alias {cdr,cdg,gcd}='cd ~/repos/'
 alias cdh='cd ~/repos/help-docs'
 alias cdi='cd ~/repos/internal-developer.github.com'

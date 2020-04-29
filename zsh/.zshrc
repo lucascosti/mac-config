@@ -176,6 +176,8 @@ alias gremotes='git remote -v'
 alias gsub='git submodule'
 alias gsubupd='git submodule update --remote --merge'
 alias {cdr,cdg,gcd}='cd ~/repos/'
+alias cdh='cd ~/repos/help-docs'
+alias cdi='cd ~/repos/internal-developer.github.com'
 
 # Functions
 

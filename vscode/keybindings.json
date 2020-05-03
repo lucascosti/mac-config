@@ -38,8 +38,13 @@
   },
   {
     "key": "cmd+right",
-    "command": "-workbench.action.terminal.moveToLineEnd",
-    "when": "terminalFocus"
+    "command": "cursorWordEndRight",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "alt+right",
+    "command": "-cursorWordEndRight",
+    "when": "textInputFocus"
   },
   {
     "key": "cmd+right",
@@ -48,11 +53,17 @@
   },
   {
     "key": "cmd+right",
-    "command": "cursorWordStartRight"
+    "command": "-workbench.action.terminal.moveToLineEnd",
+    "when": "terminalFocus"
   },
   {
     "key": "shift+cmd+right",
     "command": "cursorWordStartRightSelect"
+  },
+  {
+    "key": "shift+alt+right",
+    "command": "-cursorWordEndRightSelect",
+    "when": "textInputFocus"
   },
   // Cmd+delete/backspace for removing words
   {

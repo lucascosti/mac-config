@@ -169,6 +169,12 @@
     "command": "-editor.action.customEditor.redo",
     "when": "focusedCustomEditorIsEditable && !inputFocus"
   },
+  // ctrl+s for bringing up the spell check menu
+  {
+    "key": "ctrl+s",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
   // Cmd+f2 to toggle bookmarks
   {
     "key": "cmd+f2",
@@ -332,5 +338,16 @@
     "key": "ctrl+m ctrl+b",
     "command": "-md-shortcut.toggleBullets",
     "when": "editorTextFocus && markdownShortcuts:enabled"
+  },
+  // Open reusable shortcut
+  {
+    "key": "ctrl+o",
+    "command": "open-reusable",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-lineBreakInsert",
+    "when": "textInputFocus && !editorReadonly"
   },
 ]

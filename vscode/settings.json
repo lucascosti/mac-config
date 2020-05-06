@@ -5,6 +5,7 @@
   "markdown.preview.fontFamily": "\"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, freesans, sans-serif",
   "editor.acceptSuggestionOnEnter": "off",
   "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.enablePreviewFromQuickOpen": false,
   "editor.renderWhitespace": "boundary",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.mouseWheelZoom": true,

@@ -295,7 +295,7 @@ gclean() {
 ###   * If there is no tracking branch, exit with an error.
 ###   * If the tracking branch is master, exit with an error. I probably don't want to rebase to master unless I do it explicitly myself.
 ###   * If the tracking branch is another branch that is not master, use that for the rebase.
-gsync (){
+gsync() {
   local REMOTE=origin
   local LOCAL_BRANCH=`git rev-parse --abbrev-ref HEAD`
   local REMOTE_BRANCH=''
@@ -343,7 +343,7 @@ gsync (){
 }
 
 ### Function to undo all changes (including stages) back to the last commit, with a confirmation.
-gundoall () {
+gundoall() {
   local response=""
   print -P "$lcicon_warning $FG[009]WARNING:$reset_color This will delete all untracked files, and undo all changes since the previous commit."
   vared -p "$lcicon_question Are you sure? [y/N] " -c response
@@ -384,7 +384,7 @@ bbackport() {
   # if there a no arguments, build all versions. For one or more specified versions as arguments, build those specified.
   if [ -z "$1" ]
     then
-      versions=( 2.19 2.18 2.17 2.16 )
+      versions=( 2.20 2.19 2.18 2.17 )
     else
       versions=( "$@" )
   fi

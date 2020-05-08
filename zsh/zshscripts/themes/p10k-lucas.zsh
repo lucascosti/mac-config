@@ -138,20 +138,35 @@
       where=${(V)VCS_STATUS_TAG}
     fi
 
-    # If local branch name or tag is at most 50 characters long, show it in full.
-    # Otherwise show the first 16 … the last 9.
-    # Tip: To always show local branch name in full without truncation, delete the next line.
-    (( $#where > 50 )) && where[17,-10]="…"
+    # Show tracking branch name if it differs from local branch 
+    ## Lucas: moved this above the shorthening test, and added the "AND is not master"
+    if [[ -n ${VCS_STATUS_REMOTE_BRANCH:#$VCS_STATUS_LOCAL_BRANCH} && ${VCS_STATUS_REMOTE_BRANCH} != 'master' ]]; then
+      where+=":${(V)VCS_STATUS_REMOTE_BRANCH//\%/%%}"  # escape %
+    fi
+
+    # Lucas custom part to shorten long branch names, with remote tracking.
+    if (( $#where > 40 )); then
+      if [[ $where == *:* ]]; then # if there is a tracking branch (if there is a colon in there)
+        # Split the where at the colon
+        local shorterlocalbranch=${where%\:*}
+        local shorterremotebranch=${where#*\:}
+        # Shorten the local branch to 20 characters from start, 5 from the end.
+        shorterlocalbranch[21,-6]="…"
+        # Shorten the remote branch to 13 characters
+        shorterremotebranch="${shorterremotebranch:0:12}…"
+        # Combine the two new shorter branches
+        where="$shorterlocalbranch:$shorterremotebranch"
+      else # there is no tracking branch, so it's a local branch only or a tag
+        # Show the first 27 … the last 8.
+        where[28,-9]="…"
+      fi
+    fi
+
     res+="${clean}${where//\%/%%}"  # escape %
 
     # Display the current Git commit if there is no branch or tag.
     # Tip: To always display the current Git commit, remove `[[ -z $where ]] &&` from the next line.
     [[ -z $where ]] && res+="${meta}@${clean}${VCS_STATUS_COMMIT[1,8]}"
-
-    # Show tracking branch name if it differs from local branch ## Lucas changed: AND is not master
-    if [[ -n ${VCS_STATUS_REMOTE_BRANCH:#$VCS_STATUS_LOCAL_BRANCH} && ${VCS_STATUS_REMOTE_BRANCH} != 'master' ]]; then
-      res+="${meta}:${clean}${(V)VCS_STATUS_REMOTE_BRANCH//\%/%%}"  # escape %
-    fi
 
     # add a space after the branch stuff
     res+=" "

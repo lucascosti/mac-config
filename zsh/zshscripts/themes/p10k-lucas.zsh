@@ -80,13 +80,13 @@
   # Enable support for a conflict states (to customise colours)
   typeset -g POWERLEVEL9K_VCS_CONFLICTED_STATE=true
   
-  # Colors:
+  # General colors (see the my_git_formatter()  function for other foreground colors specific to the type git ):
   typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=254 # almost white
   typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=028 #green
   typeset -g POWERLEVEL9K_VCS_{MODIFIED,UNTRACKED}_FOREGROUND=000 # black
   typeset -g POWERLEVEL9K_VCS_{MODIFIED,UNTRACKED,CONFLICTED}_BACKGROUND=003 # yellow/orange
-  typeset -g POWERLEVEL9K_VCS_LOADING_FOREGROUND=247 # gray
-  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=235 # almost black 
+  typeset -g POWERLEVEL9K_VCS_LOADING_FOREGROUND=248 # lighter gray
+  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=240 # darker gray 
   
   # Icons:
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=' '
@@ -95,51 +95,123 @@
   typeset -g POWERLEVEL9K_VCS_STASH_ICON=''
   typeset -g POWERLEVEL9K_VCS_CONFLICT_ICON=''
   typeset -g POWERLEVEL9K_VCS_STAGED_ICON=''
-  
-  # Git status: feature:master#tag ⇣42⇡42 42 merge 42 42 42 42.
+
+  # Formatter for Git status.
   #
-  # VCS_STATUS parameters are set by gitstatus plugin. See reference:
+  # Example output: local_branch:tracking#tag ⇣42⇡42 42 merge 42 424242
+  # VCS_STATUS_* parameters are set by gitstatus plugin. See reference:
   # https://github.com/romkatv/gitstatus/blob/master/gitstatus.plugin.zsh.
-  # See here for an explanation of ZSH parameter expansions: http://zsh.sourceforge.net/Doc/Release/Expansion.html#Parameter-Expansion
-  local vcs=''
-  # 'feature' or '@72f5c8a' if not on a branch.
-  vcs+='${${VCS_STATUS_LOCAL_BRANCH:+${POWERLEVEL9K_VCS_BRANCH_ICON}${VCS_STATUS_LOCAL_BRANCH//\%/%%}}'
-  vcs+=':-@${VCS_STATUS_COMMIT[1,8]}}'
-  # ':remotebranchname' if the tracking branch name differs from local branch and is not tracking master
-  vcs+='${${VCS_STATUS_REMOTE_BRANCH:#($VCS_STATUS_LOCAL_BRANCH|master)}:+:${VCS_STATUS_REMOTE_BRANCH//\%/%%}}'
-  # '#tag' if on a tag
-  vcs+='${VCS_STATUS_TAG:+#${VCS_STATUS_TAG//\%/%%}}'
-  # add a space after the branch shenanigans, only if there is nothing more in the prompt
-  vcs+=' '
-  # ⇣42 if behind the remote. If no commits are ahead, also add trailing space
-  vcs+='${${VCS_STATUS_COMMITS_BEHIND:#0}:+⇣${VCS_STATUS_COMMITS_BEHIND}${${VCS_STATUS_COMMITS_AHEAD:#<1->}:+ }}'
-  # ⇡42 if ahead of the remote
-  vcs+='${${VCS_STATUS_COMMITS_AHEAD:#0}:+⇡${VCS_STATUS_COMMITS_AHEAD} }'
-  # if there are stashes
-  vcs+='${${VCS_STATUS_STASHES:#0}:+%025F${POWERLEVEL9K_VCS_STASH_ICON}${VCS_STATUS_STASHES} }'
-  # if the repo is in an unusual state, e.g during a merge: 'merge'
-  vcs+='${VCS_STATUS_ACTION:+%001F${VCS_STATUS_ACTION//\%/%%} }'
-  # if there are merge conflicts
-  vcs+='${${VCS_STATUS_NUM_CONFLICTED:#0}:+%001F${POWERLEVEL9K_VCS_CONFLICT_ICON}${VCS_STATUS_NUM_CONFLICTED}}'
-  # if there are staged changes
-  vcs+='${${VCS_STATUS_NUM_STAGED:#0}:+%021F${POWERLEVEL9K_VCS_STAGED_ICON}${VCS_STATUS_NUM_STAGED}}'
-  # if there are modified files
-  vcs+='${${VCS_STATUS_NUM_UNSTAGED:#0}:+%124F${POWERLEVEL9K_VCS_MODIFIED_ICON}${VCS_STATUS_NUM_UNSTAGED}}'
-  #  if there are untracked files.
-  vcs+='${${VCS_STATUS_NUM_UNTRACKED:#0}:+%008F${POWERLEVEL9K_VCS_UNTRACKED_ICON}${VCS_STATUS_NUM_UNTRACKED}}'
-  # Force a color reset in case this breaks over to another line
-  vcs+='$reset_color'
-  # If P9K_CONTENT is not empty, leave it unchanged. It's either "loading" or from vcs_info.
-  vcs="\${P9K_CONTENT:-$vcs}"
+  function my_git_formatter() {
+    emulate -L zsh
+
+    if [[ -n $P9K_CONTENT ]]; then
+      # If P9K_CONTENT is not empty, use it. It's either "loading" or from vcs_info (not from
+      # gitstatus plugin). VCS_STATUS_* parameters are not available in this case.
+      typeset -g my_git_format=$P9K_CONTENT
+      return
+    fi
+
+    # Colors for most foreground elements of git status
+    if (( $1 )); then
+      # Styling for up-to-date Git status.
+      # Lucas: commenting these couple out, so it should use the POWERLEVEL9K_VCS_ colors for clean/dirty.
+      # local       meta='%248F'  #  foreground
+      # local      clean='%254F'  #  foreground
+      local   modified='%124F'  # dark red foreground
+      local  untracked='%008F'  # grey foreground
+      local conflicted='%001F'  # red foreground
+      # Lucas: other custom colors
+      local stashed='%025F'     # subtle blue foreground
+      local staged='%021F'      # blue foreground
+    else
+      # Styling for incomplete and stale Git status.
+      # Lucas: removed all these, just use POWERLEVEL9K_VCS_LOADING_ colors.
+    fi
+
+    local res
+    local where  # branch or tag
+    if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
+      res+="${clean}${(g::)POWERLEVEL9K_VCS_BRANCH_ICON}"
+      where=${(V)VCS_STATUS_LOCAL_BRANCH}
+    elif [[ -n $VCS_STATUS_TAG ]]; then
+      res+="${meta}#"
+      where=${(V)VCS_STATUS_TAG}
+    fi
+
+    # If local branch name or tag is at most 50 characters long, show it in full.
+    # Otherwise show the first 16 … the last 9.
+    # Tip: To always show local branch name in full without truncation, delete the next line.
+    (( $#where > 50 )) && where[17,-10]="…"
+    res+="${clean}${where//\%/%%}"  # escape %
+
+    # Display the current Git commit if there is no branch or tag.
+    # Tip: To always display the current Git commit, remove `[[ -z $where ]] &&` from the next line.
+    [[ -z $where ]] && res+="${meta}@${clean}${VCS_STATUS_COMMIT[1,8]}"
+
+    # Show tracking branch name if it differs from local branch ## Lucas changed: AND is not master
+    if [[ -n ${VCS_STATUS_REMOTE_BRANCH:#$VCS_STATUS_LOCAL_BRANCH} && ${VCS_STATUS_REMOTE_BRANCH} != 'master' ]]; then
+      res+="${meta}:${clean}${(V)VCS_STATUS_REMOTE_BRANCH//\%/%%}"  # escape %
+    fi
+
+    # add a space after the branch stuff
+    res+=" "
+    # ⇣42 if behind the remote.
+    (( VCS_STATUS_COMMITS_BEHIND )) && res+="⇣${VCS_STATUS_COMMITS_BEHIND}"
+    # ⇡42 if ahead of the remote.
+    (( VCS_STATUS_COMMITS_AHEAD  )) && res+="⇡${VCS_STATUS_COMMITS_AHEAD}"
+    # If were either commits ahead or behind, add a space
+    (( VCS_STATUS_COMMITS_BEHIND || VCS_STATUS_COMMITS_AHEAD )) && res+=" "
+    # ⇠42 if behind the push remote.
+    (( VCS_STATUS_PUSH_COMMITS_BEHIND )) && res+="⇠${VCS_STATUS_PUSH_COMMITS_BEHIND}"
+    # ⇢42 if ahead of the push remote.
+    (( VCS_STATUS_PUSH_COMMITS_AHEAD  )) && res+="⇢${VCS_STATUS_PUSH_COMMITS_AHEAD}"
+    # If there are either push commits ahead or behind, add trailing space
+    (( VCS_STATUS_PUSH_COMMITS_BEHIND || VCS_STATUS_PUSH_COMMITS_AHEAD )) && res+=" "
+    # IF there are stashes.
+    (( VCS_STATUS_STASHES        )) && res+="${stashed}${POWERLEVEL9K_VCS_STASH_ICON}${VCS_STATUS_STASHES} "
+    # 'merge' if the repo is in an unusual state.
+    [[ -n $VCS_STATUS_ACTION     ]] && res+="${conflicted}${VCS_STATUS_ACTION} "
+    # Dirty icons after here; no more spaces!
+    ## If there is nothing ahead, trim the space off the end
+    (( !VCS_STATUS_NUM_CONFLICTED && !VCS_STATUS_NUM_STAGED && !VCS_STATUS_NUM_UNSTAGED && !VCS_STATUS_NUM_UNTRACKED )) && res="${res%% }"
+    ## Otherwise:
+    # ~42 if have merge conflicts.
+    (( VCS_STATUS_NUM_CONFLICTED )) && res+="${conflicted}${POWERLEVEL9K_VCS_CONFLICT_ICON}${VCS_STATUS_NUM_CONFLICTED}"
+    # +42 if have staged changes.
+    (( VCS_STATUS_NUM_STAGED     )) && res+="${staged}${POWERLEVEL9K_VCS_STAGED_ICON}${VCS_STATUS_NUM_STAGED}"
+    # !42 if have unstaged changes.
+    (( VCS_STATUS_NUM_UNSTAGED   )) && res+="${modified}${POWERLEVEL9K_VCS_MODIFIED_ICON}${VCS_STATUS_NUM_UNSTAGED}"
+    # ?42 if have untracked files. It's really a question mark, your font isn't broken.
+    # See POWERLEVEL9K_VCS_UNTRACKED_ICON above if you want to use a different icon.
+    # Remove the next line if you don't want to see untracked files at all.
+    (( VCS_STATUS_NUM_UNTRACKED  )) && res+="${untracked}${POWERLEVEL9K_VCS_UNTRACKED_ICON}${VCS_STATUS_NUM_UNTRACKED}"
+    # "─" if the number of unstaged files is unknown. This can happen due to
+    # POWERLEVEL9K_VCS_MAX_INDEX_SIZE_DIRTY (see below) being set to a non-negative number lower
+    # than the number of files in the Git index, or due to bash.showDirtyState being set to false
+    # in the repository config. The number of staged and untracked files may also be unknown
+    # in this case.
+    (( VCS_STATUS_HAS_UNSTAGED == -1 )) && res+="${modified}─"
+
+    typeset -g my_git_format=$res
+  }
+  functions -M my_git_formatter 2>/dev/null
   
   # Disable the default Git status formatting.
   typeset -g POWERLEVEL9K_VCS_DISABLE_GITSTATUS_FORMATTING=true
   # Use the above Git status formatter.
-  typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION=$vcs
+  typeset -g POWERLEVEL9K_VCS_CONTENT_EXPANSION='${$((my_git_formatter(1)))+${my_git_format}}'
   # When Git status is being refreshed asynchronously, display the last known repo status in grey.
-  typeset -g POWERLEVEL9K_VCS_LOADING_CONTENT_EXPANSION=${${${vcs//\%f}//\%<->F}//\%F\{(\#|)[[:xdigit:]]#(\\|)\}}
+  typeset -g POWERLEVEL9K_VCS_LOADING_CONTENT_EXPANSION='${$((my_git_formatter(0)))+${my_git_format}}'
   # Enable counters for staged, unstaged, etc.
   typeset -g POWERLEVEL9K_VCS_{STAGED,UNSTAGED,UNTRACKED,CONFLICTED,COMMITS_AHEAD,COMMITS_BEHIND}_MAX_NUM=-1
+  # Don't count the number of unstaged, untracked and conflicted files in Git repositories with
+  # more than this many files in the index. Negative value means infinity.
+  #
+  # If you are working in Git repositories with tens of millions of files and seeing performance
+  # sagging, try setting POWERLEVEL9K_VCS_MAX_INDEX_SIZE_DIRTY to a number lower than the output
+  # of `git ls-files | wc -l`. Alternatively, add `bash.showDirtyState = false` to the repository's
+  # config: `git config bash.showDirtyState false`.
+  typeset -g POWERLEVEL9K_VCS_MAX_INDEX_SIZE_DIRTY=-1
   
   ################################[ prompt_char: prompt symbol ]################################
   # Green prompt for both ok and error state

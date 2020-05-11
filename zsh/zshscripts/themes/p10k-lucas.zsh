@@ -121,8 +121,8 @@
       local  untracked='%008F'  # grey foreground
       local conflicted='%001F'  # red foreground
       # Lucas: other custom colors
-      local stashed='%025F'     # subtle blue foreground
-      local staged='%021F'      # blue foreground
+      local    stashed='%025F'  # subtle blue foreground
+      local     staged='%021F'  # blue foreground
     else
       # Styling for incomplete and stale Git status.
       # Lucas: removed all these, just use POWERLEVEL9K_VCS_LOADING_ colors.
@@ -147,7 +147,7 @@
     # Lucas custom part to shorten long branch names, with remote tracking.
     if (( $#where > 40 )); then
       if [[ $where == *:* ]]; then # if there is a tracking branch (if there is a colon in there)
-        # Split the where at the colon
+        # Split into two variables at the colon
         local shorterlocalbranch=${where%\:*}
         local shorterremotebranch=${where#*\:}
         # Shorten the local branch to 20 characters from start, 5 from the end.
@@ -174,7 +174,7 @@
     (( VCS_STATUS_COMMITS_BEHIND )) && res+="⇣${VCS_STATUS_COMMITS_BEHIND}"
     # ⇡42 if ahead of the remote.
     (( VCS_STATUS_COMMITS_AHEAD  )) && res+="⇡${VCS_STATUS_COMMITS_AHEAD}"
-    # If were either commits ahead or behind, add a space
+    # If there are either commits ahead or behind, add a space
     (( VCS_STATUS_COMMITS_BEHIND || VCS_STATUS_COMMITS_AHEAD )) && res+=" "
     # ⇠42 if behind the push remote.
     (( VCS_STATUS_PUSH_COMMITS_BEHIND )) && res+="⇠${VCS_STATUS_PUSH_COMMITS_BEHIND}"
@@ -182,7 +182,7 @@
     (( VCS_STATUS_PUSH_COMMITS_AHEAD  )) && res+="⇢${VCS_STATUS_PUSH_COMMITS_AHEAD}"
     # If there are either push commits ahead or behind, add trailing space
     (( VCS_STATUS_PUSH_COMMITS_BEHIND || VCS_STATUS_PUSH_COMMITS_AHEAD )) && res+=" "
-    # IF there are stashes.
+    # If there are stashes.
     (( VCS_STATUS_STASHES        )) && res+="${stashed}${POWERLEVEL9K_VCS_STASH_ICON}${VCS_STATUS_STASHES} "
     # 'merge' if the repo is in an unusual state.
     [[ -n $VCS_STATUS_ACTION     ]] && res+="${conflicted}${VCS_STATUS_ACTION} "
@@ -190,15 +190,13 @@
     ## If there is nothing ahead, trim the space off the end
     (( !VCS_STATUS_NUM_CONFLICTED && !VCS_STATUS_NUM_STAGED && !VCS_STATUS_NUM_UNSTAGED && !VCS_STATUS_NUM_UNTRACKED )) && res="${res%% }"
     ## Otherwise:
-    # ~42 if have merge conflicts.
+    # If there are merge conflicts.
     (( VCS_STATUS_NUM_CONFLICTED )) && res+="${conflicted}${POWERLEVEL9K_VCS_CONFLICT_ICON}${VCS_STATUS_NUM_CONFLICTED}"
-    # +42 if have staged changes.
+    # If there are staged changes.
     (( VCS_STATUS_NUM_STAGED     )) && res+="${staged}${POWERLEVEL9K_VCS_STAGED_ICON}${VCS_STATUS_NUM_STAGED}"
-    # !42 if have unstaged changes.
+    # If there are unstaged changes.
     (( VCS_STATUS_NUM_UNSTAGED   )) && res+="${modified}${POWERLEVEL9K_VCS_MODIFIED_ICON}${VCS_STATUS_NUM_UNSTAGED}"
-    # ?42 if have untracked files. It's really a question mark, your font isn't broken.
-    # See POWERLEVEL9K_VCS_UNTRACKED_ICON above if you want to use a different icon.
-    # Remove the next line if you don't want to see untracked files at all.
+    # If there are untracked files.
     (( VCS_STATUS_NUM_UNTRACKED  )) && res+="${untracked}${POWERLEVEL9K_VCS_UNTRACKED_ICON}${VCS_STATUS_NUM_UNTRACKED}"
     # "─" if the number of unstaged files is unknown. This can happen due to
     # POWERLEVEL9K_VCS_MAX_INDEX_SIZE_DIRTY (see below) being set to a non-negative number lower

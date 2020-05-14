@@ -145,18 +145,23 @@
     fi
 
     # Lucas custom part to shorten long branch names, with remote tracking.
-    if (( $#where > 40 )); then
-      if [[ $where == *:* ]]; then # if there is a tracking branch (if there is a colon in there)
-        # Split into two variables at the colon
-        local shorterlocalbranch=${where%\:*}
-        local shorterremotebranch=${where#*\:}
-        # Shorten the local branch to 20 characters from start, 5 from the end.
-        shorterlocalbranch[21,-6]="…"
-        # Shorten the remote branch to 13 characters
-        shorterremotebranch="${shorterremotebranch:0:12}…"
-        # Combine the two new shorter branches
-        where="$shorterlocalbranch:$shorterremotebranch"
-      else # there is no tracking branch, so it's a local branch only or a tag
+    local max_branch_length=40
+    if (( $#where > $max_branch_length )); then
+      # If the branch includes my handle (e.g. lucascosti/), replace it with a trimmed version:
+      where=${where//lucascosti\//lucas…\/}
+      # If it is still longer than 40 chars
+      if (( $#where > $max_branch_length )); then
+        if [[ $where == *:* ]]; then # if there is a tracking branch (if there is a colon in there)
+          # Split into two variables at the colon
+          local shorterlocalbranch=${where%\:*}
+          local shorterremotebranch=${where#*\:}
+          # For a max branch length of 40, shorten the local branch to 20 characters from start, 5 from the end.
+          shorterlocalbranch[$max_branch_length*0.5,-($max_branch_length*0.15)]="…"
+          #  For a max branch length of 40, shorten the remote branch to 13 characters
+          shorterremotebranch="${shorterremotebranch:0:$max_branch_length*0.3}…"
+          # Combine the two new shorter branches
+          where="$shorterlocalbranch:$shorterremotebranch"
+        else # there is no tracking branch, so it's a local branch only or a tag
         # Show the first 27 … the last 8.
         where[28,-9]="…"
       fi

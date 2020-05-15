@@ -70,11 +70,49 @@
   typeset -g POWERLEVEL9K_DIR_VISUAL_IDENTIFIER_EXPANSION='${P9K_VISUAL_IDENTIFIER// }'
   # Enable special styling for non-writable directories.
   typeset -g POWERLEVEL9K_DIR_SHOW_WRITABLE=true
-  # Shorten the path if it is too long
-  typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_absolute_chars
-  typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=40
-  # Replace removed chars with this symbol.
-  typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=…
+
+  ## Old shorten config:
+  # # Shorten the path if it is too long
+  # typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_absolute_chars
+  # typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=40
+  # # Replace removed chars with this symbol.
+  # typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=…
+
+  ## New shorten config:
+  # If directory is too long, shorten some of its segments to the shortest possible unique
+  # prefix. The shortened directory can be tab-completed to the original.
+  typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
+  # Shorten directory if it's longer than this even if there is space for it. The value can
+  # be either absolute (e.g., '80') or a percentage of terminal width (e.g, '50%'). If empty,
+  # directory will be shortened only when prompt doesn't fit or when other parameters demand it
+  # (see POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS and POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT below).
+  # If set to `0`, directory will always be shortened to its minimum length.
+  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=50%
+  # Don't shorten this many last directory segments. They are anchors.
+  typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+  # Display anchor directory segments in bold.
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
+  # Don't shorten directories that contain any of these files. They are anchors.
+  local anchor_files=(
+    .git
+  )
+  typeset -g POWERLEVEL9K_SHORTEN_FOLDER_MARKER="(${(j:|:)anchor_files})"
+  # If set to "first" ("last"), remove everything before the first (last) subdirectory that contains
+  # files matching $POWERLEVEL9K_SHORTEN_FOLDER_MARKER. For example, when the current directory is
+  # /foo/bar/git_repo/nested_git_repo/baz, prompt will display git_repo/nested_git_repo/baz (first)
+  # or nested_git_repo/baz (last). This assumes that git_repo and nested_git_repo contain markers
+  # and other directories don't.
+  typeset -g POWERLEVEL9K_DIR_TRUNCATE_BEFORE_MARKER=last
+  # Don't shorten this many last directory segments. They are anchors.
+  #typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+  # Shorten directory if it's longer than this even if there is space for it. The value can
+  # be either absolute (e.g., '80') or a percentage of terminal width (e.g, '50%'). If empty,
+  # directory will be shortened only when prompt doesn't fit or when other parameters demand it
+  # (see POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS and POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT below).
+  # If set to `0`, directory will always be shortened to its minimum length.
+  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=40
+  # Don't shorten this many last directory segments. They are anchors.
+  typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
   
   #####################################[ vcs: git status ]######################################
   # Enable support for a conflict states (to customise colours)
@@ -162,8 +200,9 @@
           # Combine the two new shorter branches
           where="$shorterlocalbranch:$shorterremotebranch"
         else # there is no tracking branch, so it's a local branch only or a tag
-        # Show the first 27 … the last 8.
-        where[28,-9]="…"
+          # For a max branch length of 40, show the first 27 … the last 8.
+          where[$max_branch_length*0.7,-($max_branch_length*0.3)]="…"
+        fi
       fi
     fi
 

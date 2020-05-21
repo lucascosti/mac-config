@@ -183,6 +183,9 @@ alias cdi='cd ~/repos/internal-developer.github.com'
 
 # Functions
 
+### Function to get the macOS bundle id of an app, e.g. getbundleid firefox
+getbundleid() { osascript -e 'id of app "'$1'"' }
+
 ## Some icons for the functions below (prefixed so they won't annoy me in autocompletion on the shell.) Requires a Nerd Fonts patched font.
 local lcicon_infoi="$FG[033]$reset_color"      # blue i
 local lcicon_trash="$FG[166]$reset_color"      # orange trash

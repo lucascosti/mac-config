@@ -306,10 +306,25 @@ gsync() {
   print -P "$lcicon_sync Syncing the current branch: $LOCAL_BRANCH"
   # Step 1: Fetch from the remote
   lcfunc_step_border 1 3 "Fetching remote $REMOTE"
-  if ! git fetch $REMOTE ; then
-    print -P "$lcicon_fail Fetch from remote $REMOTE failed."
+  # Sometimes the fetch can fail because something else is doing a fetch in the background. If it fails, sleep and try again (looped twice)
+  local fetch_retry_count=0
+  local fetch_successfull=false
+  local sleep_seconds=3
+  while (($fetch_retry_count <= 2)) && [ "$fetch_successfull" = false ]; do
+    if git fetch $REMOTE ; then
+      fetch_successfull=true
+    else
+      print -P "$lcicon_warning Fetch from remote $REMOTE failed."
+      print -P "$lcicon_infoi Trying again in $sleep_seconds seconds..."
+      let "fetch_retry_count++"
+      sleep $sleep_seconds
+    fi
+  done
+  if (($fetch_retry_count > 2)); then
+     print -P "$lcicon_fail After multiple attempts, the fetch from remote $REMOTE failed."
     return 1
   fi
+  
   # Step 2: Figure out which branch to rebase to
   lcfunc_step_border 2 3 "Finding which remote branch to rebase to"
   # Test if there is branch with the same name on the remote
@@ -387,7 +402,7 @@ bbackport() {
   # if there a no arguments, build all versions. For one or more specified versions as arguments, build those specified.
   if [ -z "$1" ]
     then
-      versions=( 2.20 2.19 2.18 2.17 )
+      versions=( 2.20 2.19 2.18 )
     else
       versions=( "$@" )
   fi

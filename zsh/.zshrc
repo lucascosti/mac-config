@@ -141,8 +141,8 @@ alias ffs='sudo $(fc -ln -1)'
 ### Brew aliases
 alias bi='brew install'
 alias br='brew uninstall'
-alias bupd='brew update'
-alias bupg='brew upgrade'
+alias bupd='echo "brew update:" && brew update && echo "brew cask outdated:" && brew cask outdated'
+alias bupg='echo "brew upgrade:" && brew upgrade && echo "brew cask upgrade:" && brew cask upgrade'
 ### Git aliases
 alias g='git'
 alias gfu='git fetch upstream'

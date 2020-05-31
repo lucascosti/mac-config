@@ -133,14 +133,16 @@
                         ]
                     },
                     {
-                        "description": "Slack/Insomnia: Cmd+left arrow to Opt-left arrow. To move between words (because Electron apps don't respect a keybinding file!)",
+                        "description": "Cmd+left arrow to Opt-left arrow, to move between words. (For apps that don't respect the macOS keybinding file (including some pages in browsers))",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
                                             "com.tinyspeck.slackmacgap",
-                                            "com.insomnia.app"
+                                            "com.insomnia.app",
+                                            "org.mozilla.firefox",
+                                            "com.google.Chrome"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -170,14 +172,16 @@
                         ]
                     },
                     {
-                        "description": "Slack/Insomnia: Cmd+right arrow to Opt-right arrow. To move between words (because Electron apps don't respect a keybinding file!)",
+                        "description": "Cmd+right arrow to Opt-right arrow, to move between words. (For apps that don't respect the macOS keybinding file (including some pages in browsers))",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
                                             "com.tinyspeck.slackmacgap",
-                                            "com.insomnia.app"
+                                            "com.insomnia.app",
+                                            "org.mozilla.firefox",
+                                            "com.google.Chrome"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -207,14 +211,16 @@
                         ]
                     },
                     {
-                        "description": "Slack/Insomnia: Cmd+backspace to Opt-backspace. To delete a word (because Electron apps don't respect a keybinding file!)",
+                        "description": "Cmd+backspace to Opt-backspace, to delete a word. (For apps that don't respect the macOS keybinding file (including some pages in browsers))",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
                                             "com.tinyspeck.slackmacgap",
-                                            "com.insomnia.app"
+                                            "com.insomnia.app",
+                                            "org.mozilla.firefox",
+                                            "com.google.Chrome"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -244,14 +250,16 @@
                         ]
                     },
                     {
-                        "description": "Slack/Insomnia: Cmd+delete to Opt-delete. To forward delete a word (because Electron apps don't respect a keybinding file!)",
+                        "description": "Cmd+delete to Opt-delete, to forward delete a word. (For apps that don't respect the macOS keybinding file (including some pages in browsers))",
                         "manipulators": [
                             {
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
                                             "com.tinyspeck.slackmacgap",
-                                            "com.insomnia.app"
+                                            "com.insomnia.app",
+                                            "org.mozilla.firefox",
+                                            "com.google.Chrome"
                                         ],
                                         "type": "frontmost_application_if"
                                     }

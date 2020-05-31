@@ -66,6 +66,8 @@
   # Default current directory color.
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=252 # almost white
   typeset -g POWERLEVEL9K_DIR_BACKGROUND=004
+  # Color of the shortened directory segments. # a few shades lighter than above
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=249
   # Lucas enable icons for the directory segment
   typeset -g POWERLEVEL9K_DIR_VISUAL_IDENTIFIER_EXPANSION='${P9K_VISUAL_IDENTIFIER// }'
   # Enable special styling for non-writable directories.
@@ -87,7 +89,7 @@
   # directory will be shortened only when prompt doesn't fit or when other parameters demand it
   # (see POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS and POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT below).
   # If set to `0`, directory will always be shortened to its minimum length.
-  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=50%
+  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=40%
   # Don't shorten this many last directory segments. They are anchors.
   typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
   # Display anchor directory segments in bold.
@@ -103,14 +105,6 @@
   # or nested_git_repo/baz (last). This assumes that git_repo and nested_git_repo contain markers
   # and other directories don't.
   typeset -g POWERLEVEL9K_DIR_TRUNCATE_BEFORE_MARKER=last
-  # Don't shorten this many last directory segments. They are anchors.
-  #typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
-  # Shorten directory if it's longer than this even if there is space for it. The value can
-  # be either absolute (e.g., '80') or a percentage of terminal width (e.g, '50%'). If empty,
-  # directory will be shortened only when prompt doesn't fit or when other parameters demand it
-  # (see POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS and POWERLEVEL9K_DIR_MIN_COMMAND_COLUMNS_PCT below).
-  # If set to `0`, directory will always be shortened to its minimum length.
-  typeset -g POWERLEVEL9K_DIR_MAX_LENGTH=40
   # Don't shorten this many last directory segments. They are anchors.
   typeset -g POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
   

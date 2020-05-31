@@ -85,4 +85,13 @@
     "body": "For more information, see \"[${1:title}]($2).\"",
     "description": "For more information..."
   },
+  "Raw block": {
+    "prefix": "raw",
+    "body": [
+      "{% raw %}",
+      "",
+      "{% endraw %}",
+    ],
+    "description": "Raw block"
+  },
 }

@@ -306,24 +306,29 @@ gsync() {
   print -P "$lcicon_sync Syncing the current branch: $LOCAL_BRANCH"
   # Step 1: Fetch from the remote
   lcfunc_step_border 1 3 "Fetching remote $REMOTE"
-  # Sometimes the fetch can fail because something else is doing a fetch in the background. If it fails, sleep and try again (looped twice)
-  local fetch_retry_count=0
-  local fetch_successfull=false
+  # Sometimes the fetch can fail because something else is doing a fetch in the background. If it fails, sleep and try again (3 tries total).
   local sleep_seconds=3
-  while (($fetch_retry_count <= 2)) && [ "$fetch_successfull" = false ]; do
+  local max_tries=3
+
+  local fetch_try_count=0
+  local fetch_successfull=false
+  while [ "$fetch_successfull" = false ]; do
     if git fetch $REMOTE ; then
       fetch_successfull=true
     else
       print -P "$lcicon_warning Fetch from remote $REMOTE failed."
-      print -P "$lcicon_infoi Trying again in $sleep_seconds seconds..."
-      let "fetch_retry_count++"
-      sleep $sleep_seconds
+      let "fetch_try_count++"
+      # If we've reached the max number of tries, exit. Else, try again.
+      if (($fetch_try_count == $max_tries)); then
+        print -P "$lcicon_fail After multiple attempts, the fetch from remote $REMOTE failed."
+        return 1
+      else
+        print -P "$lcicon_infoi Trying again in $sleep_seconds seconds..."
+        sleep $sleep_seconds
+        print -P "$lcicon_runarrow Trying again to fetch remote $REMOTE..."
+      fi
     fi
   done
-  if (($fetch_retry_count > 2)); then
-     print -P "$lcicon_fail After multiple attempts, the fetch from remote $REMOTE failed."
-    return 1
-  fi
   
   # Step 2: Figure out which branch to rebase to
   lcfunc_step_border 2 3 "Finding which remote branch to rebase to"

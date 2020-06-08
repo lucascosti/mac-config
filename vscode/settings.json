@@ -56,7 +56,7 @@
       //     "_folder": {
       //         "fontCharacter": "\\f016",
       // ```
-      // change the "fontColor" tp "#9da5b4"
+      // change the "fontColor" to "#9da5b4"
     // Make the modified color orange instead of teal!
     "editorOverviewRuler.modifiedForeground": "#b6944f",
     "editorGutter.modifiedBackground": "#b6944f",

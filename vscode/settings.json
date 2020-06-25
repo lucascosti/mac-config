@@ -19,7 +19,6 @@
   "editor.selectionHighlight": false,
   "editor.renderLineHighlight": "all",
   "workbench.editor.restoreViewState": false,
-  "workbench.activityBar.visible": true,
   "editor.occurrencesHighlight": false,
   "editor.wordWrap": "bounded",
   "[markdown]": {
@@ -30,6 +29,8 @@
   "search.exclude": {
     "**/translations": true
   },
+  "search.searchEditor.reusePriorSearchConfiguration": true,
+  "search.searchEditor.defaultNumberOfContextLines": 1,
   "window.zoomLevel": 0,
   // Set the git commit editor validation lengths to match Atom (72 for description, no limit on other lines)
   "git.inputValidationSubjectLength": 72,
@@ -251,5 +252,5 @@
   "todohighlight.defaultStyle": {
     "backgroundColor": "#F06292",
     "color": "white"
-  },
+  }
 }

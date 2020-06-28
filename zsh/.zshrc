@@ -180,6 +180,7 @@ alias gsubupd='git submodule update --remote --merge'
 alias {cdr,cdg,gcd}='cd ~/repos/'
 alias cdh='cd ~/repos/help-docs'
 alias cdi='cd ~/repos/internal-developer.github.com'
+alias cdo='cd ~/repos/openapi'
 
 # Functions
 
@@ -407,7 +408,7 @@ bbackport() {
   # if there a no arguments, build all versions. For one or more specified versions as arguments, build those specified.
   if [ -z "$1" ]
     then
-      versions=( 2.20 2.19 2.18 )
+      versions=( 2.21 2.20 2.19 2.18 )
     else
       versions=( "$@" )
   fi

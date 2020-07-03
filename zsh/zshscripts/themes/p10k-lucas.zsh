@@ -13,7 +13,7 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
       # =========================[ Line #1 ]=========================
       status                  # return status of last command
-      time                    # current time
+      #time                    # current time
       dir                     # current directory
       vcs                     # git status
       # =========================[ Line #2 ]=========================
@@ -38,18 +38,20 @@
   typeset -g POWERLEVEL9K_RULER_FOREGROUND=240
   
   ##########################[ status: exit code of the last command ]###########################
-  
-  # nothing for an ok status
-  typeset -g POWERLEVEL9K_STATUS_OK=false
-  
-  # for an error, show a new segment with a red background and a white cross
+  # For an OK status, show an octocat face
+  typeset -g POWERLEVEL9K_STATUS_OK=true
+  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=black
+  typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=007 # whitish
+  typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='ﯙ'
+  # show the OK status even though we have verbose disabled (see below)
+  typeset -g POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
+  # for an error, show a red background and a white cross
   typeset -g POWERLEVEL9K_STATUS_ERROR=true
   typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=255 # white
   typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND=001 # red
   typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION='✘'
   # don't show the error code on error
   typeset -g POWERLEVEL9K_STATUS_VERBOSE=false
-  
   
   ####################################[ time: current time ]####################################
   # Current time color.

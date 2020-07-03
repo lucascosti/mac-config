@@ -350,4 +350,26 @@
     "command": "-lineBreakInsert",
     "when": "textInputFocus && !editorReadonly"
   },
+  // Rename file in explorer panel as F2
+  {
+    "key": "f2",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // 'Open file under cursor' extension as ctrl+p
+  {
+    "key": "ctrl+p",
+    "command": "seito-openfile.openFileFromText",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+p",
+    "command": "-seito-openfile.openFileFromText",
+    "when": "editorTextFocus"
+  },
 ]

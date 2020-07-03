@@ -216,6 +216,14 @@ lcfunc_step_border() {
 
 ## Git functions
 
+### Internal functon to get the name of the default branch
+### from: https://stackoverflow.com/a/44750379/6348342
+git_default_branch () {
+  git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+}
+### Backup array of common default branch names
+default_git_branches=("main" "master" "default")
+
 ### Function to take git interactive rebase argument. e.g.: gir 2
 gri() { git rebase -i HEAD~$1; }
 gir() { git rebase -i HEAD~$1; }
@@ -312,10 +320,10 @@ gsync() {
   local max_tries=3
 
   local fetch_try_count=0
-  local fetch_successfull=false
-  while [ "$fetch_successfull" = false ]; do
+  local fetch_successful=false
+  while [ "$fetch_successful" = false ]; do
     if git fetch $REMOTE ; then
-      fetch_successfull=true
+      fetch_successful=true
     else
       print -P "$lcicon_warning Fetch from remote $REMOTE failed."
       let "fetch_try_count++"

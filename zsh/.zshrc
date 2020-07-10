@@ -172,7 +172,6 @@ alias gcommend='git add -A && git commit --amend --no-edit'
 alias gm='git merge'
 alias gcp='git cherry-pick'
 alias gpoh='git push origin HEAD'
-alias grom='git rebase origin/master'
 alias gremotes='git remote -v'
 alias gsub='git submodule'
 alias gsubupd='git submodule update --remote --merge'
@@ -216,13 +215,32 @@ lcfunc_step_border() {
 
 ## Git functions
 
-### Internal functon to get the name of the default branch
-### from: https://stackoverflow.com/a/44750379/6348342
+### Default remote branch for functions
+LUCAS_GIT_REMOTE=origin
+
+### Internal functon to get the name of the default branch. This is necessary especially for the master -> main transition, where we can't assume the default branch is master.
 git_default_branch () {
-  git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+  local REMOTE=$LUCAS_GIT_REMOTE
+  local DEFAULT_BRANCH
+  # Array of common default branch names
+  local default_git_branches=("main" "master" "default" "develop")
+  # Let's try to assume the default branch without needing a slow call to a remote.
+  # Iterate through the list; if only one of the branches in the list exists, let's assume it is the default branch.
+  local matches=0
+  for i in "${default_git_branches[@]}"; do
+    # If there is a match save that as the branch, increase the matches found
+    if git show-ref --quiet refs/remotes/$REMOTE/$i; then
+      DEFAULT_BRANCH=$i
+      let "matches++"
+    fi
+  done
+  # If the matches is not exatly one, something is not right and a call to the remote is needed.
+  if (($matches != 1)); then
+    # From: https://stackoverflow.com/questions/28666357/git-how-to-get-default-branch/44750379#comment92366240_50056710
+    DEFAULT_BRANCH=`git remote show $REMOTE | grep "HEAD branch" | sed 's/.*: //'`
+  fi
+  echo $DEFAULT_BRANCH
 }
-### Backup array of common default branch names
-default_git_branches=("main" "master" "default")
 
 ### Function to take git interactive rebase argument. e.g.: gir 2
 gri() { git rebase -i HEAD~$1; }
@@ -242,14 +260,15 @@ compdef -e 'words[1]=(git remote show); service=git; (( CURRENT+=2 )); _git' gcm
 gcpr() { gh pr checkout $1; }
 
 ### This function prunes references to deleted remote branches, and deletes local branches that have been merged and/or deleted from the remotes.
-### It is intended to be run when on a master branch, and warns when it isn't.
+### It is intended to be run when on a default branch, and warns when it isn't.
 gclean() {
   local BRANCH=`git rev-parse --abbrev-ref HEAD`
+  local DEFAULT_BRANCH=`git_default_branch`
   local response=""
-  # Warning if not on a master* branch
-  if [[ $BRANCH != master* ]]
+  # Warning if not on a default* branch
+  if [[ $BRANCH != $DEFAULT_BRANCH* ]]
   then
-    print -P "$lcicon_warning$lcicon_warning $FG[009]WARNING: It looks like you are not on a master branch!$reset_color $lcicon_warning$lcicon_warning"
+    print -P "$lcicon_warning$lcicon_warning $FG[009]WARNING: It looks like you are not on a default branch ($DEFAULT_BRANCH)!$reset_color $lcicon_warning$lcicon_warning"
     vared -p "$lcicon_question Are you sure you want to continue? [y/N] " -c response
     if ! [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
     then
@@ -263,9 +282,9 @@ gclean() {
   lcfunc_step_border 1 3 "$lcicon_scissors Simulating pruning origin $lcicon_scissors" \
   && remote_prune_list="$(git remote prune origin --dry-run)" \
   && if [ ! -z "$remote_prune_list" ]; then echo $remote_prune_list; fi
-  # Step 2: check if any local branches have been merged to master. 
+  # Step 2: check if any local branches have been merged to the default branch. 
   lcfunc_step_border 2 3 "$lcicon_trash Simulating cleaning local branches merged to $BRANCH $lcicon_trash" \
-  && git branch --merged $BRANCH | grep -v "^\**\s*master"
+  && git branch --merged $BRANCH | grep -v "^\**\s*$DEFAULT_BRANCH"
   # Step 3: Using the variable from step 1, check if any local branches have the same name as remote ones that would be pruned.
   # !! Be careful when looking at the result of this! !!
   # This is necessary for branches merged with the GitHub 'squash-and-merge' workflows.
@@ -282,14 +301,14 @@ gclean() {
   if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
   then
     # Step 1: Run a prune and save the result (i.e. the pruned branches) to a variable.
-    # Step 2: delete any branches that have been merged into master
+    # Step 2: delete any branches that have been merged into the default branch
     # Step 3: Using the variable from step 1, check if any local branches have the same name as remote ones that would be pruned.
     #         If there are any branches that match, delete them.
     print -P "$lcicon_runarrow Running a clean on $BRANCH ..." \
     && lcfunc_step_border 1 3 "$lcicon_scissors Pruning origin $lcicon_scissors" \
     && remote_prune_list="$(git remote prune origin)" \
     && lcfunc_step_border 2 3 "$lcicon_trash Cleaning local branches merged to $BRANCH $lcicon_trash" \
-    && git branch --merged $BRANCH | grep -v "^\**\s*master" | xargs git branch -d || true \
+    && git branch --merged $BRANCH | grep -v "^\**\s*$DEFAULT_BRANCH" | xargs git branch -d || true \
     && lcfunc_step_border 3 3 "$lcicon_trash Cleaning local branches with same name as pruned remote ones $lcicon_trash" \
     && comm -12 <(git branch | sed "s/ *//g") <( echo $remote_prune_list | sed "s/^.*origin\///g") | xargs -L1 -J % git branch -D % \
     && lcfunc_step_border \
@@ -305,10 +324,10 @@ gclean() {
 ### * If there is a branch on the remote with the same name as the current branch, use that for the rebase.
 ### * Otherwise, look at the tracking branch for the rebase:
 ###   * If there is no tracking branch, exit with an error.
-###   * If the tracking branch is master, exit with an error. I probably don't want to rebase to master unless I do it explicitly myself.
-###   * If the tracking branch is another branch that is not master, use that for the rebase.
+###   * If the tracking branch is the default branch, exit with an error. I probably don't want to rebase to is the default branch unless I do it explicitly myself.
+###   * If the tracking branch is another branch that is not the default branch, use that for the rebase.
 gsync() {
-  local REMOTE=origin
+  local REMOTE=$LUCAS_GIT_REMOTE
   local LOCAL_BRANCH=`git rev-parse --abbrev-ref HEAD`
   local REMOTE_BRANCH=''
   
@@ -318,7 +337,6 @@ gsync() {
   # Sometimes the fetch can fail because something else is doing a fetch in the background. If it fails, sleep and try again (3 tries total).
   local sleep_seconds=3
   local max_tries=3
-
   local fetch_try_count=0
   local fetch_successful=false
   while [ "$fetch_successful" = false ]; do
@@ -338,7 +356,6 @@ gsync() {
       fi
     fi
   done
-  
   # Step 2: Figure out which branch to rebase to
   lcfunc_step_border 2 3 "Finding which remote branch to rebase to"
   # Test if there is branch with the same name on the remote
@@ -348,7 +365,7 @@ gsync() {
     print -P "$lcicon_infoi Remote branch is $REMOTE/$REMOTE_BRANCH"
   else
     print -P "$lcicon_infoi No branch with the same name as $LOCAL_BRANCH on the remote. Looking at the tracking branch..."
-    # Use the upstream tracking branch for the rebase, as long as it is NOT master
+    # Use the upstream tracking branch for the rebase, as long as it is NOT the default branch
     if ! REMOTE_BRANCH=`git rev-parse --abbrev-ref --symbolic-full-name @{u}` > /dev/null 2>&1 ; then
       # There is no tracking branch
       print -P "$lcicon_fail Sync failed! There is no tracking branch to rebase to."
@@ -356,13 +373,15 @@ gsync() {
     else
       # There is a tracking branch. Strip the 'remote/' from the start of it
       REMOTE_BRANCH=`echo $REMOTE_BRANCH | sed "s/$REMOTE\///"`
-      # Test to see if the remote branch is a master branch
-      if  [[ $REMOTE_BRANCH = master* ]] ; then
-        # The remote upstream tracking branch is master, so don't sync it (syncing might rebase the current branch to the wrong branch).
-        print -P "$lcicon_fail Sync aborted! The tracking branch is a master branch. If you want to rebase to master, you will have to do it yourself."
+      # get the default branch
+      local DEFAULT_BRANCH=`git_default_branch`
+      # Test to see if the remote branch is a default branch
+      if  [[ $REMOTE_BRANCH = $DEFAULT_BRANCH* ]] ; then
+        # The remote upstream tracking branch is the default branch, so don't sync it (syncing might rebase the current branch to the wrong branch).
+        print -P "$lcicon_fail Sync aborted! The tracking branch is a default branch. If you want to rebase to the default branch ($DEFAULT_BRANCH), you will have to do it yourself."
         return 1
       else
-        # There is a proper tracking branch with a different name and is not master
+        # There is a proper tracking branch with a different name and is not the default branch
         print -P "$lcicon_infoi Remote tracking branch is $REMOTE/$REMOTE_BRANCH"
       fi
     fi

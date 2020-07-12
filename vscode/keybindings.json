@@ -263,7 +263,8 @@
   // Cmd+shift+f to show new project find editor
   {
     "key": "shift+cmd+f",
-    "command": "search.action.openNewEditor"
+    "command": "search.action.openNewEditor",
+    "args": { "focusResults": false }
   },
   {
     "key": "shift+cmd+f",

@@ -95,6 +95,19 @@ font-size:  11.5pt !important; }
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
   display: none;
 }
+/* Lucas: the CSS below goes in the Tree Style Tab 'Advanced' styles on the add-on preferences page:
+
+.tab:not(.active) .closebox {
+  display: none;
+}
+.tab .label {
+  font-size: 9pt
+}
+
+.tab {
+  padding: 3px;
+}
+*/
 /* Reduce minimum width of the sidebar */
 #sidebar {
   min-width: 100px !important;

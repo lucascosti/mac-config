@@ -225,7 +225,7 @@ git_default_branch () {
   # Array of common default branch names
   local default_git_branches=("main" "master" "default" "develop")
   # Let's try to assume the default branch without needing a slow call to a remote.
-  # Iterate through the list; if only one of the branches in the list exists, let's assume it is the default branch.
+  # Iterate through the list; if only one of the common default branches in the list exists on the remote, let's assume it is the default branch.
   local matches=0
   for i in "${default_git_branches[@]}"; do
     # If there is a match save that as the branch, increase the matches found
@@ -324,7 +324,7 @@ gclean() {
 ### * If there is a branch on the remote with the same name as the current branch, use that for the rebase.
 ### * Otherwise, look at the tracking branch for the rebase:
 ###   * If there is no tracking branch, exit with an error.
-###   * If the tracking branch is the default branch, exit with an error. I probably don't want to rebase to is the default branch unless I do it explicitly myself.
+###   * If the tracking branch is the default branch, exit with an error. I probably don't want to rebase to the default branch unless I do it explicitly myself.
 ###   * If the tracking branch is another branch that is not the default branch, use that for the rebase.
 gsync() {
   local REMOTE=$LUCAS_GIT_REMOTE

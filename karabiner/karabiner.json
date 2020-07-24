@@ -58,7 +58,8 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_control"
-                                        ]
+                                        ],
+                                        "optional": ["left_shift"]
                                     }
                                 },
                                 "to": [
@@ -82,7 +83,8 @@
                                         "bundle_identifiers": [
                                             "org.mozilla.firefox",
                                             "com.github.atom",
-                                            "com.microsoft.VSCode"
+                                            "com.microsoft.VSCode",
+                                            "com.googlecode.iterm2"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -92,7 +94,8 @@
                                     "modifiers": {
                                         "mandatory": [
                                             "left_gui"
-                                        ]
+                                        ],
+                                        "optional": ["left_shift"]
                                     }
                                 },
                                 "to": [

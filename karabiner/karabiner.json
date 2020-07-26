@@ -59,7 +59,9 @@
                                         "mandatory": [
                                             "left_control"
                                         ],
-                                        "optional": ["left_shift"]
+                                        "optional": [
+                                            "left_shift"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -95,7 +97,9 @@
                                         "mandatory": [
                                             "left_gui"
                                         ],
-                                        "optional": ["left_shift"]
+                                        "optional": [
+                                            "left_shift"
+                                        ]
                                     }
                                 },
                                 "to": [

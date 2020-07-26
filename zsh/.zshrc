@@ -228,13 +228,13 @@ git_default_branch () {
   # Iterate through the list; if only one of the common default branches in the list exists on the remote, let's assume it is the default branch.
   local matches=0
   for i in "${default_git_branches[@]}"; do
-    # If there is a match save that as the branch, increase the matches found
+    # If there is a match, save that as the branch and increment the number of matches found
     if git show-ref --quiet refs/remotes/$REMOTE/$i; then
       DEFAULT_BRANCH=$i
       let "matches++"
     fi
   done
-  # If the matches is not exatly one, something is not right and a call to the remote is needed.
+  # If the number of matches found is not exatly one, something is not right and a call to the remote is needed.
   if (($matches != 1)); then
     # From: https://stackoverflow.com/questions/28666357/git-how-to-get-default-branch/44750379#comment92366240_50056710
     DEFAULT_BRANCH=`git remote show $REMOTE | grep "HEAD branch" | sed 's/.*: //'`
@@ -255,7 +255,7 @@ gcmr() { git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2; 
 compdef -e 'words[1]=(git remote show); service=git; (( CURRENT+=2 )); _git' gcmr
 
 #### For GitHub: e.g gcpr 12345.
-#### Requires GitHUb CLI: https://github.com/cli/cli
+#### Requires GitHub CLI: https://github.com/cli/cli
 #### Replaces old complicated function. For old function, see https://github.com/lucascosti/zshrc/blob/b371ff5404e47990d37be72c6f4c90618f019445/.zshrc#L215-L241
 gcpr() { gh pr checkout $1; }
 

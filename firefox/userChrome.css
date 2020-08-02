@@ -95,11 +95,40 @@ font-size:  11.5pt !important; }
 #sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
   display: none;
 }
-/* Lucas: the CSS below goes in the Tree Style Tab 'Advanced' styles on the add-on preferences page:
+/* Lucas: the stuff below goes in the Tree Style Tab 'Advanced' styles on the add-on preferences page:
+
+//Unsets the default browser style (I like the old TST styling 
+
+:root {
+  --browser-background: unset;
+  --browser-bg-base: unset;
+  --browser-bg-less-lighter: unset;
+  --browser-bg-lighter: unset;
+  --browser-bg-more-lighter: unset;
+  --browser-bg-lightest: unset;
+  --browser-bg-less-darker: unset;
+  --browser-bg-darker: unset;
+  --browser-bg-more-darker: unset;
+  --browser-fg: unset;
+  --browser-fg-active: unset;
+  --browser-border: unset;
+  --browser-header-url: unset;
+  --browser-bg-url: unset;
+  --browser-bg-for-header-image: unset;
+  --browser-bg-hover-for-header-image: unset;
+  --browser-bg-active-for-header-image: unset;
+  --browser-textshadow-for-header-image: unset;
+  --browser-tab-highlighter: unset;
+  --browser-loading-indicator: unset;
+  --theme-colors-frame: unset;
+  --theme-colors-tab_background_text: unset;
+  --theme-images-theme_frame: unset;
+}
 
 .tab:not(.active) .closebox {
   display: none;
 }
+
 .tab .label {
   font-size: 9pt
 }

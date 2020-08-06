@@ -1,4 +1,4 @@
-Exported 2020-04-08
+Updated 2020-08-06
 
 alefragnani.Bookmarks
 bierner.github-markdown-preview
@@ -7,11 +7,18 @@ bierner.markdown-emoji
 bierner.markdown-preview-github-styles
 bierner.markdown-yaml-preamble
 DavidAnson.vscode-markdownlint
+dnicolson.binary-plist
 eamodio.gitlens
 file-icons.file-icons
+Fr43nk.seito-openfile
+hilleer.yaml-plus-json
 HookyQR.beautify
+hubwriter.open-reusable
 IgorSbitnev.error-gutters
+jakearl.search-editor-apply-changes
 jeff-hykin.code-eol
+mdickin.markdown-shortcuts
+mhutchie.git-graph
 ms-azuretools.vscode-docker
 redhat.vscode-yaml
 RoscoP.ActiveFileInStatusBar

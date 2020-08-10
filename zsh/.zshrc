@@ -177,7 +177,7 @@ alias gsub='git submodule'
 alias gsubupd='git submodule update --remote --merge'
 ### Directory aliases
 alias {cdr,cdg,gcd}='cd ~/repos/'
-alias cdh='cd ~/repos/help-docs'
+alias {cdd,cdh}='cd ~/repos/docs-internal'
 alias cdi='cd ~/repos/internal-developer.github.com'
 alias cdo='cd ~/repos/openapi'
 

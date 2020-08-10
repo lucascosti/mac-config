@@ -953,7 +953,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>-1044 225 918 512 -1080 -422 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 579 1920 478 0 0 1920 1057 </string>
+	<string>-1080 53 1080 650 -1080 -260 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>401 102 1110 657 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -1668,7 +1668,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/lucascosti/repos/help-docs</string>
+			<string>/Users/lucascosti/repos/docs-internal</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -2404,7 +2404,7 @@
 			<key>Window Type</key>
 			<integer>2</integer>
 			<key>Working Directory</key>
-			<string>/Users/lucascosti/repos/help-docs</string>
+			<string>/Users/lucascosti/repos/docs-internal</string>
 		</dict>
 	</array>
 	<key>NoSyncAllAppVersions</key>
@@ -2450,7 +2450,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>0DDC18E5-0C66-4571-BA9E-04CB2E8BD87E</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>199</integer>
+	<integer>207</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3213,7 +3213,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-27T22:13:49Z</date>
+	<date>2020-08-10T22:40:51Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>

@@ -1,4 +1,4 @@
-Updated 2020-08-06
+Updated 2020-08-19
 
 alefragnani.Bookmarks
 bierner.github-markdown-preview
@@ -22,7 +22,6 @@ mhutchie.git-graph
 ms-azuretools.vscode-docker
 redhat.vscode-yaml
 RoscoP.ActiveFileInStatusBar
-Shan.code-settings-sync
 streetsidesoftware.code-spell-checker
 wayou.vscode-todo-highlight
 zhuangtongfa.material-theme

@@ -194,7 +194,7 @@ local lcicon_tick="$FG[046]$reset_color"       # green tick
 local lcicon_question="$FG[192]ﲉ$reset_color"   # yellow question
 local lcicon_fail="$FG[009]$reset_color"       # red x
 local lcicon_runarrow="$FG[077]$reset_color"   # green arrow
-local lcicon_sync="$FG[077]$reset_color"       # green sync symbol
+local lcicon_update="$FG[077]ﮮ$reset_color"     # green update symbol
 local lcicon_warning="$FG[226]$reset_color"    # yellow warning symbol
 local lcicon_undo="$FG[003]\ufa4c$reset_color"  # orange undo symbol
 
@@ -319,19 +319,19 @@ gclean() {
   fi
 }
 
-### Sync function for my current workflow, which only has one remote: origin.
+### Git function for my current workflow to update the current branch from an upstream repo. At the moment, it's only one remote: origin.
 ### It rebases the current branch, with some intelligence to figure out which remote branch to rebase to:
 ### * If there is a branch on the remote with the same name as the current branch, use that for the rebase.
 ### * Otherwise, look at the tracking branch for the rebase:
 ###   * If there is no tracking branch, exit with an error.
 ###   * If the tracking branch is the default branch, exit with an error. I probably don't want to rebase to the default branch unless I do it explicitly myself.
 ###   * If the tracking branch is another branch that is not the default branch, use that for the rebase.
-gsync() {
+gup() {
   local REMOTE=$LUCAS_GIT_REMOTE
   local LOCAL_BRANCH=`git rev-parse --abbrev-ref HEAD`
   local REMOTE_BRANCH=''
   
-  print -P "$lcicon_sync Syncing the current branch: $LOCAL_BRANCH"
+  print -P "$lcicon_update Updating the current branch: $LOCAL_BRANCH"
   # Step 1: Fetch from the remote
   lcfunc_step_border 1 3 "Fetching remote $REMOTE"
   # Sometimes the fetch can fail because something else is doing a fetch in the background. If it fails, sleep and try again (3 tries total).
@@ -368,7 +368,7 @@ gsync() {
     # Use the upstream tracking branch for the rebase, as long as it is NOT the default branch
     if ! REMOTE_BRANCH=`git rev-parse --abbrev-ref --symbolic-full-name @{u}` > /dev/null 2>&1 ; then
       # There is no tracking branch
-      print -P "$lcicon_fail Sync failed! There is no tracking branch to rebase to."
+      print -P "$lcicon_fail Update failed! There is no tracking branch to rebase to."
       return 1
     else
       # There is a tracking branch. Strip the 'remote/' from the start of it
@@ -377,8 +377,8 @@ gsync() {
       local DEFAULT_BRANCH=`git_default_branch`
       # Test to see if the remote branch is a default branch
       if  [[ $REMOTE_BRANCH = $DEFAULT_BRANCH* ]] ; then
-        # The remote upstream tracking branch is the default branch, so don't sync it (syncing might rebase the current branch to the wrong branch).
-        print -P "$lcicon_fail Sync aborted! The tracking branch is a default branch. If you want to rebase to the default branch ($DEFAULT_BRANCH), you will have to do it yourself."
+        # The remote upstream tracking branch is the default branch, so don't update it (updating might rebase the current branch to the wrong branch).
+        print -P "$lcicon_fail Update aborted! The tracking branch is a default branch. If you want to rebase to the default branch ($DEFAULT_BRANCH), you will have to do it yourself."
         return 1
       else
         # There is a proper tracking branch with a different name and is not the default branch
@@ -390,7 +390,7 @@ gsync() {
   lcfunc_step_border 3 3 "Rebasing $LOCAL_BRANCH to $REMOTE/$REMOTE_BRANCH" \
   && git rebase $REMOTE/$REMOTE_BRANCH \
   && lcfunc_step_border \
-  && print -P "$lcicon_tick Syncing finished!"
+  && print -P "$lcicon_tick Updating finished!"
 }
 
 ### Function to undo all changes (including stages) back to the last commit, with a confirmation.

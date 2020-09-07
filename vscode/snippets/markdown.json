@@ -81,7 +81,7 @@
     "description": "Warning block"
   },
   "For more information...": {
-    "prefix": "For more",
+    "prefix": "For more information,",
     "body": "For more information, see \"[${1:title}]($2).\"",
     "description": "For more information..."
   },
@@ -93,5 +93,12 @@
       "{% endraw %}",
     ],
     "description": "Raw block"
+  },
+  "Liquid if": {
+    "prefix": "if ",
+    "body": [
+      "{% if page.version == 'dotcom' %}something{% endif %}"
+    ],
+    "description": "Liquid if condition"
   },
 }

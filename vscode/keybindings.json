@@ -264,7 +264,9 @@
   {
     "key": "shift+cmd+f",
     "command": "search.action.openEditor",
-    "args": { "focusResults": false }
+    "args": {
+      "focusResults": false
+    }
   },
   {
     "key": "shift+cmd+f",
@@ -276,7 +278,7 @@
     "command": "editor.action.insertSnippet",
     "when": "editorTextFocus",
     "args": {
-        "snippet": "[${TM_SELECTED_TEXT}]($1)"
+      "snippet": "[${TM_SELECTED_TEXT}]($1)"
     }
   },
   // Markdown shortcuts keybindings
@@ -372,5 +374,5 @@
     "key": "alt+p",
     "command": "-seito-openfile.openFileFromText",
     "when": "editorTextFocus"
-  },
+  }
 ]

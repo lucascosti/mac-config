@@ -173,8 +173,8 @@
     fi
 
     # Show tracking branch name if it differs from local branch 
-    ## Lucas: moved this above the shorthening test, and added the "AND is not master"
-    if [[ -n ${VCS_STATUS_REMOTE_BRANCH:#$VCS_STATUS_LOCAL_BRANCH} && ${VCS_STATUS_REMOTE_BRANCH} != 'master' ]]; then
+    ## Lucas: moved this above the shorthening test, and added the "AND is not master/main tests"
+    if [[ -n ${VCS_STATUS_REMOTE_BRANCH:#$VCS_STATUS_LOCAL_BRANCH} && ${VCS_STATUS_REMOTE_BRANCH} != 'master' && ${VCS_STATUS_REMOTE_BRANCH} != 'main' ]]; then
       where+=":${(V)VCS_STATUS_REMOTE_BRANCH//\%/%%}"  # escape %
     fi
 

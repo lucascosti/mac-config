@@ -141,8 +141,8 @@ alias ffs='sudo $(fc -ln -1)'
 ### Brew aliases
 alias bi='brew install'
 alias br='brew uninstall'
-alias bupd='echo "brew update:" && brew update && echo "brew cask outdated:" && brew cask outdated'
-alias bupg='echo "brew upgrade:" && brew upgrade && echo "brew cask upgrade:" && brew cask upgrade'
+alias bupd='brew update'
+alias bupg='brew upgrade'
 ### Git aliases
 alias g='git'
 alias gfu='git fetch upstream'
@@ -176,10 +176,11 @@ alias gremotes='git remote -v'
 alias gsub='git submodule'
 alias gsubupd='git submodule update --remote --merge'
 ### Directory aliases
-alias {cdr,cdg,gcd}='cd ~/repos/'
-alias {cdd,cdh}='cd ~/repos/docs-internal'
+alias cdr='cd ~/repos/'
+alias cdd='cd ~/repos/docs-internal'
 alias cdi='cd ~/repos/internal-developer.github.com'
 alias cdo='cd ~/repos/openapi'
+alias cdg='cd ~/repos/github'
 
 # Functions
 

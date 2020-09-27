@@ -138,6 +138,7 @@
     "dotfiles",
     "entrypoint",
     "frontmatter",
+    "ghes",
     "hardcoded",
     "megabranch",
     "orgs",

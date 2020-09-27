@@ -97,7 +97,7 @@
   "Liquid if": {
     "prefix": "if ",
     "body": [
-      "{% if page.version == 'dotcom' %}something{% endif %}"
+      "{% if page.version == 'dotcom' or page.version ver_gt '2.22' %}something{% endif %}"
     ],
     "description": "Liquid if condition"
   },

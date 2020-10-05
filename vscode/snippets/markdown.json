@@ -14,17 +14,17 @@
   // }
   "GitHub - helpdocs": {
     "prefix": "GitHub",
-    "body": "{{ site.data.variables.product.prodname_dotcom }}",
+    "body": "{% data variables.product.prodname_dotcom %}",
     "description": "GitHub variable"
   },
   "GitHub Actions - helpdocs": {
     "prefix": "Actions",
-    "body": "{{ site.data.variables.product.prodname_actions }}",
+    "body": "{% data variables.product.prodname_actions %}",
     "description": "GitHub Actions variable"
   },
   "GitHub Packages - helpdocs": {
     "prefix": "Packages",
-    "body": "{{ site.data.variables.product.prodname_registry }}",
+    "body": "{% data variables.product.prodname_registry %}",
     "description": "GitHub Packages variable"
   },
   "Plain Code block": {
@@ -62,21 +62,21 @@
   "Note block": {
     "prefix": "note",
     "body": [
-      "{{#note}}",
+      "{% note %}",
       "",
       "**Note:** $1",
       "",
-      "{{/note}}",
+      "{% endnote %}",
     ],
   },
   "Warning block": {
     "prefix": "warning",
     "body": [
-      "{{#warning}}",
+      "{% warning %}",
       "",
       "**Warning:** $1",
       "",
-      "{{/warning}}",
+      "{% endwarning %}",
     ],
     "description": "Warning block"
   },
@@ -97,7 +97,7 @@
   "Liquid if": {
     "prefix": "if ",
     "body": [
-      "{% if page.version == 'dotcom' or page.version ver_gt '2.22' %}something{% endif %}"
+      "{% currentVersion == \"free-pro-team@latest\" or currentVersion ver_gt \"enterprise-server@2.22\" %}something{% endif %}"
     ],
     "description": "Liquid if condition"
   },

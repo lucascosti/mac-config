@@ -431,6 +431,8 @@ bdocs() {
     return 1
   fi
 }
+alias api-sew='script/preview-openapi-changes'
+
 ## Runs a backport then a build. 
 bbackport() {
   # if there a no arguments, build all versions. For one or more specified versions as arguments, build those specified.

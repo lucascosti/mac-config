@@ -36,6 +36,9 @@
   // Set the git commit editor validation lengths to match Atom (72 for description, no limit on other lines)
   "git.inputValidationSubjectLength": 72,
   "git.inputValidationLength": 1000,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
   "problems.decorations.enabled": false,
   "workbench.iconTheme": "file-icons",
   "workbench.colorTheme": "One Dark Pro",

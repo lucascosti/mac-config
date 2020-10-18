@@ -432,6 +432,7 @@ bdocs() {
   fi
 }
 alias api-sew='script/preview-openapi-changes'
+api-bump() { bin/openapi generate_root_files $1; }
 
 ## Runs a backport then a build. 
 bbackport() {

@@ -55,7 +55,7 @@
     // make the text in File Explorer the same color as Atom's
     "sideBar.foreground": "#9da5b4",
     // To change the folder icon color to be the same color:
-      // open the Icon extension file at: ~/.vscode/extensions/file-icons.file-icons-1.0.22/icons/file-icons-icon-theme.json
+      // open the Icon extension file at: ~/.vscode/extensions/file-icons.file-icons-<version>/icons/file-icons-icon-theme.json
       // find the following segment:
       // ```
       // "iconDefinitions": {
@@ -143,6 +143,7 @@
     "frontmatter",
     "ghes",
     "hardcoded",
+    "kilobranch",
     "megabranch",
     "openapi",
     "orgs",

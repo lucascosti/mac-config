@@ -374,5 +374,14 @@
     "key": "alt+p",
     "command": "-seito-openfile.openFileFromText",
     "when": "editorTextFocus"
-  }
+  },
+  // Close all editors
+  {
+    "key": "ctrl+cmd+w",
+    "command": "-workbench.action.toggleTabsVisibility"
+  },
+  {
+    "key": "ctrl+cmd+w",
+    "command": "workbench.action.closeAllEditors"
+  },
 ]

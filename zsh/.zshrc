@@ -260,6 +260,27 @@ compdef -e 'words[1]=(git remote show); service=git; (( CURRENT+=2 )); _git' gcm
 #### Replaces old complicated function. For old function, see https://github.com/lucascosti/zshrc/blob/b371ff5404e47990d37be72c6f4c90618f019445/.zshrc#L215-L241
 gcpr() { gh pr checkout $1; }
 
+# Checkout the default branch
+gcm() { gc `git_default_branch` }
+
+### Checkout the default branch and attempt to delete the current branch after changing
+gcmd() {
+  local CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
+  local DEFAULT_BRANCH=`git_default_branch`
+
+  # check we're not on the default branch
+  if [[ $CURRENT_BRANCH == $DEFAULT_BRANCH ]]; then
+    print -P "$lcicon_fail Whoops! 😬 You're already on $DEFAULT_BRANCH!"
+    return 1
+  fi
+
+  lcfunc_step_border 1 2 "$lcicon_infoi Changing to the default branch: $DEFAULT_BRANCH..."
+  gc $DEFAULT_BRANCH \
+  && lcfunc_step_border 2 2 "$lcicon_trash Attempting to delete branch $CURRENT_BRANCH..." \
+  && grmbranch $CURRENT_BRANCH \
+  && lcfunc_step_border
+}
+
 ### This function prunes references to deleted remote branches, and deletes local branches that have been merged and/or deleted from the remotes.
 ### It is intended to be run when on a default branch, and warns when it isn't.
 gclean() {
@@ -431,7 +452,7 @@ bdocs() {
     return 1
   fi
 }
-alias api-sew='script/preview-openapi-changes'
+alias bapi='npm run rest-dev'
 api-bump() { bin/openapi generate_root_files $1; }
 
 ## Runs a backport then a build. 

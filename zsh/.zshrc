@@ -86,6 +86,14 @@ source $ZSH/oh-my-zsh.sh
 
 ######## Lucas' custom stuff below here ########
 
+# Load brew completions (from https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Load completions (e.g. for git completion)
 autoload -Uz compinit && compinit
 # allow commands to be executed in the prompt:

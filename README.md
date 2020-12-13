@@ -35,13 +35,13 @@ This repo contains the following config files:
   
 * [MacOS key bindings for text navigation](macoskeybindings/DefaultKeyBinding.dict)
   
-  In addition to the above Karabiner settings to change keys, I also have changed some of the default MacOS keybindings to make keyboard text navigation behave more like Windows.
+  In addition to the above Karabiner settings to change keys, I have also changed some of the default MacOS keybindings to make keyboard text navigation behave more like Windows.
   
-  This includes changing the behaviour of the <kbd>Home</kbd> and <kbd>End</kbd> keys to respectively move the cursor to the beginning and end of a line (and using <kbd>Shift</kbd> to select the text if desired).
+  This includes changing the behaviour of the <kbd>Home</kbd> and <kbd>End</kbd> keys to respectively move the cursor to the beginning and end of a line (and using <kbd>Shift</kbd> to select the text, if desired).
   
   Also, I have swapped the <kbd>⌘ Command</kbd>/<kbd>⌥ Option</kbd>+<kbd> arrow</kbd> keys behaviour: <kbd>⌘ Command(mapped)</kbd>+<kbd>←</kbd>/<kbd>→</kbd>  now moves the cursor between words, and <kbd>⌥ Option(mapped)</kbd>+<kbd>←</kbd>/<kbd>→</kbd> moves to the start/end of a line (and <kbd>Shift</kbd> with both sets to select the text, if desired). 
   
-  This seems to work in most places in MacOS, except Electron-based apps (like VS Code, Atom, Slack, etc.). The editors like VS Code have their own keymaps, so I have also had to replicate this behaviour in the VS Code settings keymap settings. For apps that don't allow you to customise this, like Slack, I've had to resort to Karabiner rules.
+  This seems to work in most places in MacOS, except Electron-based apps (like VS Code, Atom, Slack, etc.). The editors like VS Code have their own keymaps, so I have also had to replicate this behaviour in the VS Code keymap settings. For apps that don't allow you to customise this, like Slack, I've had to resort to Karabiner rules.
 
   Place this file in the `~/Library/KeyBindings` folder (you might need to create that folder).
   
@@ -50,7 +50,7 @@ This repo contains the following config files:
   
   Especially for the colour palette that I really got used to when using Fedora, as well as some key mappings (as iTerm2 doesn't recognise/respect most [custom `DefaultKeyBinding.dict`](macoskeybindings/DefaultKeyBinding.dict) settings).
   
-  Set the iTerm configuration to this file in **iTerm2 > Preferences > General > Preferences > Load preferences from a custom folder or URL**
+  Set the iTerm configuration to this file in **iTerm2 > Preferences > General > Preferences > Load preferences from a custom folder or URL**.
 * [VS Code configuration](vscode/)
   
   The files that control the majority of my VS Code editor's configuration.
@@ -63,7 +63,7 @@ This repo contains the following config files:
   
   Mainly just [`userChrome.css`](firefox/userChrome.css), this configures some minor (mainly font) changes in the Firefox UI, aka the 'chrome'. The user profile location on macOS is `~/Library/Application Support/Firefox/Profiles/xxxxxxxx.default`.
   
-  See https://www.reddit.com/r/FirefoxCSS/ for some good tutorials and required settings for have a custom `userChrome.css`. 
+  See https://www.reddit.com/r/FirefoxCSS/ for some good tutorials and required settings for a custom `userChrome.css`. 
 * Some other minor settings:
   * I use [uBar](https://brawersoftware.com/products/ubar) as a Windows-like taskbar, so I have the MacOS Dock set to autohide on the right of the screen. This command sets the Dock to be less sensitive to appear, so it's less prone to accidental activation when I move the cursor near the right edge of the screen.
     

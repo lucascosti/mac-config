@@ -29,7 +29,7 @@ This repo contains the following config files:
     | <kbd>⌥ Option</kbd> | <kbd>⌥ Option</kbd> |
     | <kbd>⌘ Command</kbd> | <kbd>^ Control</kbd> |
     
-  I also have a few key extra combination shortcuts that do special things. For example, <kbd>⌥ Option(mapped)</kbd>+<kbd>Tab</kbd> opens MacOS Mission Control, and a single press on <kbd>⌥ Option(mapped)</kbd> is mapped to the keyboard shortcut to open [Alfred](https://www.alfredapp.com/).
+  I also have a few extra key combination shortcuts that do special things. For example, <kbd>⌥ Option(mapped)</kbd>+<kbd>Tab</kbd> opens MacOS Mission Control, and a single press on <kbd>⌥ Option(mapped)</kbd> is mapped to the keyboard shortcut to open [Alfred](https://www.alfredapp.com/).
   
   This [`karabiner/`](karabiner/) directory is symlinked from `~/.config/karabiner`.
   

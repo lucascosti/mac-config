@@ -308,7 +308,7 @@ gclean() {
     fi
   fi
   
-  print -P "$lcicon_infoi Simulating a clean on $BRANCH ..."
+  print -P "$lcicon_infoi Simulating a clean on $BRANCH..."
   # Step 1: Simulate a prune and save the result to a variable. Echo the variable if it is not empty.
   lcfunc_step_border 1 3 "$lcicon_scissors Simulating pruning origin $lcicon_scissors" \
   && remote_prune_list="$(git remote prune origin --dry-run)" \
@@ -335,7 +335,7 @@ gclean() {
     # Step 2: delete any branches that have been merged into the default branch
     # Step 3: Using the variable from step 1, check if any local branches have the same name as remote ones that would be pruned.
     #         If there are any branches that match, delete them.
-    print -P "$lcicon_runarrow Running a clean on $BRANCH ..." \
+    print -P "$lcicon_runarrow Running a clean on $BRANCH..." \
     && lcfunc_step_border 1 3 "$lcicon_scissors Pruning origin $lcicon_scissors" \
     && remote_prune_list="$(git remote prune origin)" \
     && lcfunc_step_border 2 3 "$lcicon_trash Cleaning local branches merged to $BRANCH $lcicon_trash" \

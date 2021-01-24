@@ -454,6 +454,12 @@ eval "$(nodenv init -)"
 alias bcurrent='bdocs'
 bdocs() {
   if [ -f "script/server" ]; then
+    # If there is a 'ci' argument, do a clean install first
+    if [[ $1 == *"ci" ]]; then 
+      echo "Running a clean install and build first..."
+      npm ci
+      npm run build
+    fi
     echo "Running script/server..."
     script/server
   else
@@ -462,7 +468,8 @@ bdocs() {
   fi
 }
 alias bapi='npm run rest-dev'
-api-bump() { bin/openapi generate_root_files $1; }
+# Rollback changes in the OpenAPI static files to main
+alias gapirollback='git checkout origin/main lib/rest/static/'
 
 ## Runs a backport then a build. 
 bbackport() {

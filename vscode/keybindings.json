@@ -260,18 +260,6 @@
     "key": "cmd+b",
     "command": "-workbench.action.toggleSidebarVisibility"
   },
-  // Cmd+shift+f to show new project find editor
-  {
-    "key": "shift+cmd+f",
-    "command": "search.action.openEditor",
-    "args": {
-      "focusResults": false
-    }
-  },
-  {
-    "key": "shift+cmd+f",
-    "command": "-workbench.action.findInFiles"
-  },
   // Cmd+k for markdown-style link
   {
     "key": "cmd+k",

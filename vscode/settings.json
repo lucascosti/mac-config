@@ -10,6 +10,7 @@
   "editor.renderWhitespace": "boundary",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.mouseWheelZoom": true,
+  "search.mode": "newEditor",
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
   "editor.minimap.showSlider": "always",

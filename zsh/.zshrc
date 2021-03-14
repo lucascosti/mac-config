@@ -470,6 +470,9 @@ bdocs() {
 alias bapi='npm run rest-dev'
 # Rollback changes in the OpenAPI static files to main
 alias gapirollback='git checkout origin/main lib/rest/static/'
+# lint the GitHub OpenAPI files
+## alias openapi-yaml-lint       # See local ~/.zshrc file
+## alias openapi-schema-lint     # See local ~/.zshrc file
 
 ## Runs a backport then a build. 
 bbackport() {

@@ -146,6 +146,7 @@
     "frontmatter",
     "ghes",
     "hardcoded",
+    "keychain",
     "kilobranch",
     "megabranch",
     "openapi",
@@ -208,9 +209,12 @@
   },
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
-  "gitlens.codeLens.enabled": false,
   "gitlens.blame.format": "${id}  ${date}  ${author|10}",
   "gitlens.blame.dateFormat": "YYYY-MM-DD",
+  "gitlens.defaultTimeFormat": "HH:mm",
+  "gitlens.statusBar.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.views.commits.showBranchComparison": false,
   "gitlens.views.fileHistory.avatars": false,
   "gitlens.views.lineHistory.avatars": false,
   "gitlens.hovers.avatars": false,
@@ -219,7 +223,6 @@
   "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
   "gitlens.defaultDateFormat": "DD MMM YYYY",
   "gitlens.keymap": "none",
-  "gitlens.statusBar.enabled": false,
   "gitlens.views.repositories.avatars": false,
   "gitlens.views.repositories.enabled": false,
   "gitlens.menus": {
@@ -261,5 +264,6 @@
   "todohighlight.defaultStyle": {
     "backgroundColor": "#F06292",
     "color": "white"
-  }
+  },
+  "docker.showStartPage": false
 }

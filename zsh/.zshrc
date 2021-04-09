@@ -247,7 +247,7 @@ git_default_branch () {
   # If the number of matches found is not exatly one, something is not right and a call to the remote is needed.
   if (($matches != 1)); then
     # From: https://stackoverflow.com/questions/28666357/git-how-to-get-default-branch/44750379#comment92366240_50056710
-    DEFAULT_BRANCH=`git remote show $REMOTE | grep "HEAD branch" | sed 's/.*: //'`
+    DEFAULT_BRANCH=$(git remote show $REMOTE | grep "HEAD branch" | sed 's/.*: //')
   fi
   echo $DEFAULT_BRANCH
 }
@@ -270,12 +270,12 @@ compdef -e 'words[1]=(git remote show); service=git; (( CURRENT+=2 )); _git' gcm
 gcpr() { gh pr checkout $1; }
 
 # Checkout the default branch
-gcm() { gc `git_default_branch` }
+gcm() { gc $(git_default_branch) }
 
 ### Checkout the default branch and attempt to delete the current branch after changing
 gcmd() {
-  local CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD`
-  local DEFAULT_BRANCH=`git_default_branch`
+  local CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  local DEFAULT_BRANCH=$(git_default_branch)
 
   # check we're not on the default branch
   if [[ $CURRENT_BRANCH == $DEFAULT_BRANCH ]]; then
@@ -293,8 +293,8 @@ gcmd() {
 ### This function prunes references to deleted remote branches, and deletes local branches that have been merged and/or deleted from the remotes.
 ### It is intended to be run when on a default branch, and warns when it isn't.
 gclean() {
-  local BRANCH=`git rev-parse --abbrev-ref HEAD`
-  local DEFAULT_BRANCH=`git_default_branch`
+  local BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  local DEFAULT_BRANCH=$(git_default_branch)
   local response=""
   # Warning if not on a default* branch
   if [[ $BRANCH != $DEFAULT_BRANCH* ]]
@@ -359,7 +359,7 @@ gclean() {
 ###   * If the tracking branch is another branch that is not the default branch, use that for the rebase.
 gup() {
   local REMOTE=$LUCAS_GIT_REMOTE
-  local LOCAL_BRANCH=`git rev-parse --abbrev-ref HEAD`
+  local LOCAL_BRANCH=$(git rev-parse --abbrev-ref HEAD)
   local REMOTE_BRANCH=''
   
   print -P "$lcicon_update Updating the current branch: $LOCAL_BRANCH"
@@ -397,15 +397,15 @@ gup() {
   else
     print -P "$lcicon_infoi No branch with the same name as $LOCAL_BRANCH on the remote. Looking at the tracking branch..."
     # Use the upstream tracking branch for the rebase, as long as it is NOT the default branch
-    if ! REMOTE_BRANCH=`git rev-parse --abbrev-ref --symbolic-full-name @{u}` > /dev/null 2>&1 ; then
+    if ! REMOTE_BRANCH=$(git rev-parse --abbrev-ref --symbolic-full-name @{u}) > /dev/null 2>&1 ; then
       # There is no tracking branch
       print -P "$lcicon_fail Update failed! There is no tracking branch to rebase to."
       return 1
     else
       # There is a tracking branch. Strip the 'remote/' from the start of it
-      REMOTE_BRANCH=`echo $REMOTE_BRANCH | sed "s/$REMOTE\///"`
+      REMOTE_BRANCH=$(echo $REMOTE_BRANCH | sed "s/$REMOTE\///")
       # get the default branch
-      local DEFAULT_BRANCH=`git_default_branch`
+      local DEFAULT_BRANCH=$(git_default_branch)
       # Test to see if the remote branch is a default branch
       if  [[ $REMOTE_BRANCH = $DEFAULT_BRANCH* ]] ; then
         # The remote upstream tracking branch is the default branch, so don't update it (updating might rebase the current branch to the wrong branch).

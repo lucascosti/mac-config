@@ -84,6 +84,10 @@ plugins=(git-auto-fetch)
 
 source $ZSH/oh-my-zsh.sh
 
+# set git autofetching to be once every 20 minutes
+# https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git-auto-fetch
+GIT_AUTO_FETCH_INTERVAL=1200 #in seconds
+
 ######## Lucas' custom stuff below here ########
 
 # Load brew completions (from https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
@@ -102,9 +106,6 @@ setopt PROMPT_SUBST
 setopt INTERACTIVE_COMMENTS
 # Live life on the edge: like bash, don't prompt for confirmation when doing rm -rf *
 setopt RM_STAR_SILENT
-# set git autofetching to be once every 20 minutes
-# https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git-auto-fetch
-GIT_AUTO_FETCH_INTERVAL=1200 #in seconds
 # Disable highlighting of pasted text. See https://github.com/zsh-users/zsh/blob/ac0dcc9a63dc2a0edc62f8f1381b15b0b5ce5da3/NEWS#L37-L42
 zle_highlight+=(paste:none)
 # Bind Home/End keys for beginning/end of line.

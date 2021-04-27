@@ -3,7 +3,6 @@
   "editor.fontSize": 14,
   "editor.tabSize": 2,
   "markdown.preview.fontFamily": "\"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, freesans, sans-serif",
-  "editor.acceptSuggestionOnEnter": "off",
   "workbench.editor.tabSizing": "shrink",
   "workbench.editor.tabCloseButton": "off",
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -33,7 +32,6 @@
   },
   "search.searchEditor.reusePriorSearchConfiguration": true,
   "search.searchEditor.defaultNumberOfContextLines": 1,
-  "window.zoomLevel": 0,
   // Set the git commit editor validation lengths to match Atom (72 for description, no limit on other lines)
   "git.inputValidationSubjectLength": 72,
   "git.inputValidationLength": 1000,
@@ -265,5 +263,6 @@
     "backgroundColor": "#F06292",
     "color": "white"
   },
-  "docker.showStartPage": false
+  "docker.showStartPage": false,
+  "eslint.format.enable": true
 }

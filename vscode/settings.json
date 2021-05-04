@@ -20,6 +20,7 @@
   "editor.selectionHighlight": false,
   "editor.renderLineHighlight": "all",
   "workbench.editor.restoreViewState": false,
+  "window.openFoldersInNewWindow": "on",
   "editor.occurrencesHighlight": false,
   "editor.wordWrap": "bounded",
   "[markdown]": {
@@ -264,5 +265,6 @@
     "color": "white"
   },
   "docker.showStartPage": false,
-  "eslint.format.enable": true
+  "eslint.format.enable": true,
+  "liquid.format": true
 }

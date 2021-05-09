@@ -36,6 +36,8 @@
   // Set the git commit editor validation lengths to match Atom (72 for description, no limit on other lines)
   "git.inputValidationSubjectLength": 72,
   "git.inputValidationLength": 1000,
+  "git.autofetch": true,
+  "git.autofetchPeriod": 900, // 15 minutes
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },

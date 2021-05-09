@@ -6,7 +6,7 @@ In August 2019, I migrated my work MacBook over to use [Zsh](https://en.wikipedi
 
 The main files that do the work are:
 
-* [`.zshrc`](.zshrc): Contains the templated oh-my-zsh options (mostly commented out), and also my custom functions and git aliases.
+* [`.zshrc`](.zshrc): Main settings file. It contains oh-my-zsh settings, and also my custom functions and git aliases.
 * [`zshscripts/themes/p10k-lucas.zsh`](zshscripts/themes/p10k-lucas.zsh): My custom powerlevel10k theme file. Powerlevel10k and this theme file are sourced in `.zshrc`. This theme uses glyphs that require a [Nerd Fonts-patched font](https://github.com/ryanoasis/nerd-fonts) in your terminal.
 
 I use the following [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules), which are stored in [`zshscripts/`](zshscripts/):

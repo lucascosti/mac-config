@@ -7,3 +7,6 @@
 [submodule "zsh/zshscripts/cheatsheets"]
 	path = zsh/zshscripts/cheatsheets
 	url = git@github.com:cheat/cheatsheets.git
+[submodule "zsh/zshscripts/zsh-autosuggestions"]
+	path = zsh/zshscripts/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

@@ -56,7 +56,7 @@ LS_COLORS='di=1;34:ln=35:so=32:pi=33:ex=32:bd=34;46:cd=34;43:su=30;41:sg=30;46:t
 # Set zsh's completion colors to use the above colors too (needs to use LS_COLORS):
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# This script enables syntax highlighting on the prompt (it must be sourced after all the other plugins/theme stuff above).
+# This enables syntax highlighting on the prompt.
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source $ZSH_SCRIPTS_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ## Set the highlighters we want:
@@ -66,6 +66,12 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 typeset -A ZSH_HIGHLIGHT_STYLES
 ### Have paths colored blue instead of underlined (and a bit more vibrant blue than the ls one above):
 ZSH_HIGHLIGHT_STYLES[path]='fg=33'
+
+# This enables auto-suggestions after the prompt (press -> to complete the suggestion)
+# https://github.com/zsh-users/zsh-autosuggestions/
+source $ZSH_SCRIPTS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+## Set the colour for the auto-suggestion
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5A616E"
 
 # Set path for the cheat command config (https://github.com/cheat/cheat)
 export CHEAT_CONFIG_PATH="$ZSH_SCRIPTS_DIR/miscdotfiles/cheat/conf.yml"

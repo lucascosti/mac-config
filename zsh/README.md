@@ -13,6 +13,7 @@ I use the following [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Su
 
 * [Powerlevel10k](https://github.com/romkatv/powerlevel10k) (which is a faster implementation of [powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k)) to customise the look of the prompt.
 * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) to enable syntax highlighting for the command I enter at the prompt.
+* [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) to enable autosuggestions after the prompt.
 * [cheat/cheatsheets](https://github.com/cheat/cheatsheets) for use with the [`cheat` command](https://github.com/cheat/cheat). The cheat command was installed using brew, but the cheatsheets are stored here. (See also the [cheat config file](zshscripts/miscdotfiles/cheat/conf.yml).)
 
 <img src="https://raw.githubusercontent.com/lucascosti/zshrc/master/git-prompt.png" width="50%">

@@ -1,4 +1,4 @@
-Updated 2021-03-19
+Updated 2021-05-26
 
 42Crunch.vscode-openapi
 alefragnani.Bookmarks
@@ -8,6 +8,7 @@ bierner.markdown-emoji
 bierner.markdown-preview-github-styles
 bierner.markdown-yaml-preamble
 DavidAnson.vscode-markdownlint
+dbaeumer.vscode-eslint
 dnicolson.binary-plist
 eamodio.gitlens
 esbenp.prettier-vscode
@@ -22,10 +23,13 @@ mdickin.markdown-shortcuts
 mhutchie.git-graph
 ms-azuretools.vscode-docker
 ms-python.python
+ms-python.vscode-pylance
 ms-toolsai.jupyter
+redhat.vscode-commons
 redhat.vscode-yaml
 RoscoP.ActiveFileInStatusBar
 sissel.shopify-liquid
 streetsidesoftware.code-spell-checker
+techer.open-in-browser
 wayou.vscode-todo-highlight
 zhuangtongfa.material-theme

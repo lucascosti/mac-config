@@ -16,6 +16,6 @@ I use the following [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Su
 * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) to enable autosuggestions after the prompt.
 * [cheat/cheatsheets](https://github.com/cheat/cheatsheets) for use with the [`cheat` command](https://github.com/cheat/cheat). The cheat command was installed using brew, but the cheatsheets are stored here. (See also the [cheat config file](zshscripts/miscdotfiles/cheat/conf.yml).)
 
-<img src="https://raw.githubusercontent.com/lucascosti/zshrc/main/git-prompt.png" width="50%">
+<img src="https://raw.githubusercontent.com/lucascosti/mac-config/main/zsh/git-prompt.png" width="50%">
 
 **Note:** This config was previously hosted in its [own repository](https://github.com/lucascosti/zshrc), before it was moved here in April 2020.

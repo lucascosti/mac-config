@@ -120,7 +120,8 @@ alias gcoma='git add -A && git commit'
 alias gcommend='git add -A && git commit --amend --no-edit'
 alias gm='git merge'
 alias gcp='git cherry-pick'
-alias gpoh='git push origin HEAD'
+# alias gpoh='git push origin HEAD'
+## See the gpoh function instead
 alias gremotes='git remote -v'
 alias gsub='git submodule'
 alias gsubupd='git submodule update --remote --merge'
@@ -191,6 +192,24 @@ git_default_branch () {
     DEFAULT_BRANCH=$(git remote show $REMOTE | grep "HEAD branch" | sed 's/.*: //')
   fi
   echo $DEFAULT_BRANCH
+}
+
+### Function to make sure I don't push to the default remote branch unless I really mean to 🤦‍♂️
+gpoh() {
+  local CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  local DEFAULT_BRANCH=$(git_default_branch)
+
+  # check we're not on the default branch
+  if [[ $CURRENT_BRANCH == $DEFAULT_BRANCH ]]; then
+    print -P "$lcicon_warning$lcicon_warning $FG[009]WARNING: You're about to push to the default branch ($DEFAULT_BRANCH)!$reset_color $lcicon_warning$lcicon_warning"
+    vared -p "$lcicon_question Are you sure you want to continue? [y/N] " -c response
+    if ! [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+    then
+      print -P "$lcicon_fail Aborted! Nothing was done."
+      return 1
+    fi
+  fi
+  git push origin HEAD
 }
 
 ### Function to take git interactive rebase argument. e.g.: gir 2

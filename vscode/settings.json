@@ -268,5 +268,6 @@
   },
   "docker.showStartPage": false,
   "eslint.format.enable": true,
-  "liquid.format": true
+  "liquid.format": true,
+  "redhat.telemetry.enabled": false
 }

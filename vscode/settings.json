@@ -147,6 +147,7 @@
     "frontmatter",
     "ghes",
     "hardcoded",
+    "ifversion",
     "keychain",
     "kilobranch",
     "megabranch",

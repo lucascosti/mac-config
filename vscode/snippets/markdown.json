@@ -97,7 +97,7 @@
   "Liquid if": {
     "prefix": "if ",
     "body": [
-      "{% if currentVersion == \"free-pro-team@latest\" or (for GHES only->)enterpriseServerVersions contains currentVersion or currentVersion ver_gt \"enterprise-server@2.22\" %}something{% endif %}"
+      "{% ifversion fpt or ghes > 3.1 or ghae %}something{% endif %}"
     ],
     "description": "Liquid if condition"
   }

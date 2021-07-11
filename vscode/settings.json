@@ -9,6 +9,7 @@
   "editor.renderWhitespace": "boundary",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.mouseWheelZoom": true,
+  "editor.inlineSuggest.enabled": true,
   "search.mode": "newEditor",
   "diffEditor.ignoreTrimWhitespace": false,
   "diffEditor.renderSideBySide": false,
@@ -272,5 +273,12 @@
   "docker.showStartPage": false,
   "eslint.format.enable": true,
   "liquid.format": true,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": true,
+    "markdown": true,
+    "javascript": true
+  }
 }

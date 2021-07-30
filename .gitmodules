@@ -1,12 +1,12 @@
 [submodule "zsh/zshscripts/zsh-syntax-highlighting"]
 	path = zsh/zshscripts/zsh-syntax-highlighting
-	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "zsh/zshscripts/powerlevel10k"]
 	path = zsh/zshscripts/powerlevel10k
-	url = git@github.com:romkatv/powerlevel10k.git
+	url = https://github.com/romkatv/powerlevel10k
 [submodule "zsh/zshscripts/cheatsheets"]
 	path = zsh/zshscripts/cheatsheets
-	url = git@github.com:cheat/cheatsheets.git
+	url = https://github.com/cheat/cheatsheets
 [submodule "zsh/zshscripts/zsh-autosuggestions"]
 	path = zsh/zshscripts/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions

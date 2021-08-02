@@ -88,7 +88,28 @@
     "bookmarks.lineBackground": "#0071fc50",
     "bookmarks.overviewRuler": "#0070f8",
     // Highlight notifications with a border
-    "notificationToast.border": "#568af2"
+    "notificationToast.border": "#568af2",
+    // Make the terminal colors match my iTerm2 color scheme
+    "terminal.background": "#282c34",
+    "terminal.foreground": "#c7c7c7",
+    "terminalCursor.background": "#ffffff",
+    "terminalCursor.foreground": "#c7c7c7",
+    "terminal.ansiBlack": "#2e3436",
+    "terminal.ansiBlue": "#3465a4",
+    "terminal.ansiBrightBlack": "#555753",
+    "terminal.ansiBrightBlue": "#729fcf",
+    "terminal.ansiBrightCyan": "#34e2e2",
+    "terminal.ansiBrightGreen": "#8ae234",
+    "terminal.ansiBrightMagenta": "#ad7fa8",
+    "terminal.ansiBrightRed": "#ef2929",
+    "terminal.ansiBrightWhite": "#eeeeec",
+    "terminal.ansiBrightYellow": "#fce94f",
+    "terminal.ansiCyan": "#06979a",
+    "terminal.ansiGreen": "#4e9a06",
+    "terminal.ansiMagenta": "#75507b",
+    "terminal.ansiRed": "#cc0000",
+    "terminal.ansiWhite": "#d3d7cf",
+    "terminal.ansiYellow": "#c4a000"
   },
   "editor.tokenColorCustomizations": {
     "[One Dark Pro]": {

@@ -6,7 +6,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/lucascosti/.oh-my-zsh"
+export ZSH=~/.oh-my-zsh
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -407,8 +407,8 @@ gundoall() {
 # GitHub docs build stuff
 
 ## Required for GitHub docs builds bootstrap
-eval "$(rbenv init -)"
-eval "$(nodenv init -)"
+# eval "$(rbenv init -)"
+# eval "$(nodenv init -)"
 
 ## Build GitHub docs
 alias bcurrent='bdocs'

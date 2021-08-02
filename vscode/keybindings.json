@@ -77,13 +77,9 @@
     "when": "textInputFocus && !editorReadonly"
   },
   {
-    "key": "cmd+delete",
-    "command": "workbench.action.terminal.deleteWordRight",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "alt+delete",
-    "command": "-workbench.action.terminal.deleteWordRight",
+    "key": "cmd+delete", // this deletes the word to right of the cursor in the terminal
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u001bd" }, //  =  escape+d (not sure why it's this)
     "when": "terminalFocus"
   },
   {
@@ -97,19 +93,15 @@
     "when": "textInputFocus && !editorReadonly"
   },
   {
-    "key": "cmd+backspace",
-    "command": "workbench.action.terminal.deleteWordLeft",
+    "key": "cmd+backspace", // this deletes the word to left of the cursor in the terminal
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u001b\u007f" }, //  =  escape+delete (not sure why it's this)
     "when": "terminalFocus"
   },
   {
     "key": "cmd+backspace",
     "command": "-deleteAllLeft",
     "when": "textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "alt+backspace",
-    "command": "-workbench.action.terminal.deleteWordLeft",
-    "when": "terminalFocus"
   },
   {
     "key": "alt+backspace",
@@ -371,5 +363,5 @@
   {
     "key": "ctrl+cmd+w",
     "command": "workbench.action.closeAllEditors"
-  },
+  }
 ]

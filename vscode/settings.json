@@ -144,6 +144,8 @@
       ]
     }
   },
+  // Mainly for Codespaces, make sure the default terminal is ZSH:
+  "terminal.integrated.defaultProfile.linux": "zsh",
   // Extension settings should go below here
   "cSpell.language": "en,en-US",
   "cSpell.diagnosticLevel": "Error",

@@ -149,7 +149,8 @@
                                             "com.tinyspeck.slackmacgap",
                                             "com.insomnia.app",
                                             "org.mozilla.firefox",
-                                            "com.google.Chrome"
+                                            "com.google.Chrome",
+                                            "com.todoist.mac.Todoist"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -188,7 +189,8 @@
                                             "com.tinyspeck.slackmacgap",
                                             "com.insomnia.app",
                                             "org.mozilla.firefox",
-                                            "com.google.Chrome"
+                                            "com.google.Chrome",
+                                            "com.todoist.mac.Todoist"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -227,7 +229,8 @@
                                             "com.tinyspeck.slackmacgap",
                                             "com.insomnia.app",
                                             "org.mozilla.firefox",
-                                            "com.google.Chrome"
+                                            "com.google.Chrome",
+                                            "com.todoist.mac.Todoist"
                                         ],
                                         "type": "frontmost_application_if"
                                     }
@@ -266,7 +269,8 @@
                                             "com.tinyspeck.slackmacgap",
                                             "com.insomnia.app",
                                             "org.mozilla.firefox",
-                                            "com.google.Chrome"
+                                            "com.google.Chrome",
+                                            "com.todoist.mac.Todoist"
                                         ],
                                         "type": "frontmost_application_if"
                                     }

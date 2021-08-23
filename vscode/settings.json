@@ -285,9 +285,11 @@
     "**/*.scss"
   ],
   "todohighlight.keywords": [
+
     "TODO",
     "FIXME",
-    "REPLACE"
+    "REPLACE",
+    "FOLLOWUP"
   ],
   "todohighlight.defaultStyle": {
     "backgroundColor": "#F06292",

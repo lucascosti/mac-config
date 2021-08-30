@@ -12,17 +12,21 @@
   // 	],
   // 	"description": "Log output to console"
   // }
-  "GitHub - helpdocs": {
+  "Product name reusable": {
+    "prefix": "product",
+    "body": "{% data variables.product.${TM_SELECTED_TEXT:$CLIPBOARD} %}"
+  },
+  "GitHub - docs variable": {
     "prefix": "GitHub",
     "body": "{% data variables.product.prodname_dotcom %}",
     "description": "GitHub variable"
   },
-  "GitHub Actions - helpdocs": {
+  "GitHub Actions - docs variable": {
     "prefix": "Actions",
     "body": "{% data variables.product.prodname_actions %}",
     "description": "GitHub Actions variable"
   },
-  "GitHub Packages - helpdocs": {
+  "GitHub Packages - docs variable": {
     "prefix": "Packages",
     "body": "{% data variables.product.prodname_registry %}",
     "description": "GitHub Packages variable"
@@ -79,11 +83,6 @@
       "{% endwarning %}"
     ],
     "description": "Warning block"
-  },
-  "For more information...": {
-    "prefix": "For more information,",
-    "body": "For more information, see \"[${1:title}]($2).\"",
-    "description": "For more information..."
   },
   "Raw block": {
     "prefix": "raw",

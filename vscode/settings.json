@@ -6,6 +6,7 @@
   "workbench.editor.tabSizing": "shrink",
   "workbench.editor.tabCloseButton": "off",
   "workbench.editor.enablePreviewFromQuickOpen": false,
+  "editor.accessibilitySupport": "off",
   "editor.renderWhitespace": "boundary",
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.mouseWheelZoom": true,

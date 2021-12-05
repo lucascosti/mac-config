@@ -67,7 +67,7 @@ typeset -A ZSH_HIGHLIGHT_STYLES
 ### Have paths colored blue instead of underlined (and a bit more vibrant blue than the ls one above):
 ZSH_HIGHLIGHT_STYLES[path]='fg=33'
 
-# This enables auto-suggestions after the prompt (press -> to complete the suggestion)
+# This enables auto-suggestions after the prompt (press right arrow to complete the suggestion)
 # https://github.com/zsh-users/zsh-autosuggestions/
 source $ZSH_SCRIPTS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 ## Set the colour for the auto-suggestion
@@ -129,7 +129,6 @@ alias gsubupd='git submodule update --remote --merge'
 alias cdr='cd ~/repos/'
 alias cdd='cd ~/repos/docs-internal'
 alias cdo='cd ~/repos/docs'
-alias cdi='cd ~/repos/internal-developer.github.com'
 alias cdg='cd ~/repos/github'
 alias cdm='cd ~/repos/mac-config'
 
@@ -406,10 +405,6 @@ gundoall() {
 
 # GitHub docs build stuff
 
-## Required for GitHub docs builds bootstrap
-# eval "$(rbenv init -)"
-# eval "$(nodenv init -)"
-
 ## Build GitHub docs
 alias bcurrent='bdocs'
 bdocs() {
@@ -433,18 +428,3 @@ alias gapirollback='git checkout --no-overlay origin/main lib/rest/static/'
 # lint the GitHub OpenAPI files
 ## alias openapi-yaml-lint       # See local ~/.zshrc file
 ## alias openapi-schema-lint     # See local ~/.zshrc file
-
-## Runs a backport then a build. 
-bbackport() {
-  # if there a no arguments, build all versions. For one or more specified versions as arguments, build those specified.
-  if [ -z "$1" ]
-    then
-      versions=( 2.21 2.20 2.19 2.18 )
-    else
-      versions=( "$@" )
-  fi
-  for v in "${versions[@]}"
-    do script/enterprise-backport $v
-  done
-  bcurrent
-}

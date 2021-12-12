@@ -129,6 +129,7 @@ alias gsubupd='git submodule update --remote --merge'
 alias cdr='cd ~/repos/'
 alias cdd='cd ~/repos/docs-internal'
 alias cdo='cd ~/repos/docs'
+alias cdcs='cd ~/repos/docs-content-strategy'
 alias cdg='cd ~/repos/github'
 alias cdm='cd ~/repos/mac-config'
 

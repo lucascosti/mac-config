@@ -406,6 +406,8 @@ gundoall() {
 
 # GitHub docs build stuff
 
+eval "$(nodenv init -)"
+
 ## Build GitHub docs
 alias bcurrent='bdocs'
 bdocs() {

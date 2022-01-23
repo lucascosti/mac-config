@@ -209,7 +209,7 @@ gpoh() {
       return 1
     fi
   fi
-  git push origin HEAD
+  git push origin HEAD --set-upstream
 }
 
 ### Function to take git interactive rebase argument. e.g.: gir 2

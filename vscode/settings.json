@@ -307,5 +307,6 @@
     "plaintext": true,
     "markdown": true,
     "javascript": true
-  }
+  },
+  "markdown-preview-github-styles.colorTheme": "system"
 }

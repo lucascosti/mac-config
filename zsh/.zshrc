@@ -431,3 +431,5 @@ alias gapirollback='git checkout --no-overlay origin/main lib/rest/static/'
 # lint the GitHub OpenAPI files
 ## alias openapi-yaml-lint       # See local ~/.zshrc file
 ## alias openapi-schema-lint     # See local ~/.zshrc file
+# Setup the docs repo in a GitHub codepsace
+alias codespacedocssetup="./script/setup-codespaces-docs-openapi"

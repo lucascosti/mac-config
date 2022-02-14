@@ -308,5 +308,9 @@
     "markdown": true,
     "javascript": true
   },
-  "markdown-preview-github-styles.colorTheme": "system"
+  "markdown-preview-github-styles.colorTheme": "system",
+  "githubPullRequests.terminalLinksHandler": "github",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

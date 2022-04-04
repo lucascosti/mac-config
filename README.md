@@ -63,7 +63,7 @@ This repo contains the following config files:
 
 * [Firefox](firefox/)
   
-  Mainly just [`userChrome.css`](firefox/userChrome.css), this configures some minor (mainly font) changes in the Firefox UI, aka the 'chrome'. The user profile location on macOS is `~/Library/Application Support/Firefox/Profiles/xxxxxxxx.default`.
+  Mainly just [`userChrome.css`](firefox/userChrome.css), this configures some minor (mainly font) changes in the Firefox UI, aka the 'chrome'. The user chrome file is located in the Firefox profile on macOS at `~/Library/Application Support/Firefox/Profiles/xxxxxxxx.default/chrome/userChrome.css`, and is symlinked to the file in this repo.
   
   See https://www.reddit.com/r/FirefoxCSS/ for some good tutorials and required settings for a custom `userChrome.css`. 
 * Some other minor settings:

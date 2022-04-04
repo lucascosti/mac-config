@@ -312,5 +312,6 @@
   "markdown-preview-github-styles.colorTheme": "system",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "security.workspace.trust.untrustedFiles": "open"
 }

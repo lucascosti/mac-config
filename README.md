@@ -28,7 +28,9 @@ This repo contains the following config files:
     | <kbd>^ Control</kbd> | <kbd>fn</kbd> |
     | <kbd>⌥ Option</kbd> | <kbd>⌥ Option</kbd> |
     | <kbd>⌘ Command</kbd> | <kbd>^ Control</kbd> |
-    
+  
+    **Note for future Lucas:** The internal keyboard's product ID and vendor ID is likely different between each MacBook, so you will need to create a new set of these built-in MacBook keyboard mapping for each new laptop.
+
   I also have a few extra key combination shortcuts that do special things. For example, <kbd>⌥ Option(mapped)</kbd>+<kbd>Tab</kbd> opens MacOS Mission Control, and a single press on <kbd>⌥ Option(mapped)</kbd> is mapped to the keyboard shortcut to open [Alfred](https://www.alfredapp.com/).
   
   This [`karabiner/`](karabiner/) directory is symlinked from `~/.config/karabiner`.

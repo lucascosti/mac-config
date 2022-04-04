@@ -48,6 +48,8 @@
   "workbench.iconTheme": "file-icons",
   "workbench.colorTheme": "One Dark Pro",
   "oneDarkPro.markdownStyle": false,
+  // Setting for https://github.com/microsoft/vscode/issues/146168
+  "terminal.integrated.minimumContrastRatio": 1,
   // These color customisations are for the "One Dark Pro" theme.
   "workbench.colorCustomizations": {
     // This makes linter warnings/errors transparent in the minimap
@@ -255,7 +257,6 @@
   "gitlens.defaultDateFormat": "DD MMM YYYY",
   "gitlens.keymap": "none",
   "gitlens.views.repositories.avatars": false,
-  "gitlens.views.repositories.enabled": false,
   "gitlens.menus": {
     "editor": false,
     "editorGroup": false,

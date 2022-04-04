@@ -67,10 +67,20 @@ This repo contains the following config files:
   
   See https://www.reddit.com/r/FirefoxCSS/ for some good tutorials and required settings for a custom `userChrome.css`. 
 * Some other minor settings:
+  * After the Big Sur upgrade, fonts were heavy and ugly. Run this command to get them looking good again, and restart:
+
+    ```shell
+    defaults -currentHost write -g AppleFontSmoothing -int 0
+    ```
   * I use [uBar](https://brawersoftware.com/products/ubar) as a Windows-like taskbar, so I have the MacOS Dock set to autohide on the right of the screen. This command sets the Dock to be less sensitive to appear, so it's less prone to accidental activation when I move the cursor near the right edge of the screen.
-    
+
     ```shell
     defaults write com.apple.dock autohide-delay -float 0.20
     killall Dock
+    ```
+  * For uBar showing document icons over the application icons, use this command to only show the application icon for windows:
+
+    ```shell
+    defaults write ca.brawer.uBar useAppIconForWindows -bool YES
     ```
 

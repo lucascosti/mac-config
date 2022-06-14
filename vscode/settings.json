@@ -28,7 +28,11 @@
   "editor.wordWrap": "bounded",
   "[markdown]": {
     "editor.wordWrap": "bounded",
-    "editor.quickSuggestions": true,
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
   },
   "explorer.confirmDragAndDrop": false,
@@ -191,6 +195,7 @@
     "postgres",
     "Powerlevel",
     "prodname",
+    "quickstart",
     "repos",
     "reusables",
     "scim",
@@ -316,5 +321,6 @@
     "markdown": true,
     "javascript": true
   },
-  "markdown-preview-github-styles.colorTheme": "system"
+  "markdown-preview-github-styles.colorTheme": "system",
+  "security.workspace.trust.untrustedFiles": "open"
 }

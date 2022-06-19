@@ -1,10 +1,12 @@
-Updated 2021-05-26
+Updated 2022-06-20
 
-42Crunch.vscode-openapi
 alefragnani.Bookmarks
+AlistairChristie.open-reusables
 bierner.github-markdown-preview
 bierner.markdown-checkbox
 bierner.markdown-emoji
+bierner.markdown-footnotes
+bierner.markdown-mermaid
 bierner.markdown-preview-github-styles
 bierner.markdown-yaml-preamble
 DavidAnson.vscode-markdownlint
@@ -14,8 +16,10 @@ eamodio.gitlens
 esbenp.prettier-vscode
 file-icons.file-icons
 Fr43nk.seito-openfile
+GitHub.codespaces
+GitHub.copilot
+GitHub.remotehub
 hilleer.yaml-plus-json
-hubwriter.open-reusable
 IgorSbitnev.error-gutters
 jakearl.search-editor-apply-changes
 jeff-hykin.code-eol
@@ -25,6 +29,9 @@ ms-azuretools.vscode-docker
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+ms-vscode.remote-repositories
 redhat.vscode-commons
 redhat.vscode-yaml
 RoscoP.ActiveFileInStatusBar

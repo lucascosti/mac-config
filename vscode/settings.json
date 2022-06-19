@@ -322,5 +322,6 @@
     "javascript": true
   },
   "markdown-preview-github-styles.colorTheme": "system",
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "githubPullRequests.terminalLinksHandler": "github"
 }

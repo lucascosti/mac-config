@@ -1,4 +1,5 @@
 {
+  "window.commandCenter": true,
   "editor.fontFamily": "DejaVuSansMono Nerd Font Mono",
   "editor.fontSize": 14,
   "editor.tabSize": 2,
@@ -89,8 +90,9 @@
     "editorGutter.addedBackground": "#28744e",
     "minimapGutter.addedBackground": "#28744e",
     // Similar color changes for diff editor backgrounds
-    //"diffEditor.removedTextBackground": "#64111186",
-    "diffEditor.insertedTextBackground": "#28744e7e",
+    "diffEditor.removedTextBackground": "#940c0cac",
+    "diffEditor.insertedTextBackground": "#256a47",
+    "diffEditor.insertedLineBackground": "#28744e82",
     // Change the search highlight in minimap to a yellow (instead of orange)
     "minimap.findMatchHighlight": "#b3b154",
     "editorOverviewRuler.findMatchForeground": "#b3b154",
@@ -98,6 +100,8 @@
     "focusBorder" : "#568af2",
     // Add a colored border to the top of the active tab
     "tab.activeBorderTop" : "#568af2",
+    // Transparent (nothing) for the bottom border of the active tab
+    "tab.activeBorder": "#00000000",
     // Bookmark extension colors
     "bookmarks.lineBackground": "#0071fc50",
     "bookmarks.overviewRuler": "#0070f8",
@@ -310,7 +314,6 @@
     "backgroundColor": "#F06292",
     "color": "white"
   },
-  "docker.showStartPage": false,
   "eslint.format.enable": true,
   "liquid.format": true,
   "redhat.telemetry.enabled": false,
@@ -323,5 +326,4 @@
   },
   "markdown-preview-github-styles.colorTheme": "system",
   "security.workspace.trust.untrustedFiles": "open",
-  "githubPullRequests.terminalLinksHandler": "github"
 }

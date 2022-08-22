@@ -409,7 +409,6 @@ gundoall() {
 eval "$(nodenv init -)"
 
 ## Build GitHub docs
-alias bcurrent='bdocs'
 bdocs() {
   if [ -f "script/server" ]; then
     # If there is a 'ci' argument, do a clean install first

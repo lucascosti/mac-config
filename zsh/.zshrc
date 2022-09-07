@@ -22,8 +22,12 @@ source $ZSH/oh-my-zsh.sh
 export ZSH_SCRIPTS_DIR=~/repos/mac-config/zsh/zshscripts
 
 ## Source powerlevel10k & my theme
-source $ZSH_SCRIPTS_DIR/powerlevel10k/powerlevel10k.zsh-theme
-source $ZSH_SCRIPTS_DIR/themes/p10k-lucas.zsh
+#source $ZSH_SCRIPTS_DIR/powerlevel10k/powerlevel10k.zsh-theme
+#source $ZSH_SCRIPTS_DIR/themes/p10k-lucas.zsh
+
+## Temp: Trying oh-my-posh
+## Load oh-my-posh and my theme
+eval "$(oh-my-posh init zsh --config $ZSH_SCRIPTS_DIR/themes/oh-my-posh-lucas.omp.json)"
 
 # Load brew completions (from https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh)
 if type brew &>/dev/null; then

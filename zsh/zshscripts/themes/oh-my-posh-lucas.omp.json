@@ -77,7 +77,7 @@
             "truncate_symbol": "…"
           },
           "style": "powerline",
-          "template": " {{ .HEAD }}{{ .BranchStatus }}{{ if or .Working.Changed .Staging.Changed .StashCount }} {{ end }}{{ if gt .Working.Unmerged 0 }}<red>{{ .Working.Unmerged }}</>{{ end }}{{ if gt .StashCount 0 }}<#275EAA>{{ .StashCount }}</>{{ end }}{{ if or .Staging.Added .Staging.Modified .Staging.Deleted }}<#2431F5>{{ add (.Staging.Added) (.Staging.Modified) (.Staging.Deleted) }}</>{{ end }}{{ if gt .Working.Modified 0 }}<#A12916>{{ .Working.Modified }}</>{{ end }}{{ if gt .Working.Deleted 0 }}<#8a4801>{{ .Working.Deleted }}</>{{ end }}{{ if gt .Working.Untracked 0 }}<#555753>{{ .Working.Untracked }}</>{{ end }} "
+          "template": " {{ .HEAD }} {{ .BranchStatus }}{{ if or .Working.Changed .Staging.Changed .StashCount }} {{ end }}{{ if gt .Working.Unmerged 0 }}<red>{{ .Working.Unmerged }}</>{{ end }}{{ if gt .StashCount 0 }}<#275EAA>{{ .StashCount }}</>{{ end }}{{ if or .Staging.Added .Staging.Modified .Staging.Deleted }}<#2431F5>{{ add (.Staging.Added) (.Staging.Modified) (.Staging.Deleted) }}</>{{ end }}{{ if gt .Working.Modified 0 }}<#A12916>{{ .Working.Modified }}</>{{ end }}{{ if gt .Working.Deleted 0 }}<#8a4801>{{ .Working.Deleted }}</>{{ end }}{{ if gt .Working.Untracked 0 }}<#555753>{{ .Working.Untracked }}</>{{ end }} "
         }
       ]
     },

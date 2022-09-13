@@ -183,6 +183,8 @@
     "dotfiles",
     "entrypoint",
     "frontmatter",
+    "ghae",
+    "ghec",
     "ghes",
     "hardcoded",
     "hotpatch",

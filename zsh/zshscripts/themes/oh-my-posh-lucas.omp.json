@@ -19,6 +19,7 @@
         }
       ]
     },
+    // This block is the first line of the prompt, containing the dir/git/etc. info
     {
       "type": "prompt",
       "alignment": "left",
@@ -81,6 +82,7 @@
         }
       ]
     },
+    // This block is the second line containing the prompt itself
     {
       "alignment": "left",
       "newline": true,

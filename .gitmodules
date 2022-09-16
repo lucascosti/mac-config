@@ -1,9 +1,6 @@
 [submodule "zsh/zshscripts/zsh-syntax-highlighting"]
 	path = zsh/zshscripts/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "zsh/zshscripts/powerlevel10k"]
-	path = zsh/zshscripts/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k
 [submodule "zsh/zshscripts/cheatsheets"]
 	path = zsh/zshscripts/cheatsheets
 	url = https://github.com/cheat/cheatsheets

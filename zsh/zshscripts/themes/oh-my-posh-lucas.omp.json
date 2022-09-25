@@ -13,7 +13,7 @@
           "foreground": "#585858",
           "properties": {
             "shell": "zsh",
-            "command": "printf %\"$COLUMNS\"s |tr \" \" \"─\""
+            "command": "printf '%*s\n' \"${COLUMNS:-$(tput cols)}\" '' | tr ' ' ─"
           },
           "template": "{{ .Output }}"
         }

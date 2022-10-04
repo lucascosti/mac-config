@@ -328,4 +328,7 @@
   },
   "markdown-preview-github-styles.colorTheme": "system",
   "security.workspace.trust.untrustedFiles": "open",
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
 }

@@ -195,6 +195,7 @@
     "kilobranch",
     "Kubernetes",
     "megabranch",
+    "octo",
     "openapi",
     "orgs",
     "permalinks",
@@ -316,8 +317,8 @@
     "backgroundColor": "#F06292",
     "color": "white"
   },
+  "todohighlight.isCaseSensitive": false,
   "eslint.format.enable": true,
-  "liquid.format": true,
   "redhat.telemetry.enabled": false,
   "github.copilot.enable": {
     "*": true,
@@ -330,5 +331,5 @@
   "security.workspace.trust.untrustedFiles": "open",
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
-  },
+  }
 }

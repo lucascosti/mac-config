@@ -293,6 +293,7 @@
   "markdownShortcuts.icons.bold": false,
   "markdownShortcuts.icons.strikethrough": false,
   "todohighlight.include": [
+
     "**/*.md",
     "**/*.txt",
     "**/*.zsh",
@@ -307,17 +308,16 @@
     "**/*.scss"
   ],
   "todohighlight.keywords": [
-
     "TODO",
     "FIXME",
     "REPLACE",
-    "FOLLOWUP"
+    "FOLLOWUP",
+    "TODOCS"
   ],
   "todohighlight.defaultStyle": {
     "backgroundColor": "#F06292",
     "color": "white"
   },
-  "todohighlight.isCaseSensitive": false,
   "eslint.format.enable": true,
   "redhat.telemetry.enabled": false,
   "github.copilot.enable": {

@@ -50,7 +50,7 @@
             "max_depth": 3,
             "folder_icon": "",
             "mapped_locations": {
-              "~/repos/": ""
+              "~/repos/": "/"
             }
           },
           "style": "powerline",

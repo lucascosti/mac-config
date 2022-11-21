@@ -96,7 +96,7 @@
   "Liquid if": {
     "prefix": "if ",
     "body": [
-      "{% ifversion fpt or ghec or ghes > 3.1 or ghae-issue-#### %}something{% endif %}"
+      "{% ifversion fpt or ghec or ghes > 3.5 or ghae > 3.5 %}something{% endif %}"
     ],
     "description": "Liquid if condition"
   }

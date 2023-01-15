@@ -47,7 +47,7 @@
           "properties": {
             "home_icon": "~",
             "style": "agnoster_short",
-            "max_depth": 3,
+            "max_depth": 2,
             "folder_icon": "",
             "mapped_locations": {
               "~/repos/": "/"

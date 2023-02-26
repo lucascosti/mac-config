@@ -17,7 +17,7 @@
 	// }
 	"For more information...": {
     "prefix": "For more information,",
-    "body": " For more information, see \"[${1:title}]($2).\"",
+    "body": " For more information, see \"[${1:AUTOTITLE}]($2).\"",
     "description": "For more information..."
   }
 }

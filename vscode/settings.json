@@ -332,5 +332,8 @@
   "security.workspace.trust.untrustedFiles": "open",
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[python]": {
+    "editor.formatOnType": true
   }
 }

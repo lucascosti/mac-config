@@ -1,11 +1,10 @@
-Updated 2022-06-20
+Updated 2023-03-06
 
 alefragnani.Bookmarks
 AlistairChristie.open-reusables
 bierner.github-markdown-preview
 bierner.markdown-checkbox
 bierner.markdown-emoji
-bierner.markdown-footnotes
 bierner.markdown-mermaid
 bierner.markdown-preview-github-styles
 bierner.markdown-yaml-preamble
@@ -26,16 +25,23 @@ jeff-hykin.code-eol
 mdickin.markdown-shortcuts
 mhutchie.git-graph
 ms-azuretools.vscode-docker
+ms-python.isort
 ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
+ms-toolsai.vscode-jupyter-cell-tags
+ms-toolsai.vscode-jupyter-slideshow
+ms-vscode.azure-repos
+ms-vscode.live-server
 ms-vscode.remote-repositories
+peterbe.ghdocs-goer
 redhat.vscode-commons
 redhat.vscode-yaml
 RoscoP.ActiveFileInStatusBar
 sissel.shopify-liquid
+stkb.rewrap
 streetsidesoftware.code-spell-checker
 techer.open-in-browser
 wayou.vscode-todo-highlight

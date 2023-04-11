@@ -65,7 +65,9 @@ This repo contains the following config files:
   
   Mainly just [`userChrome.css`](firefox/userChrome.css), this configures some minor (mainly font) changes in the Firefox UI, aka the 'chrome'. The user chrome file is located in the Firefox profile on macOS at `~/Library/Application Support/Firefox/Profiles/xxxxxxxx.default/chrome/userChrome.css`, and is symlinked to the file in this repo.
   
-  See https://www.reddit.com/r/FirefoxCSS/ for some good tutorials and required settings for a custom `userChrome.css`. 
+  See https://www.reddit.com/r/FirefoxCSS/ for some good tutorials and required settings for a custom `userChrome.css`.
+
+  > **Note:**: In recent versions of Firefox, you must also go to about:config and set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true` for the `userChrome.css` file to take effect. 
 * Some other minor settings:
   * After the Big Sur upgrade, fonts were heavy and ugly. Run this command to get them looking good again, and restart:
 

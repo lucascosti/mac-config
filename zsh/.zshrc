@@ -126,10 +126,6 @@ alias gsub='git submodule'
 alias gsubupd='git submodule update --remote --merge'
 ### Directory aliases
 alias cdr='cd ~/repos/'
-alias cdd='cd ~/repos/docs-internal'
-alias cdo='cd ~/repos/docs'
-alias cdcs='cd ~/repos/docs-strategy'
-alias cdg='cd ~/repos/github'
 alias cdm='cd ~/repos/mac-config'
 
 # Functions
@@ -402,32 +398,3 @@ gundoall() {
     return 1
   fi
 }
-
-# GitHub docs build stuff
-
-eval "$(nodenv init -)"
-
-## Build GitHub docs
-bdocs() {
-  if [ -f "script/server" ]; then
-    # If there is a 'ci' argument, do a clean install first
-    if [[ $1 == *"ci" ]]; then 
-      echo "Running a clean install and build first..."
-      npm ci
-      npm run build
-    fi
-    echo "Running script/server..."
-    script/server
-  else
-    print -P "$lcicon_fail Can't find a server script! Are you sure you are in a docs repo?"
-    return 1
-  fi
-}
-alias bapi='npm run rest-dev'
-# Rollback changes in the OpenAPI static files to main
-alias gapirollback='git checkout --no-overlay origin/main lib/rest/static/'
-# lint the GitHub OpenAPI files
-## alias openapi-yaml-lint       # See local ~/.zshrc file
-## alias openapi-schema-lint     # See local ~/.zshrc file
-# Setup the docs repo in a GitHub codepsace
-alias codespacedocssetup="./script/setup-codespaces-docs-openapi"

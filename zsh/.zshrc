@@ -127,6 +127,7 @@ alias gsubupd='git submodule update --remote --merge'
 ### Directory aliases
 alias cdr='cd ~/repos/'
 alias cdm='cd ~/repos/mac-config'
+alias cdd='cd ~/repos/docs'
 
 # Functions
 
@@ -398,3 +399,7 @@ gundoall() {
     return 1
   fi
 }
+
+## Canva docs stuff below here
+
+alias bdocs='yarn dev'

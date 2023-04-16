@@ -37,7 +37,7 @@
           "style": "powerline",
           "background": "#d3d7cf",
           "foreground": "#000000",
-          "template": "{{ if gt .Code 0 }}<red>\ue0b0</>{{end}} ﯙ "
+          "template": "{{ if gt .Code 0 }}<red>\ue0b0</>{{end}} 󱓞 "
         },
         {
           "type": "path",

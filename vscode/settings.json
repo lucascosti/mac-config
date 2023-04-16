@@ -175,6 +175,8 @@
     "Algolia",
     "automations",
     "AUTOTITLE",
+    "canva",
+    "Canva's",
     "cheatsheets",
     "codespace",
     "codespaces",
@@ -335,5 +337,7 @@
   },
   "[python]": {
     "editor.formatOnType": true
-  }
+  },
+  "vale.readabilityProblemLocation": "both",
+  "vale.valeCLI.config": "/Users/lucascosti/repos/docs/eng-curriculum/vale/.vale.ini"
 }

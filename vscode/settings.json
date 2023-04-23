@@ -175,6 +175,7 @@
     "Algolia",
     "automations",
     "AUTOTITLE",
+    "Bazel",
     "canva",
     "Canva's",
     "cheatsheets",
@@ -205,6 +206,7 @@
     "postgres",
     "Powerlevel",
     "prodname",
+    "Protogen",
     "quickstart",
     "repos",
     "reusables",
@@ -339,5 +341,9 @@
     "editor.formatOnType": true
   },
   "vale.readabilityProblemLocation": "both",
-  "vale.valeCLI.config": "/Users/lucascosti/repos/docs/eng-curriculum/vale/.vale.ini"
+  "vale.valeCLI.config": "/Users/lucascosti/repos/docs/eng-curriculum/vale/.vale.ini",
+  "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
+  "[applescript]": {
+    "files.encoding": "utf8"
+  }
 }

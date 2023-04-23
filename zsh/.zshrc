@@ -70,7 +70,7 @@ ZSH_HIGHLIGHT_STYLES[path]='fg=33'
 # https://github.com/zsh-users/zsh-autosuggestions/
 source $ZSH_SCRIPTS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 ## Set the colour for the auto-suggestion
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5A616E"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5a616e"
 
 # Set path for the cheat command config (https://github.com/cheat/cheat)
 export CHEAT_CONFIG_PATH="$ZSH_SCRIPTS_DIR/miscdotfiles/cheat/conf.yml"

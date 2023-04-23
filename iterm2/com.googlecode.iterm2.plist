@@ -1538,7 +1538,7 @@
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>
-			<integer>8</integer>
+			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -1556,7 +1556,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/lucascosti/repos/</string>
+			<string>/Users/lucascosti/repos/docs/eng-curriculum/</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -2216,7 +2216,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>DejaVuSansMonoNerdFontCompleteM-Book 15</string>
+			<string>DejaVuSansMonoNerdFontComplete-Book 15</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -2277,6 +2277,8 @@
 			<integer>3</integer>
 			<key>Transparency</key>
 			<real>0.023800364847715694</real>
+			<key>Unicode Version</key>
+			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
 			<true/>
 			<key>Use Bold Font</key>
@@ -2286,7 +2288,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<true/>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
@@ -2294,7 +2296,7 @@
 			<key>Window Type</key>
 			<integer>2</integer>
 			<key>Working Directory</key>
-			<string>/Users/lucascosti/repos/</string>
+			<string>/Users/lucascosti/repos/docs/eng-curriculum/</string>
 		</dict>
 	</array>
 	<key>OnlyWhenMoreTabs</key>

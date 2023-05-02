@@ -181,6 +181,7 @@
     "cheatsheets",
     "codespace",
     "codespaces",
+    "Costi",
     "datacenter",
     "Dependabot",
     "devops",
@@ -334,16 +335,19 @@
   },
   "markdown-preview-github-styles.colorTheme": "system",
   "security.workspace.trust.untrustedFiles": "open",
+  "vale.readabilityProblemLocation": "both",
+  "vale.valeCLI.config": "/Users/lucascosti/repos/docs/eng-curriculum/vale/.vale.ini",
+  "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "[python]": {
     "editor.formatOnType": true
   },
-  "vale.readabilityProblemLocation": "both",
-  "vale.valeCLI.config": "/Users/lucascosti/repos/docs/eng-curriculum/vale/.vale.ini",
-  "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
   "[applescript]": {
     "files.encoding": "utf8"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }

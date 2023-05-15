@@ -349,5 +349,6 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.acceptSuggestionOnEnter": "off"
 }

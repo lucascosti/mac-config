@@ -137,14 +137,14 @@ getbundleid() { osascript -e 'id of app "'$1'"' }
 ## Some icons for the functions below (prefixed so they won't annoy me in autocompletion on the shell.) Requires a Nerd Fonts patched font.
 local lcicon_infoi="$FG[033]$reset_color"      # blue i
 local lcicon_trash="$FG[166]$reset_color"      # orange trash
-local lcicon_scissors="$FG[003]$reset_color"   # light orange scissors
-local lcicon_tick="$FG[046]$reset_color"       # green tick
-local lcicon_question="$FG[192]ﲉ$reset_color"   # yellow question
-local lcicon_fail="$FG[009]$reset_color"       # red x
+local lcicon_scissors="$FG[003]$reset_color"   # light orange scissors
+local lcicon_tick="$FG[046]$reset_color"       # green tick
+local lcicon_question="$FG[192]$reset_color"   # yellow question
+local lcicon_fail="$FG[009]󰅗$reset_color"       # red x
 local lcicon_runarrow="$FG[077]$reset_color"   # green arrow
-local lcicon_update="$FG[077]ﮮ$reset_color"     # green update symbol
+local lcicon_update="$FG[077]$reset_color"     # green update symbol
 local lcicon_warning="$FG[226]$reset_color"    # yellow warning symbol
-local lcicon_undo="$FG[003]\ufa4c$reset_color"  # orange undo symbol
+local lcicon_undo="$FG[003]󰕍$reset_color"  # orange undo symbol
 
 ## This is an internal function that prints a border around command exections.
 ### If called with no arguments, it prints a simple border.

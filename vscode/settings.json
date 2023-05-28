@@ -178,6 +178,7 @@
     "Bazel",
     "canva",
     "Canva's",
+    "Canvanauts",
     "cheatsheets",
     "codespace",
     "codespaces",
@@ -259,6 +260,7 @@
   "markdownlint.config": {
     "MD004": false,
     "MD024": false,
+    "MD033": false,
     "MD034": false,
     "MD037": false,
     "MD040": false,

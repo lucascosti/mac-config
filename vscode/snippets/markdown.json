@@ -12,25 +12,6 @@
   // 	],
   // 	"description": "Log output to console"
   // }
-  "Product name reusable": {
-    "prefix": "product",
-    "body": "{% data variables.product.${TM_SELECTED_TEXT:$CLIPBOARD} %}"
-  },
-  "GitHub - docs variable": {
-    "prefix": "GitHub",
-    "body": "{% data variables.product.prodname_dotcom %}",
-    "description": "GitHub variable"
-  },
-  "GitHub Actions - docs variable": {
-    "prefix": "Actions",
-    "body": "{% data variables.product.prodname_actions %}",
-    "description": "GitHub Actions variable"
-  },
-  "GitHub Packages - docs variable": {
-    "prefix": "Packages",
-    "body": "{% data variables.product.prodname_registry %}",
-    "description": "GitHub Packages variable"
-  },
   "Plain Code block": {
     "prefix": "code",
     "body": [
@@ -66,38 +47,73 @@
   "Note block": {
     "prefix": "note",
     "body": [
-      "{% note %}",
+      "import { Alert } from 'components/alert/alert'",
+      "",
+      "<Alert tone=\"info\">",
       "",
       "**Note:** $1",
       "",
-      "{% endnote %}"
+      "</Alert>"
+    ]
+  },
+  "Positive/green block": {
+    "prefix": "Positive/green",
+    "body": [
+      "import { Alert } from 'components/alert/alert'",
+      "",
+      "<Alert tone=\"positive\">",
+      "",
+      "$1",
+      "",
+      "</Alert>"
     ]
   },
   "Warning block": {
     "prefix": "warning",
     "body": [
-      "{% warning %}",
+      "import { Alert } from 'components/alert/alert'",
+      "",
+      "<Alert tone=\"warn\">",
       "",
       "**Warning:** $1",
       "",
-      "{% endwarning %}"
-    ],
-    "description": "Warning block"
+      "</Alert>"
+    ]
   },
-  "Raw block": {
-    "prefix": "raw",
+  "Critical block": {
+    "prefix": "critical",
     "body": [
-      "{% raw %}",
+      "import { Alert } from 'components/alert/alert'",
       "",
-      "{% endraw %}"
-    ],
-    "description": "Raw block"
+      "<Alert tone=\"critical\">",
+      "",
+      "$1",
+      "",
+      "</Alert>"
+    ]
   },
-  "Liquid if": {
-    "prefix": "if ",
+  "Accordion block": {
+    "prefix": "accordion",
     "body": [
-      "{% ifversion fpt or ghec or ghes > 3.5 or ghae > 3.5 %}something{% endif %}"
-    ],
-    "description": "Liquid if condition"
+      "import { Accordion } from 'components/accordion/accordion'",
+      "",
+      "<Accordion title=\"$1\">",
+      "",
+      "$2",
+      "",
+      "</Accordion>"
+    ]
+  },
+  "FAQ block": {
+    "prefix": "faq",
+    "body": [
+      "import { FAQ } from 'components/faq/faq'",
+      "",
+      "<FAQ question=\"$1\">",
+      "",
+      "$2",
+      "",
+      "</FAQ>"
+    ]
   }
 }

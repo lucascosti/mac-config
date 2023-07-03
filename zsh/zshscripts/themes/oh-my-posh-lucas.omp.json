@@ -56,6 +56,15 @@
           "style": "powerline",
           "template": "  {{ .Path }} "
         },
+        // Only show the node stuff if there is a mismatch between the actual and expected version
+        {
+          "type": "node",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#ffffff",
+          "background": "#6CA35E",
+          "template": " {{ if .Mismatch }}{{ .Full }} 󰦎 {{ .Expected }} {{ end }}"
+        },
         {
           "type": "git",
           "background": "#3B8524",

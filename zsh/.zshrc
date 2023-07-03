@@ -402,4 +402,20 @@ gundoall() {
 
 ## Canva docs stuff below here
 
-alias bdocs='yarn dev'
+bdocs() {
+  local current_folder=$(pwd)
+  if [[ $current_folder == *"eng-curriculum"* ]]; then
+    print -P "$lcicon_runarrow Running: yarn dev"
+    yarn dev
+  elif [[ $current_folder == *"canva-dev"* ]]; then
+    print -P "$lcicon_runarrow Running: yarn run start"
+    yarn run start
+  else
+    print -P "$lcicon_fail Not in a docs repository."
+    return 1
+  fi
+}
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"

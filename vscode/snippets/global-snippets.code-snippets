@@ -17,7 +17,118 @@
   // }
   "For more information...": {
     "prefix": "For more information,",
-    "body": " For more information, see ",
+    "body": " For more information, see .",
     "description": "For more information...",
+  },
+  "Plain Code block": {
+    "scope": "markdown,mdx",
+    "prefix": "code",
+    "body": [
+      "```",
+      "$1",
+      "```"
+    ]
+  },
+  "JS code block": {
+    "scope": "markdown,mdx",
+    "prefix": "codejavascript",
+    "body": [
+      "```javascript",
+      "$1",
+      "```"
+    ]
+  },
+  "TS code block": {
+    "scope": "markdown,mdx",
+    "prefix": "codetypescript",
+    "body": [
+      "```typescript",
+      "$1",
+      "```"
+    ]
+  },
+  "Shell code block": {
+    "scope": "markdown,mdx",
+    "prefix": "codeshell",
+    "body": [
+      "```shell",
+      "$1",
+      "```"
+    ]
+  },
+  "YAML code block": {
+    "scope": "markdown,mdx",
+    "prefix": "codeyaml",
+    "body": [
+      "```yaml",
+      "$1",
+      "```"
+    ]
+  },
+  "Note block": {
+    "scope": "markdown,mdx",
+    "prefix": "note",
+    "body": [
+      "<Alert tone=\"info\">",
+      "",
+      "**Note:** $1",
+      "",
+      "</Alert>"
+    ]
+  },
+  "Positive/green block": {
+    "scope": "markdown,mdx",
+    "prefix": "Positive/green",
+    "body": [
+      "<Alert tone=\"positive\">",
+      "",
+      "$1",
+      "",
+      "</Alert>"
+    ]
+  },
+  "Warning block": {
+    "scope": "markdown,mdx",
+    "prefix": "warning",
+    "body": [
+      "<Alert tone=\"warn\">",
+      "",
+      "**Warning:** $1",
+      "",
+      "</Alert>"
+    ]
+  },
+  "Critical block": {
+    "scope": "markdown,mdx",
+    "prefix": "critical",
+    "body": [
+      "<Alert tone=\"critical\">",
+      "",
+      "$1",
+      "",
+      "</Alert>"
+    ]
+  },
+  "Accordion block": {
+    "scope": "markdown,mdx",
+    "prefix": "accordion",
+    "body": [
+      "<Accordion title=\"$1\">",
+      "",
+      "$2",
+      "",
+      "</Accordion>"
+    ]
+  },
+  "FAQ block": {
+    "scope": "markdown,mdx",
+    "prefix": "faq",
+    "body": [
+      "<FAQ question=\"$1\">",
+      "",
+      "$2",
+      "",
+      "</FAQ>"
+    ]
   }
 }

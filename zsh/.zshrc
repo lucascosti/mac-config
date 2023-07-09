@@ -128,6 +128,7 @@ alias gsubupd='git submodule update --remote --merge'
 alias cdr='cd ~/repos/'
 alias cdm='cd ~/repos/mac-config'
 alias cdd='cd ~/repos/docs/eng-curriculum'
+alias cddev='cd ~/repos/canva-dev'
 
 # Functions
 
@@ -419,3 +420,5 @@ bdocs() {
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+if [ -e /Users/lucascosti/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/lucascosti/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

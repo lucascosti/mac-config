@@ -224,6 +224,7 @@
     "workspace's",
     "zshscripts"
   ],
+  "cSpell.flagWords": ["eduction"],
   "cSpell.enableFiletypes": [
     "asciidoc",
     "c",

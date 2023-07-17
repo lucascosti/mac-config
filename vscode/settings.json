@@ -10,7 +10,6 @@
   "editor.accessibilitySupport": "off",
   "editor.renderWhitespace": "boundary",
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.mouseWheelZoom": true,
   "editor.inlineSuggest.enabled": true,
   "search.mode": "newEditor",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -202,6 +201,7 @@
     "Kubernetes",
     "megabranch",
     "octo",
+    "onboarded",
     "openapi",
     "orgs",
     "permalinks",
@@ -353,5 +353,8 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.acceptSuggestionOnEnter": "off"
+  "editor.acceptSuggestionOnEnter": "off",
+  "files.associations": {
+    "*.mdx": "markdown"
+  }
 }

@@ -67,7 +67,7 @@ This repo contains the following config files:
 
   See https://www.reddit.com/r/FirefoxCSS/ for some good tutorials and required settings for a custom `userChrome.css`.
 
-  > **Note:**: In recent versions of Firefox, you must also go to about:config and set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true` for the `userChrome.css` file to take effect.
+  > **Note:** In recent versions of Firefox, you must also go to about:config and set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true` for the `userChrome.css` file to take effect.
 * Some other minor settings:
   * After the Big Sur upgrade, fonts were heavy and ugly. Run this command to get them looking good again, and restart:
 

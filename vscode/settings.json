@@ -199,6 +199,7 @@
     "keychain",
     "kilobranch",
     "Kubernetes",
+    "Liddell",
     "megabranch",
     "octo",
     "onboarded",
@@ -356,5 +357,6 @@
   "editor.acceptSuggestionOnEnter": "off",
   "files.associations": {
     "*.mdx": "markdown"
-  }
+  },
+  "bookmarks.navigateThroughAllFiles": false
 }

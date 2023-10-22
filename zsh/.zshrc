@@ -129,6 +129,7 @@ alias cdr='cd ~/repos/'
 alias cdm='cd ~/repos/mac-config'
 alias cdd='cd ~/repos/docs/eng-curriculum'
 alias cddev='cd ~/repos/canva-dev'
+alias cdc='cd ~/repos/canva'
 
 # Functions
 

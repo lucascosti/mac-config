@@ -3,6 +3,7 @@
 The main configuration files I use for my work MacBook.
 
 This repo contains the following config files:
+
 * [Zsh shell configuration](zsh/)
 
   See its [own README for details](zsh/).
@@ -85,4 +86,3 @@ This repo contains the following config files:
     ```shell
     defaults write ca.brawer.uBar useAppIconForWindows -bool YES
     ```
-

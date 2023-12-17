@@ -1,11 +1,13 @@
 {
   "window.commandCenter": true,
+  "security.promptForLocalFileProtocolHandling": false,
+  "security.workspace.trust.untrustedFiles": "open",
   "editor.fontFamily": "DejaVuSansM Nerd Font Mono",
   "editor.fontSize": 14,
   "editor.tabSize": 2,
   "markdown.preview.fontFamily": "\"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, freesans, sans-serif",
   "workbench.editor.tabSizing": "shrink",
-  "workbench.editor.tabCloseButton": "off",
+  "workbench.editor.tabActionCloseVisibility": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "editor.accessibilitySupport": "off",
   "editor.renderWhitespace": "boundary",
@@ -24,7 +26,7 @@
   "workbench.editor.restoreViewState": false,
   "window.openFoldersInNewWindow": "on",
   "window.confirmBeforeClose": "keyboardOnly",
-  "editor.occurrencesHighlight": false,
+  "editor.occurrencesHighlight": "off",
   "editor.wordWrap": "bounded",
   "[markdown]": {
     "editor.wordWrap": "bounded",
@@ -339,10 +341,6 @@
     "javascript": true
   },
   "markdown-preview-github-styles.colorTheme": "system",
-  "security.workspace.trust.untrustedFiles": "open",
-  "vale.readabilityProblemLocation": "both",
-  "vale.valeCLI.config": "/Users/lucascosti/repos/docs/eng-curriculum/vale/.vale.ini",
-  "vale.doNotShowWarningForFileToBeSavedBeforeLinting": true,
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
@@ -359,5 +357,5 @@
   "files.associations": {
     "*.mdx": "markdown"
   },
-  "bookmarks.navigateThroughAllFiles": false
+  "bookmarks.navigateThroughAllFiles": false,
 }

@@ -15,7 +15,6 @@
   "editor.inlineSuggest.enabled": true,
   "search.mode": "newEditor",
   "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.renderSideBySide": false,
   "editor.minimap.showSlider": "always",
   "editor.minimap.renderCharacters": false,
   "editor.rulers": [
@@ -358,4 +357,6 @@
     "*.mdx": "markdown"
   },
   "bookmarks.navigateThroughAllFiles": false,
+  "diffEditor.renderSideBySide": false,
+  "vale.valeCLI.config": "/Users/lucascosti/repos/docs/eng-curriculum/vale/.vale.ini",
 }

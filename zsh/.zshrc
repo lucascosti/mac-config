@@ -105,6 +105,8 @@ alias gnb='git checkout -b'
 alias gnewbranch='git checkout -b'
 alias grenamebranch='git branch -m'
 alias grmbranch='git branch -d'
+# For a sparse local checkout, add a remote origin branch so we can checkout or track it
+alias gaddremotebranchtosparsecheckout='git remote set-branches --add origin'
 alias gd='git diff'
 alias gss='git stash save'
 alias gsp='git stash pop'

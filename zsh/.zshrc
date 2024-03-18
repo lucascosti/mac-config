@@ -105,8 +105,6 @@ alias gnb='git checkout -b'
 alias gnewbranch='git checkout -b'
 alias grenamebranch='git branch -m'
 alias grmbranch='git branch -d'
-# For a sparse local checkout, add a remote origin branch so we can checkout or track it
-alias gaddremotebranchtosparsecheckout='git remote set-branches --add origin'
 alias gd='git diff'
 alias gss='git stash save'
 alias gsp='git stash pop'
@@ -248,6 +246,28 @@ gcmd() {
   && lcfunc_step_border 2 2 "$lcicon_trash Attempting to delete branch $CURRENT_BRANCH..." \
   && grmbranch $CURRENT_BRANCH \
   && lcfunc_step_border
+}
+
+### Functions for adding/removing remote branches to a local sparse checkout.
+#### Git add remote sparse checkout branch, and switch to it
+garscb() {
+  lcfunc_step_border 1 3 "$lcicon_runarrow Setting the branch in the git config..."
+  git remote set-branches --add origin $1 \
+  && lcfunc_step_border 2 3 "$lcicon_update Doing a fetch from origin..." \
+  && git fetch origin \
+  && lcfunc_step_border 3 3 "$lcicon_infoi Switching branches..." \
+  && git checkout $1 \
+  && lcfunc_step_border \
+  && print -P "$lcicon_tick Done!"
+}
+#### Git remove sparse checkout branch
+grmrscb() {
+  lcfunc_step_border 1 2 "$lcicon_runarrow Removing the branch from the git config..."
+  git config --unset remote.origin.fetch refs/heads/$1\:refs/remotes/origin/$1 \
+  && lcfunc_step_border 1 2 "$lcicon_trash Force deleting the branch..." \
+  && git branch -D $1 \
+  && lcfunc_step_border \
+  && print -P "$lcicon_tick Done!"
 }
 
 ### This function prunes references to deleted remote branches, and deletes local branches that have been merged and/or deleted from the remotes.
@@ -420,8 +440,10 @@ bdocs() {
   fi
 }
 
+alias bconnect='print -P "$lcicon_runarrow Running: yarn build:connect-api" && yarn build:connect-api'
+alias bscim='print -P "$lcicon_runarrow Running: yarn build:scim-api" && yarn build:scim-api'
+
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
-if [ -e /Users/lucascosti/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/lucascosti/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

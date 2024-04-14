@@ -8,6 +8,10 @@
   "markdown.preview.fontFamily": "\"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, freesans, sans-serif",
   "workbench.editor.tabSizing": "shrink",
   "workbench.editor.tabActionCloseVisibility": false,
+  "workbench.editor.customLabels.patterns": {
+    "**/index.md*": "${dirname}/index.${extname}",
+    "**/api.yml": "${dirname}/api.yml"
+  },
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "editor.accessibilitySupport": "off",
   "editor.renderWhitespace": "boundary",
@@ -341,7 +345,7 @@
   },
   "markdown-preview-github-styles.colorTheme": "system",
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
     "editor.formatOnType": true
@@ -357,6 +361,6 @@
     "*.mdx": "markdown"
   },
   "bookmarks.navigateThroughAllFiles": false,
-  "diffEditor.renderSideBySide": false,
   "vale.valeCLI.config": "/Users/lucascosti/repos/docs/eng-curriculum/vale/.vale.ini",
+  "diffEditor.renderSideBySide": false,
 }

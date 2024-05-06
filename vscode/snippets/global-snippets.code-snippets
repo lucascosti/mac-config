@@ -17,7 +17,7 @@
   // }
   "For more information...": {
     "prefix": "For more information,",
-    "body": " For more information, see .",
+    "body": "For more information, see .",
     "description": "For more information...",
   },
   "Plain Code block": {

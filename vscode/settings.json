@@ -291,6 +291,7 @@
   "gitlens.defaultDateFormat": "DD MMM YYYY",
   "gitlens.keymap": "none",
   "gitlens.views.repositories.avatars": false,
+  "gitlens.launchpad.indicator.enabled": false,
   "gitlens.menus": {
     "editor": false,
     "editorGroup": false,
@@ -363,4 +364,5 @@
   "bookmarks.navigateThroughAllFiles": false,
   "vale.valeCLI.config": "/Users/lucascosti/repos/docs/eng-curriculum/vale/.vale.ini",
   "diffEditor.renderSideBySide": false,
+  
 }

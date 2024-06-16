@@ -362,7 +362,7 @@
     "*.mdx": "markdown"
   },
   "bookmarks.navigateThroughAllFiles": false,
-  "vale.valeCLI.config": "/Users/lucascosti/repos/docs/eng-curriculum/vale/.vale.ini",
+  "vale.valeCLI.config": "/Users/lucascosti/repos/docs/vale/.vale.ini",
   "diffEditor.renderSideBySide": false,
   
 }

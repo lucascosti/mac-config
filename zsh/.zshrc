@@ -127,7 +127,7 @@ alias gsubupd='git submodule update --remote --merge'
 ### Directory aliases
 alias cdr='cd ~/repos/'
 alias cdm='cd ~/repos/mac-config'
-alias cdd='cd ~/repos/docs/eng-curriculum'
+alias cdd='cd ~/repos/docs'
 alias cddev='cd ~/repos/canva-dev'
 alias cdc='cd ~/repos/canva'
 
@@ -428,7 +428,7 @@ gundoall() {
 
 bdocs() {
   local current_folder=$(pwd)
-  if [[ $current_folder == *"eng-curriculum"* ]]; then
+  if [[ $current_folder == *"docs"* ]]; then
     print -P "$lcicon_runarrow Running: yarn dev"
     yarn dev
   elif [[ $current_folder == *"canva-dev"* ]]; then

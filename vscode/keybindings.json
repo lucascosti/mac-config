@@ -240,8 +240,7 @@
   // Ctrl+b for git blame
   {
     "key": "ctrl+b",
-    "command": "gitlens.toggleFileBlame",
-    "when": "gitlens:activeFileStatus =~ /blameable/"
+    "command": "gitlens.toggleFileBlame"
   },
   {
     "key": "ctrl+b",

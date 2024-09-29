@@ -52,6 +52,7 @@
   "git.enableStatusBarSync": false,
   "git.autofetch": true,
   "git.autofetchPeriod": 900, // 15 minutes
+  "git.openRepositoryInParentFolders": "never",
   "scm.diffDecorationsGutterPattern": {
     "modified": false,
     "added": false,
@@ -366,7 +367,4 @@
   "diffEditor.renderSideBySide": false,
   "vale.valeCLI.config": "/Users/lucascosti/repos/docs/vale/.vale.ini",
   "vale.valeCLI.path": "/Users/lucascosti/repos/docs/node_modules/@vvago/vale/bin/vale",
-  // Temporary until VSCode makes the incoming/outgoing view better
-  "scm.showHistoryGraph": false,
-  
 }

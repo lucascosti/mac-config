@@ -321,17 +321,6 @@
     "command": "-md-shortcut.toggleBullets",
     "when": "editorTextFocus && markdownShortcuts:enabled"
   },
-  // Open reusable shortcut
-  {
-    "key": "ctrl+o",
-    "command": "open-reusable",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+o",
-    "command": "-lineBreakInsert",
-    "when": "textInputFocus && !editorReadonly"
-  },
   // Rename file in explorer panel as F2
   {
     "key": "f2",
@@ -362,5 +351,16 @@
   {
     "key": "ctrl+cmd+w",
     "command": "workbench.action.closeAllEditors"
+  },
+  // Copilot accept next word suggestion. You must first disable the macOS default keybinding for this combination to work (Mission Control move to next space)
+  {
+    "key": "ctrl+right",
+    "command": "editor.action.inlineSuggest.acceptNextWord",
+    "when": "inlineSuggestionVisible && !editorReadonly"
+  },
+  {
+    "key": "cmd+right",
+    "command": "-editor.action.inlineSuggest.acceptNextWord",
+    "when": "inlineSuggestionVisible && !editorReadonly"
   }
 ]

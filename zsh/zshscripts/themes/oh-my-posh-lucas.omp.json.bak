@@ -1,0 +1,111 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    // This block is just for a horizontal rule across the terminal window
+    {
+      "type":"prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "command",
+          "style": "plain",
+          "foreground": "#585858",
+          "properties": {
+            "shell": "zsh",
+            "command": "printf '%*s\n' \"${COLUMNS:-$(tput cols)}\" '' | tr ' ' ─"
+          },
+          "template": "{{ .Output }}"
+        }
+      ]
+    },
+    // This block is the first line of the prompt, containing the dir/git/etc. info
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "type": "exit",
+          "style": "plain",
+          "foreground": "white",
+          "background": "red",
+          "template": " ✘ "
+        },
+        {
+          "type": "text",
+          "style": "powerline",
+          "background": "#d3d7cf",
+          "foreground": "#000000",
+          "template": "{{ if gt .Code 0 }}<red>\ue0b0</>{{end}} 󱓞 "
+        },
+        {
+          "type": "path",
+          "background": "#3465a4",
+          "foreground": "#e4e4e4",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "home_icon": "~",
+            "style": "agnoster_short",
+            "max_depth": 2,
+            "folder_icon": "󰉓",
+            "mapped_locations": {
+              "~/repos/": "/"
+            }
+          },
+          "style": "powerline",
+          "template": "  {{ .Path }} "
+        },
+        // Only show the node stuff if there is a mismatch between the actual and expected version
+        {
+          "type": "node",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#ffffff",
+          "background": "#6CA35E",
+          "template": " {{ if .Mismatch }}{{ .Full }} 󰦎 {{ .Expected }} {{ end }}"
+        },
+        {
+          "type": "git",
+          "background": "#3B8524",
+          "foreground": "#E4E4E4",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#c4a000{{ end }}"
+            //"{{ if gt .Behind 0 }}#588524{{ end }}",
+            //"{{ if gt .Ahead 0 }}#017655{{ end }}"
+          ],
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#323734{{ end }}"
+          ],
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "branch_icon": " ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "merge_icon": "<red>merge </>",
+            "branch_max_length": 40,
+            "truncate_symbol": "…"
+          },
+          "style": "powerline",
+          "template": " {{ .HEAD }} {{ .BranchStatus }}{{ if or .Working.Changed .Staging.Changed .StashCount }} {{ end }}{{ if gt .Working.Unmerged 0 }}<red>{{ .Working.Unmerged }}</>{{ end }}{{ if gt .StashCount 0 }}<#275EAA>󰉀{{ .StashCount }}</>{{ end }}{{ if or .Staging.Added .Staging.Modified .Staging.Deleted }}<#2431F5>{{ add (.Staging.Added) (.Staging.Modified) (.Staging.Deleted) }}</>{{ end }}{{ if gt .Working.Modified 0 }}<#A12916>{{ .Working.Modified }}</>{{ end }}{{ if gt .Working.Deleted 0 }}<#8a4801>{{ .Working.Deleted }}</>{{ end }}{{ if gt .Working.Untracked 0 }}<#555753>{{ .Working.Untracked }}</>{{ end }} "
+        }
+      ]
+    },
+    // This block is the second line containing the prompt itself
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#80D540",
+          "style": "plain",
+          "template": "❯",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}

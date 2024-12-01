@@ -35,7 +35,8 @@ toolbar {
 font-size: 10pt !important; }
 
 /* Address bar font */
-#urlbar {
+/* Lucas Pre-Firefox v133 this was: #urlbar { */
+.urlbar-input-container, .urlbarView {
 font-size: 10pt !important; }
 
 /* Personal Titlebar Title font */

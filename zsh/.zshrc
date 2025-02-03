@@ -146,9 +146,10 @@ local lcicon_fail="$FG[009]󰅗$reset_color"       # red x
 local lcicon_runarrow="$FG[077]$reset_color"   # green arrow
 local lcicon_update="$FG[077]$reset_color"     # green update symbol
 local lcicon_warning="$FG[226]$reset_color"    # yellow warning symbol
-local lcicon_undo="$FG[003]󰕍$reset_color"  # orange undo symbol
+local lcicon_undo="$FG[003]󰕍$reset_color"       # orange undo symbol
+local lcicon_skip="$FG[033]󰙡$reset_color"       # blue skip symbol
 
-## This is an internal function that prints a border around command exections.
+## This is an internal function that prints a border around command executions.
 ### If called with no arguments, it prints a simple border.
 ### Otherwise, it must be called with 3 arguments: the current step, the total number of steps, and the step title message.
 ### e.g: lcfunc_step_border 1 3 "First step in a 3 step process!"
@@ -265,11 +266,86 @@ grmrscb() {
   lcfunc_step_border 1 2 "$lcicon_runarrow Removing the branch from the git config..."
   git config --unset remote.origin.fetch refs/heads/$1\:refs/remotes/origin/$1 \
   && lcfunc_step_border 1 2 "$lcicon_trash Force deleting the branch..." \
-  && git branch -D $1 \
+  && if git rev-parse --verify "$1" >/dev/null 2>&1; then \
+       git branch -D "$1"; \
+     fi \
   && lcfunc_step_border \
   && print -P "$lcicon_tick Done!"
 }
+#### Automatically remove sparse checkout branches from the local config if they no longer exist on the remote, and delete the local branch.
+grmrscbauto() {
+  print -P "$lcicon_runarrow Checking if local git config branches still exist on the remote..."
+  lcfunc_step_border
+  # Get all fetch patterns from git config
+  patterns=$(git config --get-all remote.origin.fetch)
+  # Array to store branches to be removed
+  declare -a branches_to_remove=()
 
+  # Loop through each pattern
+  while IFS= read -r pattern; do
+    # Skip empty lines
+    [ -z "$pattern" ] && continue
+    # Skip patterns starting with ^ (like ^refs/heads/mergeQueue-*)
+    if [[ "$pattern" == ^* ]]; then
+      print -P "$lcicon_skip Skipping pattern with prefix ^: $pattern"
+      continue
+    fi
+    # Extract the branch name from patterns like +refs/heads/branch-name:refs/remotes/origin/branch-name
+    branch=$(echo "$pattern" | sed -n 's/+refs\/heads\/\([^:]*\):refs\/remotes\/origin\/.*/\1/p')
+    # Skip if we couldn't extract a branch name
+    if [ -z "$branch" ]; then
+      print -P "$lcicon_skip Skipping non-standard pattern: $pattern"
+      continue
+    fi
+    # Skip patterns containing wildcards (*) or other glob characters
+    if [[ "$branch" == *"*"* ]] || [[ "$branch" == *"?"* ]] || [[ "$branch" == *"["* ]]; then
+      print -P "$lcicon_skip Skipping wildcard pattern: $branch"
+      continue
+    fi
+    # Skip default branches
+    if [[ "$branch" == "green" ]] || [[ "$branch" == "master" ]]; then
+      print -P "$lcicon_skip Skipping default branch: $branch"
+      continue
+    fi
+
+    print -P "$lcicon_infoi Checking branch: $branch"
+    # Try to fetch the specific branch
+    if ! git fetch origin "refs/heads/$branch" 2>/dev/null; then
+      branches_to_remove+=("$branch")
+    fi
+  done <<< "$patterns"
+
+  # If no branches to remove, exit
+  if [ ${#branches_to_remove[@]} -eq 0 ]; then
+    lcfunc_step_border
+    print -P "$lcicon_tick No branches to remove. All configured branches still exist on the remote."
+    return 0
+  fi
+
+  # Show branches that will be removed
+  lcfunc_step_border
+  print -P "\n$lcicon_warning The following branches no longer exist on the remote and will be removed from the git config:"
+  printf '%s\n' "${branches_to_remove[@]}"
+  # Ask for confirmation
+  print -P "\n$lcicon_question Do you want to proceed with removal? (y/N): "
+  read confirm
+  if [[ ! "$confirm" =~ ^[Yy]$ ]]; then
+    print -P "$lcicon_fail Aborted! Nothing was changed."
+    return 1
+  fi
+
+  ## loop through the branches to remove and remove them
+  for branch in "${branches_to_remove[@]}"; do
+    print -P "$lcicon_trash Removing branch: $branch"
+    # Just call the existing function to remove the branch
+    grmrscb $branch
+  done
+
+  lcfunc_step_border
+  print -P "\n$lcicon_tick Cleanup complete. Running git fetch to update the remaining branches..."
+  git fetch
+  print -P "$lcicon_tick Done!"
+}
 ### This function prunes references to deleted remote branches, and deletes local branches that have been merged and/or deleted from the remotes.
 ### It is intended to be run when on a default branch, and warns when it isn't.
 gclean() {

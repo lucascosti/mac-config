@@ -342,9 +342,7 @@ grmrscbauto() {
   done
 
   lcfunc_step_border
-  print -P "\n$lcicon_tick Cleanup complete. Running git fetch to update the remaining branches..."
-  git fetch
-  print -P "$lcicon_tick Done!"
+  print -P "\n$lcicon_tick Cleanup complete."
 }
 ### This function prunes references to deleted remote branches, and deletes local branches that have been merged and/or deleted from the remotes.
 ### It is intended to be run when on a default branch, and warns when it isn't.
@@ -515,9 +513,6 @@ bdocs() {
     return 1
   fi
 }
-
-alias bconnect='print -P "$lcicon_runarrow Running: yarn build:connect-api" && yarn build:connect-api'
-alias bscim='print -P "$lcicon_runarrow Running: yarn build:scim-api" && yarn build:scim-api'
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm

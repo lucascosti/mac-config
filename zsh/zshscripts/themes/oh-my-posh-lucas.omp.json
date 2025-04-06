@@ -88,14 +88,16 @@
           "template": " {{ .HEAD }} {{ .BranchStatus }}{{ if or .Working.Changed .Staging.Changed .StashCount }} {{ end }}{{ if gt .Working.Unmerged 0 }}<red>\uf071{{ .Working.Unmerged }}</>{{ end }}{{ if gt .StashCount 0 }}<#275EAA>\udb80\ude40{{ .StashCount }}</>{{ end }}{{ if or .Staging.Added .Staging.Modified .Staging.Deleted }}<#2431F5>\uf01c{{ add (.Staging.Added) (.Staging.Modified) (.Staging.Deleted) }}</>{{ end }}{{ if gt .Working.Modified 0 }}<#A12916>\uf040{{ .Working.Modified }}</>{{ end }}{{ if gt .Working.Deleted 0 }}<#8a4801>\uf1f8{{ .Working.Deleted }}</>{{ end }}{{ if gt .Working.Untracked 0 }}<#555753>\uf059{{ .Working.Untracked }}</>{{ end }} ",
           "foreground": "#E4E4E4",
           "powerline_symbol": "\ue0b0",
-          "background": "#3B8524",
+          // default to a gray background, in case the git has timed out fetching the status
+          "background": "#696969",
           "type": "git",
           "style": "powerline",
+          // For the colours, if git is dirty, have an orange background. else if the ref is loaded (i.e. there isn't a git timeout) have a green background
           "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#323734{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#323734{{ else if .Ref }}#E4E4E4{{ end }}"
           ],
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#c4a000{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#c4a000{{ else if .Ref }}#3B8524{{ end }}"
           ]
         }
       ],

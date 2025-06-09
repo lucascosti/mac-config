@@ -503,11 +503,11 @@ gundoall() {
 bdocs() {
   local current_folder=$(pwd)
   if [[ $current_folder == *"docs"* ]]; then
-    print -P "$lcicon_runarrow Running: yarn dev"
-    yarn dev
+    print -P "$lcicon_runarrow Running: npm run dev"
+    npm run dev
   elif [[ $current_folder == *"canva-dev"* ]]; then
-    print -P "$lcicon_runarrow Running: yarn run start"
-    yarn run start
+    print -P "$lcicon_runarrow Running: npm run start"
+    npm run start
   else
     print -P "$lcicon_fail Not in a docs repository."
     return 1

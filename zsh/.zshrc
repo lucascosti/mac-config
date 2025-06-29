@@ -376,7 +376,7 @@ gclean() {
   # Save the result to a variable, and echo the variable if it is not empty.
   # Inspiration for this from https://medium.com/opendoor-labs/cleaning-up-branches-with-githubs-squash-merge-43138cc7585e
   lcfunc_step_border 3 3 "$lcicon_trash Simulating cleaning local branches with same name as pruned remote ones $lcicon_trash" \
-  && local_compare_to_delete="$(comm -12 <(git branch | sed 's/^[* ] //g') <(echo "$remote_prune_list" | grep '^\s*\*' | sed 's/^.*\[would prune\] origin\///g') | while read branch; do echo "$branch"; done)" \
+  && local_compare_to_delete="$(comm -12 <(git branch | sed 's/^[* ] //g' | sort) <(echo "$remote_prune_list" | grep '^\s*\*' | sed 's/^.*\[would prune\] origin\///g' | sort) | while read branch; do echo "$branch"; done)" \
   && if [ ! -z "$local_compare_to_delete" ]; then echo "$local_compare_to_delete"; fi
   lcfunc_step_border
   print -P "$lcicon_infoi Simulation complete.\n"
@@ -395,7 +395,7 @@ gclean() {
     && lcfunc_step_border 2 3 "$lcicon_trash Cleaning local branches merged to $BRANCH $lcicon_trash" \
     && git branch --merged $BRANCH | grep -v "^\**\s*$DEFAULT_BRANCH" | xargs git branch -d || true \
     && lcfunc_step_border 3 3 "$lcicon_trash Cleaning local branches with same name as pruned remote ones $lcicon_trash" \
-    && comm -12 <(git branch | sed 's/^[* ] //g') <(echo "$remote_prune_list" | grep '^\s*\*' | sed 's/^.*\[pruned\] origin\///g') | while read branch; do git branch -D "$branch"; done \
+    && comm -12 <(git branch | sed 's/^[* ] //g' | sort) <(echo "$remote_prune_list" | grep '^\s*\*' | sed 's/^.*\[pruned\] origin\///g' | sort) | while read branch; do git branch -D "$branch"; done \
     && lcfunc_step_border \
     && print -P "$lcicon_tick Clean finished!"
   else

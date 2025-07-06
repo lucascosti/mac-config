@@ -69,44 +69,44 @@
     "scope": "markdown,mdx",
     "prefix": "note",
     "body": [
-      "<Alert tone=\"info\">",
-      "",
-      "**Note:** $1",
-      "",
-      "</Alert>"
-    ]
-  },
-  "Positive/green block": {
-    "scope": "markdown,mdx",
-    "prefix": "Positive/green",
-    "body": [
-      "<Alert tone=\"positive\">",
+      "<Note>",
       "",
       "$1",
       "",
-      "</Alert>"
+      "</Note>"
+    ]
+  },
+  "Positive/green/tip block": {
+    "scope": "markdown,mdx",
+    "prefix": "Positive/green/tip",
+    "body": [
+      "<Tip>",
+      "",
+      "$1",
+      "",
+      "</Tip>"
     ]
   },
   "Warning block": {
     "scope": "markdown,mdx",
     "prefix": "warning",
     "body": [
-      "<Alert tone=\"warn\">",
-      "",
-      "**Warning:** $1",
-      "",
-      "</Alert>"
-    ]
-  },
-  "Critical block": {
-    "scope": "markdown,mdx",
-    "prefix": "critical",
-    "body": [
-      "<Alert tone=\"critical\">",
+      "<Warning>",
       "",
       "$1",
       "",
-      "</Alert>"
+      "</Warning>"
+    ]
+  },
+  "Critical/danger block": {
+    "scope": "markdown,mdx",
+    "prefix": "critical/danger",
+    "body": [
+      "<Danger>",
+      "",
+      "$1",
+      "",
+      "</Danger>"
     ]
   },
   "Accordion block": {

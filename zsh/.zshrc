@@ -498,6 +498,11 @@ gundoall() {
   fi
 }
 
+# Tool to decode JWT tokens locally
+jwt-decode() {
+  jq -R 'split(".") |.[0:2] | map(@base64d) | map(fromjson)' <<< $1
+}
+
 ## Canva docs stuff below here
 
 bdocs() {

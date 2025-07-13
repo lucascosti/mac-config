@@ -289,6 +289,7 @@
   "gitlens.hovers.annotations.changes": false,
   "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
   "gitlens.defaultDateFormat": "DD MMM YYYY",
+  "gitlens.plusFeatures.enabled": false,
   "gitlens.keymap": "none",
   "gitlens.views.repositories.avatars": false,
   "gitlens.launchpad.indicator.enabled": false,
@@ -363,11 +364,12 @@
   },
   "bookmarks.navigateThroughAllFiles": false,
   "diffEditor.renderSideBySide": false,
-  "vale.valeCLI.config": "/Users/lucascosti/repos/docs/vale/.vale.ini",
+  "vale.valeCLI.config": "/Users/lucascosti/repos/canva-dev/canva-dev-website/vale/.vale.ini",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+
 }

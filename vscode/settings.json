@@ -371,5 +371,6 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "code-eol.forceShowOnBoundary": true,
 }

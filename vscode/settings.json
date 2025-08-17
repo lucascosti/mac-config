@@ -373,4 +373,5 @@
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "code-eol.forceShowOnBoundary": true,
+  "amp.url": "https://ampcode.com/"
 }

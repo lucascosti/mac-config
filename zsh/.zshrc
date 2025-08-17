@@ -128,7 +128,7 @@ alias gsubupd='git submodule update --remote --merge'
 alias cdr='cd ~/repos/'
 alias cdm='cd ~/repos/mac-config'
 alias cdd='cd ~/repos/docs'
-alias cddev='cd ~/repos/canva-dev'
+alias cddev='cd ~/repos/canva-dev/canva-dev-website'
 alias cdc='cd ~/repos/canva'
 
 # Functions

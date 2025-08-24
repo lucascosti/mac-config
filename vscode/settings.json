@@ -94,8 +94,8 @@
     "minimapGutter.addedBackground": "#28744e",
     // Similar color changes for diff editor backgrounds
     "diffEditor.removedTextBackground": "#940c0cac",
-    "diffEditor.insertedTextBackground": "#256a47",
-    "diffEditor.insertedLineBackground": "#28744e82",
+    "diffEditor.insertedTextBackground": "#005E2F82", // old: #256a47
+    "diffEditor.insertedLineBackground": "#00542A82",
     // Change the search highlight in minimap to a yellow (instead of orange)
     "minimap.findMatchHighlight": "#b3b154",
     "editorOverviewRuler.findMatchForeground": "#b3b154",

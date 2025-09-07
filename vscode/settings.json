@@ -38,7 +38,6 @@
       "strings": "on",
       "other": "on"
     },
-    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
   },
   "explorer.confirmDragAndDrop": false,
   "search.exclude": {
@@ -265,7 +264,6 @@
     "yml"
   ],
   "markdownlint.config": {
-    "MD004": false,
     "MD024": false,
     "MD031": false,
     "MD033": false,
@@ -373,5 +371,6 @@
   },
   "github.copilot.nextEditSuggestions.enabled": true,
   "code-eol.forceShowOnBoundary": true,
-  "amp.url": "https://ampcode.com/"
+  "amp.url": "https://ampcode.com/",
+  "chat.agent.maxRequests": 40
 }

@@ -343,6 +343,7 @@
     "markdown": true,
     "javascript": true
   },
+  "github.copilot.nextEditSuggestions.enabled": true,
   "markdown-preview-github-styles.colorTheme": "system",
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -355,6 +356,15 @@
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   "editor.acceptSuggestionOnEnter": "off",
   "files.associations": {
@@ -369,8 +379,6 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "code-eol.forceShowOnBoundary": true,
   "amp.url": "https://ampcode.com/",
   "chat.agent.maxRequests": 40
 }

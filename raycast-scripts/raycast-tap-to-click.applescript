@@ -38,22 +38,23 @@ tell application "System Events" to tell its application process "System Setting
   repeat until window "Trackpad" exists
   end repeat
   
-  set trackpad_checkbox to checkbox 2 of group 1 of scroll area 1 of group 1 of group 2 of splitter group 1 of group 1 of window "Trackpad" of application process "System Settings" of application "System Events"
+  -- The "Tap to click" is now a toggle switch in macOS 26 (Tahoe)
+  set tap_to_click_toggle to checkbox "Tap to click" of group 1 of scroll area 1 of group 1 of group 3 of splitter group 1 of group 1 of window "Trackpad"
 
   if tap_to_set is "on" then
-      if value of trackpad_checkbox is not 1 then
-      click trackpad_checkbox
+      if value of tap_to_click_toggle is not 1 then
+      click tap_to_click_toggle
       else 
         log "Tap to click is already on 🙃"
       end if
   else if tap_to_set is "off" then
-      if value of trackpad_checkbox is 1 then 
-        click trackpad_checkbox
+      if value of tap_to_click_toggle is 1 then 
+        click tap_to_click_toggle
       else
         log "Tap to click is already off 🙃"
       end if  
   else if tap_to_set is "toggle" then
-      click trackpad_checkbox
+      click tap_to_click_toggle
   end if
 
 end tell

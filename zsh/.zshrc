@@ -1,7 +1,7 @@
 # Lucas' .zshrc file.
 # https://github.com/lucascosti/mac-config/zsh/
 
-######## oh-my-zsh stuff  ########
+######## oh-my-zsh stuff ########
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -44,6 +44,20 @@ zle_highlight+=(paste:none)
 # Bind Home/End keys for beginning/end of line.
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+
+# Function to get terminal width - runs automatically when window size changes.## This is for setting a horizontal rule environment variable that spans the terminal width for use in my oh-my-posh theme.
+get_terminal_width() {
+  # COLUMNS is a special zsh variable that contains the terminal width
+  # Create a string of box-drawing characters (─) with width minus 1
+  local width=$((COLUMNS - 1))
+  export TERMINAL_HORIZONTAL_RULE=$(printf '\u2500%.0s' {1..$width})
+}
+# TRAPWINCH is called automatically when the terminal window size changes
+TRAPWINCH() {
+  get_terminal_width
+}
+# Initialize the terminal width variable on shell startup
+get_terminal_width
 
 # Set custom LSCOLORS for MacOS (see https://geoff.greer.fm/lscolors/)
 # (on other Linux systems, it is the differently-formated LS_COLORS)

@@ -7,15 +7,10 @@
       "alignment": "left",
       "segments": [
         {
-          "properties": {
-            "cache_duration": "none",
-            "command": "printf '%*s\n' \"${COLUMNS:-$(tput cols)}\" '' | tr ' ' \u2500",
-            "shell": "zsh"
-          },
-          "template": "{{ .Output }}",
+          "type": "text",
+          "style": "plain",
           "foreground": "#585858",
-          "type": "command",
-          "style": "plain"
+          "template": "{{ .Env.TERMINAL_HORIZONTAL_RULE }}"
         }
       ],
       "newline": true

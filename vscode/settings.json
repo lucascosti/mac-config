@@ -389,6 +389,5 @@
   "gitlens.gitkraken.mcp.autoEnabled": false,
   "chat.tools.urls.autoApprove": {
     "https://www.canva.dev/docs": true
-  },
-  "editor.wrapOnEscapedLineFeeds": true,"remote.SSH.remotePlatform": {"coder-vscode.coder.canva-internal.com--lucascosti--forge-test.main":"linux"},"remote.SSH.connectTimeout": 1800,"remote.SSH.serverShutdownTimeout": 28800,"remote.SSH.reconnectionGraceTime": 28800,"remote.SSH.maxReconnectionAttempts": null,
+  }
 }

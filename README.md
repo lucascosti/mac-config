@@ -2,6 +2,18 @@
 
 The main configuration files I use for my work MacBook.
 
+## Setup
+
+The setup script creates all symlinks automatically, and includes a `--dry-run` option:
+
+```shell
+./setup.sh
+```
+
+The script is idempotent (which means it is safe to re-run). It will skip links that are already correct, back up any existing files before replacing them, and skip sections for apps that aren't installed.
+
+## Config files
+
 This repo contains the following config files:
 
 * [Zsh shell configuration](zsh/)

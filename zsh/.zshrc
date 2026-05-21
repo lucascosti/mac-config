@@ -100,6 +100,8 @@ compctl -K _cmpl_cheat cheat
 ## Regular aliases
 ### zsh sudo last command:
 alias ffs='sudo $(fc -ln -1)'
+### reload the zsh shell
+alias reload='exec zsh'
 ### Brew aliases
 alias bi='brew install'
 alias br='brew uninstall'

@@ -4,7 +4,10 @@ http://forums.mozillazine.org/viewtopic.php?p=12890981&sid=c1ff584176b806003e646
 This goes in your firefox profile in the `chrome` directory.
 */
 
-@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+/* @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul); */
+/* Lucas: Removed in Firefox 151 - Mozilla converted urlbar to HTML, 
+   so the XUL-only namespace declaration was blocking urlbar CSS rules from matching. 
+   Removing it allows selectors to match both XUL and HTML elements. */
 
 /* Window font */
 window, page, wizard, prefwindow {
@@ -35,9 +38,15 @@ toolbar {
 font-size: 10pt !important; }
 
 /* Address bar font */
-/* Lucas Pre-Firefox v133 this was: #urlbar { */
-.urlbar-input-container, .urlbarView {
-font-size: 10pt !important; }
+/* Pre-v133: #urlbar */
+/* Pre-v151: .urlbar-input-container, .urlbarView */
+/* v151+: .urlbar (element converted to HTML, namespace declaration removed) */
+.urlbar,
+.urlbar-input-container,
+.urlbarView,
+.urlbar-input-box {
+  font-size: 10pt !important;
+}
 
 /* Personal Titlebar Title font */
 #personal-titlebar{

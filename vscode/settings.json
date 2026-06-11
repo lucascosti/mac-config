@@ -1,4 +1,5 @@
 {
+  "update.mode": "start",
   "window.commandCenter": true,
   "security.promptForLocalFileProtocolHandling": false,
   "security.workspace.trust.untrustedFiles": "open",
@@ -287,10 +288,12 @@
   "gitlens.hovers.annotations.changes": false,
   "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
   "gitlens.defaultDateFormat": "DD MMM YYYY",
-  "gitlens.plusFeatures.enabled": false,
   "gitlens.keymap": "none",
   "gitlens.views.repositories.avatars": false,
   "gitlens.launchpad.indicator.enabled": false,
+  "gitlens.ai.enabled": false,
+  "gitlens.plusFeatures.enabled": false,
+  "gitlens.gitkraken.mcp.autoEnabled": false,
   "gitlens.menus": {
     "editor": false,
     "editorGroup": false,
@@ -379,15 +382,17 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "amp.url": "https://ampcode.com/",
   "chat.agent.maxRequests": 40,
   "claudeCode.preferredLocation": "sidebar",
   "claudeCode.hideOnboarding": true,
   "claudeCode.disableLoginPrompt": true,
   "claudeCode.claudeProcessWrapper": "/usr/local/bin/otter",
-  "claudeCode.selectedModel": "global.anthropic.claude-sonnet-4-6",
-  "gitlens.gitkraken.mcp.autoEnabled": false,
   "chat.tools.urls.autoApprove": {
     "https://www.canva.dev/docs": true
+  },
+  "typescript.experimental.useTsgo": true,
+  "chat.viewSessions.orientation": "stacked",
+  "chat.tools.terminal.autoApprove": {
+    "npm test": true
   }
 }

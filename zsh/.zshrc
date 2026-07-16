@@ -105,8 +105,7 @@ alias reload='exec zsh'
 ### Brew aliases
 alias bi='brew install'
 alias br='brew uninstall'
-alias bupd='brew update'
-alias bupg='brew upgrade'
+alias bupg='brew upgrade -y'
 ### Git aliases
 alias g='git'
 alias gfu='git fetch upstream'
@@ -143,9 +142,6 @@ alias gsubupd='git submodule update --remote --merge'
 ### Directory aliases
 alias cdr='cd ~/repos/'
 alias cdm='cd ~/repos/mac-config'
-alias cdd='cd ~/repos/docs'
-alias cddev='cd ~/repos/canva-dev/canva-dev-website'
-alias cdc='cd ~/repos/canva'
 
 # Functions
 
@@ -524,11 +520,11 @@ jwt-decode() {
 bdocs() {
   local current_folder=$(pwd)
   if [[ $current_folder == *"docs"* ]]; then
-    print -P "$lcicon_runarrow Running: npm run dev"
-    npm run dev
+    print -P "$lcicon_runarrow Running: pnpm run dev"
+    pnpm run dev
   elif [[ $current_folder == *"canva-dev"* ]]; then
-    print -P "$lcicon_runarrow Running: npm run start"
-    npm run start
+    print -P "$lcicon_runarrow Running: pnpm run start"
+    pnpm run start
   else
     print -P "$lcicon_fail Not in a docs repository."
     return 1

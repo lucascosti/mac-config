@@ -17,9 +17,9 @@
 	<key>AIVectorStore</key>
 	<integer>0</integer>
 	<key>AiMaxTokens</key>
-	<integer>400000</integer>
+	<integer>1050000</integer>
 	<key>AiModel</key>
-	<string>gpt-5.2</string>
+	<string>gpt-5.5</string>
 	<key>AiResponseMaxTokens</key>
 	<integer>128000</integer>
 	<key>AitermURL</key>
@@ -1340,7 +1340,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/lucascosti/repos/canva-dev/canva-dev-website</string>
+			<string>/Users/lucascosti/repos/canva-dev/sites/canva-dev/</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>

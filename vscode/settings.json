@@ -386,9 +386,6 @@
   },
   "chat.agent.maxRequests": 40,
   "claudeCode.preferredLocation": "sidebar",
-  "claudeCode.hideOnboarding": true,
-  "claudeCode.disableLoginPrompt": true,
-  "claudeCode.claudeProcessWrapper": "/usr/local/bin/otter",
   "chat.tools.urls.autoApprove": {
     "https://www.canva.dev/docs": true
   },
@@ -397,5 +394,9 @@
   "chat.tools.terminal.autoApprove": {
     "npm test": true,
     "git remote": true
-  }
+  },
+  "chat.editor.wordWrap": "on",
+  "chat.notifyWindowOnResponseReceived": "always",
+  "chat.notifyWindowOnConfirmation": "always",
+  "workbench.experimental.modernUI": false,
 }
